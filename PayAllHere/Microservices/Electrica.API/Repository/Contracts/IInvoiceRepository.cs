@@ -1,8 +1,8 @@
-﻿using EONGaz.API.Models;
+﻿using Electrica.API.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EONGaz.API.Repository.Contracts
+namespace Electrica.API.Repository.Contracts
 {
     public interface IInvoiceRepository
     {

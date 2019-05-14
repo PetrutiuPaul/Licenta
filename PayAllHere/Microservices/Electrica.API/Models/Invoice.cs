@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace EONGaz.API.Models
+namespace Electrica.API.Models
 {
     public class Invoice
     {

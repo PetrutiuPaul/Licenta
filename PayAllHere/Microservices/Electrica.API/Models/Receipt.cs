@@ -1,4 +1,4 @@
-﻿namespace EONGaz.API.Models
+﻿namespace Electrica.API.Models
 {
     public class Receipt
     {

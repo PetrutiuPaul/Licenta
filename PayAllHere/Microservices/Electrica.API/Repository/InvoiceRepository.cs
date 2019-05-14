@@ -1,11 +1,11 @@
-﻿using EONGaz.API.Models;
-using EONGaz.API.Repository.Contracts;
+﻿using Electrica.API.Models;
+using Electrica.API.Repository.Contracts;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EONGaz.API.Repository
+namespace Electrica.API.Repository
 {
     public class InvoiceRepository : IInvoiceRepository
     {
@@ -15,7 +15,7 @@ namespace EONGaz.API.Repository
         {
             var client = new MongoClient("mongodb://localhost:27017");
 
-            var mongoDatabase = client.GetDatabase("DSN_EONGazService");
+            var mongoDatabase = client.GetDatabase("DSN_ElectricaService");
 
             _collection = mongoDatabase.GetCollection<Invoice>("Invoices");
         }

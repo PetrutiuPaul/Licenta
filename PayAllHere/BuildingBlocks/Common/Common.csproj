@@ -48,6 +48,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestHelper\HTTPRequestSender.cs" />
     <Compile Include="ViewModels\ErrorResponseViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewModel\PayInvoiceRequestViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewModel\ReceiptRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\UpdateBalanceRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\UserRequestViewModel.cs" />
     <Compile Include="ViewModels\ResponseViewModel\UserResponseViewModel.cs" />

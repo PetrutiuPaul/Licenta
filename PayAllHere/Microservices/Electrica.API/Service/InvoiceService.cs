@@ -1,9 +1,9 @@
 ﻿using Common.ViewModels.RequestViewModel;
-using EONGaz.API.Repository.Contracts;
-using EONGaz.API.Service.Contracts;
+using Electrica.API.Repository.Contracts;
+using Electrica.API.Service.Contracts;
 using System.Threading.Tasks;
 
-namespace EONGaz.API.Service
+namespace Electrica.API.Service
 {
     public class InvoiceService : IInvoiceService
     {

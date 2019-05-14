@@ -1,13 +1,13 @@
 ﻿using Common.Enums;
 using Common.ViewModels;
 using Common.ViewModels.RequestViewModel;
-using EONGaz.API.Models;
-using EONGaz.API.Repository.Contracts;
-using EONGaz.API.Service.Contracts;
+using Electrica.API.Models;
+using Electrica.API.Repository.Contracts;
+using Electrica.API.Service.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace EONGaz.API.Controllers
+namespace Electrica.API.Controllers
 {
     [Route("api/invoice")]
     [ApiController]

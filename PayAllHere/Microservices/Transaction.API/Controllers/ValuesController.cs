@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Electrica.API.Controllers
+namespace Transaction.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

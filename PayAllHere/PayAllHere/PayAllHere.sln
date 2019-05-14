@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{E490569D-CD8E-4553-932B-7B0DFB1F1FB2}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EONGaz.API", "..\Microservices\EONGaz.API\EONGaz.API.csproj", "{5768AA10-B017-418F-A099-32509A2030C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Electrica.API", "..\Microservices\Electrica.API\Electrica.API.csproj", "{47D848B7-B2A9-4114-B654-E92D43A3A9DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transaction.API", "..\Microservices\Transaction.API\Transaction.API.csproj", "{CAA9B49A-FA2C-4ACC-9159-1B8EDD089AF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{47D848B7-B2A9-4114-B654-E92D43A3A9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D848B7-B2A9-4114-B654-E92D43A3A9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D848B7-B2A9-4114-B654-E92D43A3A9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA9B49A-FA2C-4ACC-9159-1B8EDD089AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA9B49A-FA2C-4ACC-9159-1B8EDD089AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA9B49A-FA2C-4ACC-9159-1B8EDD089AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA9B49A-FA2C-4ACC-9159-1B8EDD089AF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{89175F07-DB27-48B9-8797-5832991D6FE0} = {EA09CD91-99E8-4625-9225-CF8DF983A356}
 		{5768AA10-B017-418F-A099-32509A2030C9} = {EA09CD91-99E8-4625-9225-CF8DF983A356}
 		{47D848B7-B2A9-4114-B654-E92D43A3A9DD} = {EA09CD91-99E8-4625-9225-CF8DF983A356}
+		{CAA9B49A-FA2C-4ACC-9159-1B8EDD089AF6} = {EA09CD91-99E8-4625-9225-CF8DF983A356}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ADC4BB08-BC89-487F-8E3C-743E5F872971}

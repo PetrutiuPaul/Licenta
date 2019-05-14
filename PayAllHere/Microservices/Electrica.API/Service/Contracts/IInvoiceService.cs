@@ -1,7 +1,7 @@
 ﻿using Common.ViewModels.RequestViewModel;
 using System.Threading.Tasks;
 
-namespace EONGaz.API.Service.Contracts
+namespace Electrica.API.Service.Contracts
 {
     public interface IInvoiceService
     {

@@ -1,7 +1,7 @@
 ﻿using Common.ViewModels.RequestViewModel;
-using EONGaz.API.Models;
+using Electrica.API.Models;
 
-namespace EONGaz.API.Service
+namespace Electrica.API.Service
 {
     public static class ReceiptMapping
     {
