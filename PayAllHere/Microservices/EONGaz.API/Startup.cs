@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EONGaz.API.Repository;
+using EONGaz.API.Repository.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,8 @@ namespace EONGaz.API
             {
                 c.SwaggerDoc("v1", new Info { Title = "E.ON Gaz API", Version = "v1" });
             });
+
+            services.AddTransient<IInvoiceRepository, InvoiceRepository>();
 
         }
 
