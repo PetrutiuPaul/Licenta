@@ -26,7 +26,7 @@ namespace Common.RequestHelper
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(responseString);
+                    throw new System.Exception(responseString);
                 }
                 return responseString;
             }
@@ -53,7 +53,7 @@ namespace Common.RequestHelper
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(responseString);
+                    throw new System.Exception(responseString);
                 }
 
                 return responseString;
@@ -70,7 +70,7 @@ namespace Common.RequestHelper
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(responseString);
+                    throw new System.Exception(responseString);
                 }
 
                 return responseString;

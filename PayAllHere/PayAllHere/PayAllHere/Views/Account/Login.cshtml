@@ -1,0 +1,148 @@
+﻿@model Common.ViewModels.RequestViewModel.UserRequestViewModel
+@{
+    ViewBag.Title = "Welcome!";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PayAllHere</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <div class="body-content">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8" style="text-align:center">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-4">
+                        @Html.RadioButton("userRadio", "login", true)
+                        @Html.Label("Returning user")
+                    </div>
+                    <div class="col-md-4">
+                        @Html.RadioButton("userRadio", "register")
+                        @Html.Label("New User")
+                    </div>
+                </div>
+                <hr />
+                <div id="loginForm">
+                    @Html.ValidationSummary()
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
+                    {
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.Username, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control allow-max-width", id = "loginUsername" } })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.Password, new { @class = "control-label" })
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control allow-max-width", id = "loginPassword" })
+
+                            </div>
+                        </div>
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-success">Log in</button>
+                    }
+                </div>
+                <div id="registerForm" style="display:none">
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "registerForm" }))
+                    {
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.Username, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control allow-max-width" } })
+                                @Html.ValidationMessageFor(model => model.Username)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.Password, new { @class = "control-label" })
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control allow-max-width" })
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control allow-max-width" } })
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CNP, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.CNP, new { htmlAttributes = new { @class = "form-control allow-max-width" } })
+                            @Html.ValidationMessageFor(model => model.CNP)
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.FirstName, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control allow-max-width" } })
+                                @Html.ValidationMessageFor(model => model.FirstName)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.LastName, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control allow-max-width" } })
+                                @Html.ValidationMessageFor(model => model.LastName)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-offset-2 col-sm-8">
+                                @Html.LabelFor(model => model.Address, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control allow-max-width" } })
+                                @Html.ValidationMessageFor(model => model.Address)
+                            </div>
+                        </div>
+                        <div class="form-group input-group-sm">
+                            @Html.LabelFor(model => model.DateOfBirth)
+                            @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control datepicker", placeholder = "Enter Drop-off date here..." })
+                            @Html.ValidationMessageFor(model => model.DateOfBirth)
+                        </div>
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-success">Register</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts{
+        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".datepicker").datepicker({ format: 'dd/mm/yyyy', autoclose: true, todayBtn: 'linked' });
+            });
+            $(function () {
+                $("input[name=userRadio]").on("change", function () {
+
+                    var radioValue = $(this).val();
+                    if (radioValue == "login") {
+                        $("#loginForm").show();
+                        $("#registerForm").hide();
+                    }
+                    else if (radioValue == "register") {
+                        $("#registerForm").show();
+                        $("#loginForm").hide();
+                    }
+                });
+            });
+        </script>
+    }
+
+
+    </body>
+</html>

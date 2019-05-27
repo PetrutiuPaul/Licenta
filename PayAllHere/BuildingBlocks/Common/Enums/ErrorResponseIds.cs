@@ -14,6 +14,7 @@ namespace Common.Enums
         InvalidBalance = 4003,
         InvoiceNotExist = 4004,
         InvoiceAlreadyExist = 4005,
-        InvalidValue = 4006
+        InvalidValue = 4006,
+        InvalidTransaction = 4007
     }
 }

@@ -31,7 +31,7 @@ namespace Transaction.API
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "E.ON Gaz API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "Transaction API", Version = "v1" });
             });
         }
 

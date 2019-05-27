@@ -1,18 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using PayAllHere.Models;
+using PayAllHere.Service.Contracts;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using PayAllHere.Models;
 
 namespace PayAllHere.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IUserService _userService;
+
+        public HomeController(IUserService userService)
         {
-            return View();
+            _userService = userService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var user = await _userService.GetUserByCNP(User.Claims.Where(x => x.Type.Contains("nameidentifier")).Select(x => x).First().Value);
+
+            return View(user);
         }
 
         public IActionResult About()

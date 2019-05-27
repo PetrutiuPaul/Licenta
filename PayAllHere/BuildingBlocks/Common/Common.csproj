@@ -45,11 +45,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\ErrorResponseIds.cs" />
+    <Compile Include="Exception\UserAlreadyExistException.cs" />
+    <Compile Include="Exception\UserNotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestHelper\HTTPRequestSender.cs" />
     <Compile Include="ViewModels\ErrorResponseViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewModel\InvoiceRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\PayInvoiceRequestViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewModel\PaymentRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\ReceiptRequestViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewModel\TransactionRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\UpdateBalanceRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\UserRequestViewModel.cs" />
     <Compile Include="ViewModels\ResponseViewModel\UserResponseViewModel.cs" />
@@ -58,7 +63,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exception\" />
     <Folder Include="Mappings\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

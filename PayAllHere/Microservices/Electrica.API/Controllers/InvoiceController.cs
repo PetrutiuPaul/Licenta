@@ -6,6 +6,7 @@ using Electrica.API.Repository.Contracts;
 using Electrica.API.Service.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using Electrica.API.Service;
 
 namespace Electrica.API.Controllers
 {
@@ -64,11 +65,11 @@ namespace Electrica.API.Controllers
 
 
         [HttpPost]
-        public IActionResult AddInvoice([FromBody]Invoice invoice)
+        public IActionResult AddInvoice([FromBody]InvoiceRequestViewModel invoice)
         {
             try
             {
-                _invoiceRepository.AddInvoice(invoice);
+                _invoiceRepository.AddInvoice(invoice.ToInvoice());
             }
             catch (Exception)
             {

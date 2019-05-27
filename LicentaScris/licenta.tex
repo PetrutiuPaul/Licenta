@@ -5,6 +5,11 @@
 \usepackage[left=1.5in, right=1.5in, top=1in, bottom=1in]{geometry}
 \setcounter{secnumdepth}{3}
 \usepackage{mathptmx}
+\usepackage[pagestyles]{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
 \begin{document}
 \begin{titlepage}
  
@@ -36,7 +41,7 @@ SPECIALIZAREA INFORMATICǍ}\\[5cm] % Name of your university/college
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Coordonatori științifici:}\\
-lect. dr. \textbf{Ioan Gabriel Mircea}
+lect. dr. \textbf{Mircea Ioan Gabriel }
 \end{flushleft}
 \end{minipage}
 ~
@@ -64,7 +69,7 @@ lect. dr. \textbf{Ioan Gabriel Mircea}
 \cleardoublepage
 
 \chapter{Introducere} 
-  
+
 \chapter{Concepte de baza} 
   \section{Arhitectura Software}
   \section{Servicii Software}
@@ -97,6 +102,31 @@ lect. dr. \textbf{Ioan Gabriel Mircea}
 	\section{Sablone bazate pe microservicii in practica}
 \chapter{Concluzii}
 \chapter{Bibliografie}
+
+\begin{flushleft}
+\textbf{Cockcroft, Adrian. 2015. \texttt{Talking microservices with the man who made Netflix’s cloud famous. [interviu cu] Derrick Harris. 2015.}}
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{
+Cockroft, Adrian. 2014. \texttt{Migrating to Microservices by Adrian Cockroft. YouTube. [Interactiv] 2014. https://www.youtube.com/watch?v=1wiMLkXz26M.}}
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{
+Erl, Thomas. 2009. \texttt{SOA Design Patterns. Crawfordville Indiana : Prentice Hall, 2009.}}
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{
+Fowler, Martin. 2014. \texttt{Microservices, 2014,. MartinFowler.com. [Interactiv] 2014. https://martinfowler.com/articles/microservices.html.}}
+\end{flushleft}
+
+\begin{flushleft}
+\textbf{
+OASIS Foundation. 2006. \texttt{Reference Model for Service Oriented Architecture. [Interactiv] 2006. https://docs.oasis-open.org/soa-rm/v1.0/soa-rm.html.}}
+\end{flushleft}
+
 \end{document}
 
 

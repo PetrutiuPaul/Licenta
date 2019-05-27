@@ -63,7 +63,7 @@ namespace UserService.API.Controllers
 
 
         [HttpGet]
-        [Route("GetUserById/{userId}")]
+        [Route("GetUserByCNP/{CNP}")]
         public async Task<IActionResult> GetUserByCNP(string CNP)
         {
             var user = await userRepository.GetUserByCNP(CNP);

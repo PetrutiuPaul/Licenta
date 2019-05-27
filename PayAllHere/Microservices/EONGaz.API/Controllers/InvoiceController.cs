@@ -6,6 +6,7 @@ using EONGaz.API.Repository.Contracts;
 using EONGaz.API.Service.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using EONGaz.API.Service;
 
 namespace EONGaz.API.Controllers
 {
@@ -64,11 +65,11 @@ namespace EONGaz.API.Controllers
 
 
         [HttpPost]
-        public IActionResult AddInvoice([FromBody]Invoice invoice)
+        public IActionResult AddInvoice([FromBody]InvoiceRequestViewModel invoice)
         {
             try
             {
-                _invoiceRepository.AddInvoice(invoice);
+                _invoiceRepository.AddInvoice(invoice.ToInvoice());
             }
             catch (Exception)
             {
