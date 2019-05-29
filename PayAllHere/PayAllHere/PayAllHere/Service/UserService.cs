@@ -14,16 +14,16 @@ namespace PayAllHere.Service
 {
     public class UserService : IUserService
     {
-        private readonly IConfiguration configuration;
+        private readonly IConfiguration _configuration;
 
         public UserService(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            this._configuration = configuration;
         }
 
         public async Task<UserResponseViewModel> GetUserForLogin(UserRequestViewModel user)
         {
-            var url = $"{configuration["UserServiceAPIUrl"]}/api/User/Login";
+            var url = $"{_configuration["UserServiceAPIUrl"]}/api/User/Login";
 
             try
             {
@@ -47,7 +47,7 @@ namespace PayAllHere.Service
 
         public async Task<UserResponseViewModel> RegisterUser(UserRequestViewModel user)
         {
-            var url = $"{configuration["UserServiceAPIUrl"]}/api/User/Register";
+            var url = $"{_configuration["UserServiceAPIUrl"]}/api/User/Register";
             try
             {
                 var responseString = await HTTPRequestSender.PostAsync(url, user);
@@ -71,7 +71,7 @@ namespace PayAllHere.Service
 
         public async Task<bool> UserExists(UserRequestViewModel user)
         {
-            var url = $"{configuration["UserServiceAPIUrl"]}/api/User/UserExist";
+            var url = $"{_configuration["UserServiceAPIUrl"]}/api/User/UserExist";
             try
             {
                 var responseString = await HTTPRequestSender.PostAsync(url, user);
@@ -88,7 +88,7 @@ namespace PayAllHere.Service
 
         public async Task<UserResponseViewModel> GetUserByCNP(string CNP)
         {
-            var url = $"{configuration["UserServiceAPIUrl"]}/api/User/GetUserByCNP/{CNP}";
+            var url = $"{_configuration["UserServiceAPIUrl"]}/api/User/GetUserByCNP/{CNP}";
 
             try
             {
@@ -105,6 +105,30 @@ namespace PayAllHere.Service
                     throw new UserNotFoundException();
                 }
                 throw new Exception("Unknown Exception");
+            }
+        }
+
+        public async Task<double> ModifyBalance(UpdateBalanceRequestViewModel updateBalanceRequestViewModel)
+        {
+            var url = $"{_configuration["UserServiceAPIUrl"]}/api/User/ModifyBalance";
+            try
+            {   
+                var responseString = await HTTPRequestSender.PostAsync(url, updateBalanceRequestViewModel);
+
+                var responseUser = JsonConvert.DeserializeObject<double>(responseString);
+
+                return responseUser;
+            }
+            catch (Exception e)
+            {
+                var errorResponse = JsonConvert.DeserializeObject<ErrorResponseViewModel>(e.Message);
+
+                if (errorResponse.Id == (int)ErrorResponseIds.UserAlreadyExists)
+                {
+                    throw new UserAlreadyExistsException();
+                }
+
+                throw;
             }
         }
     }

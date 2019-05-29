@@ -1,4 +1,6 @@
 ﻿using Common.ViewModels.RequestViewModel;
+using Common.ViewModels.ResponseViewModel;
+
 namespace Transaction.API.Service
 {
     public static class TransactionMapping
@@ -13,6 +15,18 @@ namespace Transaction.API.Service
                 UserId = transactionRequestViewModel.UserId,
                 Validated = transactionRequestViewModel.Validated,
                 Value = transactionRequestViewModel.Value
+            };
+        }
+
+        public static TransactionResponseViewModel ToTransactionResponseViewModel(this Models.Transaction transaction)
+        {
+            return new TransactionResponseViewModel()
+            {
+                From = transaction.From,
+                Id = transaction.Id,
+                To = transaction.To,
+                Value = transaction.Value,
+                Validated = transaction.Validated
             };
         }
     }

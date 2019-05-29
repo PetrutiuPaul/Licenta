@@ -3,6 +3,7 @@ using Common.ViewModels;
 using Common.ViewModels.RequestViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Transaction.API.Repository.Contracts;
 using Transaction.API.Service;
@@ -33,17 +34,18 @@ namespace Transaction.API.Controllers
                 { Id = (int)ErrorResponseIds.InvalidTransaction, Message = "Invalid Transaction" });
             }
 
-            return Ok();
+            return Ok(true);
         }
 
         [HttpGet]
+        [Route("{id}")]
         public async Task<IActionResult> GetTransaction(string id)
         {
             try
             {
-                var transaction = await _transactionRepository.Get(x => x.Id == id);
+                var transaction = (await _transactionRepository.Get(x => x.Id == id)).FirstOrDefault();
 
-                return Ok(transaction);
+                return Ok(transaction.ToTransactionResponseViewModel());
             }
             catch (Exception)
             {
@@ -54,19 +56,19 @@ namespace Transaction.API.Controllers
 
 
         [HttpGet]
-        [Route("All")]
-        public async Task<IActionResult> GetAllTransaction()
+        [Route("All/{userId}")]
+        public async Task<IActionResult> GetAllTransaction(string userId)
         {
             try
             {
-                var transactions = await _transactionRepository.Get(x => x.Id != "");
+                var transactions = await _transactionRepository.Get(x => x.UserId == userId);
 
-                return Ok(transactions);
+                return Ok(transactions.Select(x => x.ToTransactionResponseViewModel()));
             }
             catch (Exception)
             {
                 return BadRequest(new ErrorResponseViewModel()
-                    { Id = (int)ErrorResponseIds.InvalidTransaction, Message = "Invalid Transaction Id" });
+                    { Id = (int)ErrorResponseIds.InvalidTransaction, Message = "Error" });
             }
         }
     }

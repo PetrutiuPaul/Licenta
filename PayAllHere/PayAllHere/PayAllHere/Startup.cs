@@ -34,6 +34,8 @@ namespace PayAllHere
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ITransactionService, TransactionService>();
+            services.AddTransient<IUtilityService, UtilityService>();
 
 
         }

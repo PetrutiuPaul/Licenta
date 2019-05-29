@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using EONGaz.API.Repository;
 using EONGaz.API.Repository.Contracts;
+using EONGaz.API.Service;
+using EONGaz.API.Service.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,6 +39,7 @@ namespace EONGaz.API
             });
 
             services.AddTransient<IInvoiceRepository, InvoiceRepository>();
+            services.AddTransient<IInvoiceService, InvoiceService>();
 
         }
 

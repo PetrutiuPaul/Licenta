@@ -1,5 +1,4 @@
-﻿using System.Security.Permissions;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
 
 namespace Transaction.API.Models
 {
@@ -16,6 +15,8 @@ namespace Transaction.API.Models
 
         public string UserId { get; set; }
 
-        public bool Validated { get; set; } 
+        public string TransactionId { get; set; }
+
+        public bool Validated { get; set; }
     }
 }

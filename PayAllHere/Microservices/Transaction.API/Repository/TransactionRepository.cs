@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using Transaction.API.Repository.Contracts;
 
 namespace Transaction.API.Repository
@@ -22,6 +23,7 @@ namespace Transaction.API.Repository
 
         public async Task AddTransaction(Models.Transaction transaction)
         {
+            transaction.Id = ObjectId.GenerateNewId().ToString();
             await _collection.InsertOneAsync(transaction);
         }
 

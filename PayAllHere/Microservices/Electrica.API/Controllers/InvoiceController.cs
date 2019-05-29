@@ -6,6 +6,8 @@ using Electrica.API.Repository.Contracts;
 using Electrica.API.Service.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Electrica.API.Service;
 
 namespace Electrica.API.Controllers
@@ -25,11 +27,11 @@ namespace Electrica.API.Controllers
 
         [HttpPost]
         [Route("Pay")]
-        public IActionResult PayInvoice([FromBody]PayInvoiceRequestViewModel payInvoiceRequestViewModel)
+        public async Task<IActionResult> PayInvoice([FromBody]PayInvoiceRequestViewModel payInvoiceRequestViewModel)
         {
             try
             {
-                _invoiceRepository.PayInvoice(payInvoiceRequestViewModel.InvoiceId, payInvoiceRequestViewModel.Value);
+                await _invoiceRepository.PayInvoice(payInvoiceRequestViewModel.InvoiceId, payInvoiceRequestViewModel.Value);
             }
             catch (Exception)
             {
@@ -40,12 +42,12 @@ namespace Electrica.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(string id)
+        public async Task<IActionResult> Get(string id)
         {
             try
             {
-                var invoice = _invoiceRepository.GetInvoiceById(id);
-                return Ok(invoice);
+                var invoice = await _invoiceRepository.GetInvoiceById(id);
+                return Ok(invoice.TorInvoiceResponseViewModel());
             }
             catch (Exception)
             {
@@ -55,21 +57,21 @@ namespace Electrica.API.Controllers
         }
 
         [HttpGet]
-        [Route("UserInvoices")]
-        public IActionResult GetByCNP(string CNP)
+        [Route("UserInvoices/{CNP}")]
+        public async Task<IActionResult> GetByCNP(string CNP)
         {
-            var invoices = _invoiceRepository.GetInvoicesByCNP(CNP);
+            var invoices = await _invoiceRepository.GetInvoicesByCNP(CNP);
 
-            return Ok(invoices);
+            return Ok(invoices.Select(x => x.TorInvoiceResponseViewModel()));
         }
 
 
         [HttpPost]
-        public IActionResult AddInvoice([FromBody]InvoiceRequestViewModel invoice)
+        public async Task<IActionResult> AddInvoice([FromBody]InvoiceRequestViewModel invoice)
         {
             try
             {
-                _invoiceRepository.AddInvoice(invoice.ToInvoice());
+               await _invoiceRepository.AddInvoice(invoice.ToInvoice());
             }
             catch (Exception)
             {
@@ -82,11 +84,11 @@ namespace Electrica.API.Controllers
 
         [HttpPost]
         [Route("Receipt")]
-        public IActionResult AddReceipt([FromBody]ReceiptRequestViewModel receiptRequestViewModel)
+        public async Task<IActionResult> AddReceipt([FromBody]ReceiptRequestViewModel receiptRequestViewModel)
         {
             try
             {
-                _invoiceService.AddReceipt(receiptRequestViewModel);
+                await _invoiceService.AddReceipt(receiptRequestViewModel);
             }
             catch (Exception)
             {

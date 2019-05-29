@@ -43,5 +43,7 @@ namespace PayAllHere.Service.Contracts
         /// User data
         /// </returns>
         Task<UserResponseViewModel> GetUserByCNP(string userId);
+
+        Task<double> ModifyBalance(UpdateBalanceRequestViewModel value);
     }
 }

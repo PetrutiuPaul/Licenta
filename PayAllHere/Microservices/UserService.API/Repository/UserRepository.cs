@@ -30,7 +30,7 @@ namespace UserService.API.Repository
         {
             var user = await _collection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
-            if (user.Balance >= value)
+            if (user.Balance >= -value)
             {
                 user.Balance += value;
             }

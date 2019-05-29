@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using Transaction.API.Repository;
+using Transaction.API.Repository.Contracts;
 
 namespace Transaction.API
 {
@@ -33,6 +35,9 @@ namespace Transaction.API
             {
                 c.SwaggerDoc("v1", new Info { Title = "Transaction API", Version = "v1" });
             });
+
+            services.AddTransient<ITransactionRepository, TransactionRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

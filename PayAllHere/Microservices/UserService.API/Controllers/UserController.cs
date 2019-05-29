@@ -80,14 +80,15 @@ namespace UserService.API.Controllers
         {
             try
             {
-                await userRepository.ChangeUserBalanceWith(balanceViewModel.Id,balanceViewModel.Value);
+                var newValue = await userRepository.ChangeUserBalanceWith(balanceViewModel.Id,balanceViewModel.Value);
+
+                return Ok(newValue);
             }
             catch (Exception)
             {
                 return Conflict(new ErrorResponseViewModel { Id = (int)ErrorResponseIds.InvalidBalance, Message = "Not enough money" });
             }
 
-            return Ok();
         }
 
         [HttpGet]

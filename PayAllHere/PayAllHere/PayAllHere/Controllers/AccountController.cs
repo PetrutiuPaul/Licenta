@@ -63,6 +63,7 @@ namespace PayAllHere.Controllers
                     var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
                     identity.AddClaim(new Claim(ClaimTypes.Name, loggedInUser.FirstName + " " + loggedInUser.LastName));
                     identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, loggedInUser.CNP));
+                    identity.AddClaim(new Claim(ClaimTypes.PrimarySid, loggedInUser.Id));
                     identity.AddClaim(new Claim(ClaimTypes.Role, "User"));
 
                     if (loggedInUser.IsAdmin)

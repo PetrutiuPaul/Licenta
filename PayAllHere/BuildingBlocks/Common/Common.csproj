@@ -45,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\ErrorResponseIds.cs" />
+    <Compile Include="Enums\PaymentUserType.cs" />
+    <Compile Include="Exception\InvalidTransactionException.cs" />
+    <Compile Include="Exception\InvoiceNotExistException.cs" />
     <Compile Include="Exception\UserAlreadyExistException.cs" />
     <Compile Include="Exception\UserNotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +60,8 @@
     <Compile Include="ViewModels\RequestViewModel\TransactionRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\UpdateBalanceRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\UserRequestViewModel.cs" />
+    <Compile Include="ViewModels\ResponseViewModel\InvoiceResponseViewModel.cs" />
+    <Compile Include="ViewModels\ResponseViewModel\TransactionResponseViewModel.cs" />
     <Compile Include="ViewModels\ResponseViewModel\UserResponseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
