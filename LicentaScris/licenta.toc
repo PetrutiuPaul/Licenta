@@ -1,32 +1,55 @@
 \babel@toc {romanian}{}
-\contentsline {chapter}{\numberline {1}Introducere}{2}% 
-\contentsline {chapter}{\numberline {2}Concepte de baza}{3}% 
-\contentsline {section}{\numberline {2.1}Arhitectura Software}{3}% 
-\contentsline {section}{\numberline {2.2}Servicii Software}{3}% 
-\contentsline {section}{\numberline {2.3}Sabloane de Proiectare}{3}% 
-\contentsline {section}{\numberline {2.4}Notiuni legate de arhitectura bazata pe servicii}{3}% 
-\contentsline {subsection}{\numberline {2.4.1}Fundamentele Arhitecturii bazate pe servicii}{3}% 
-\contentsline {subsection}{\numberline {2.4.2}Sabloane de Proiectare pentru arhitecturi bazate pe servicii}{3}% 
-\contentsline {chapter}{\numberline {3}Sabloane de proiectare bazate pe microservicii}{4}% 
-\contentsline {section}{\numberline {3.1}Sabloane de implementare a microservicilor}{4}% 
-\contentsline {subsection}{\numberline {3.1.1}Agregator}{4}% 
-\contentsline {subsection}{\numberline {3.1.2}API Gateway}{4}% 
-\contentsline {section}{\numberline {3.2}Sabloane arhitecturale de proiectare}{4}% 
-\contentsline {subsection}{\numberline {3.2.1}Service bus}{4}% 
-\contentsline {subsection}{\numberline {3.2.2}Procesare asincrona}{4}% 
-\contentsline {subsection}{\numberline {3.2.3}Agregarea proceselor}{4}% 
-\contentsline {subsection}{\numberline {3.2.4}Alte Sabloane}{4}% 
-\contentsline {chapter}{\numberline {4}Studiu de Caz}{5}% 
-\contentsline {section}{\numberline {4.1}Introducere}{5}% 
-\contentsline {section}{\numberline {4.2}Tranzitia catre microservicii (Netflix)}{5}% 
-\contentsline {section}{\numberline {4.3}Motive}{5}% 
-\contentsline {section}{\numberline {4.4}Avantaje, Compromisuri, Dezavantaje si Costuri}{5}% 
-\contentsline {section}{\numberline {4.5}Arhitectura noii aplicatii}{5}% 
-\contentsline {chapter}{\numberline {5}Aplicatie Practica}{6}% 
-\contentsline {section}{\numberline {5.1}Cerinta}{6}% 
-\contentsline {section}{\numberline {5.2}Specificatii}{6}% 
-\contentsline {section}{\numberline {5.3}Arhitectura aplicatiei}{6}% 
-\contentsline {section}{\numberline {5.4}Implementare}{6}% 
-\contentsline {section}{\numberline {5.5}Sablone bazate pe microservicii in practica}{6}% 
-\contentsline {chapter}{\numberline {6}Concluzii}{7}% 
-\contentsline {chapter}{\numberline {7}Bibliografie}{8}% 
+\contentsline {chapter}{\numberline {1}Introducere}{3}% 
+\contentsline {chapter}{\numberline {2}Concepte de baz\IeC {\u a}}{4}% 
+\contentsline {section}{\numberline {2.1}Arhitectura unei aplica\IeC {\textcommabelow t}ii soft}{4}% 
+\contentsline {paragraph}{}{4}% 
+\contentsline {paragraph}{}{4}% 
+\contentsline {paragraph}{}{4}% 
+\contentsline {section}{\numberline {2.2}\IeC {\textcommabelow S}abloane de proiectare}{4}% 
+\contentsline {paragraph}{}{4}% 
+\contentsline {paragraph}{}{4}% 
+\contentsline {paragraph}{}{4}% 
+\contentsline {section}{\numberline {2.3}Serviciu Software}{5}% 
+\contentsline {paragraph}{}{5}% 
+\contentsline {paragraph}{}{5}% 
+\contentsline {paragraph}{}{5}% 
+\contentsline {chapter}{\numberline {3}Aplica\IeC {\textcommabelow t}ii Monolit}{6}% 
+\contentsline {section}{\numberline {3.1}Ce este o aplica\IeC {\textcommabelow t}ie monolit?}{6}% 
+\contentsline {paragraph}{}{6}% 
+\contentsline {paragraph}{}{6}% 
+\contentsline {paragraph}{}{6}% 
+\contentsline {section}{\numberline {3.2}Avantaje \IeC {\textcommabelow s}i dezavantaje}{7}% 
+\contentsline {paragraph}{}{7}% 
+\contentsline {paragraph}{}{7}% 
+\contentsline {paragraph}{}{7}% 
+\contentsline {chapter}{\numberline {4}Arhitectura bazat\IeC {\u a} pe servicii}{8}% 
+\contentsline {section}{\numberline {4.1}Fundamentele arhitecturii bazate pe servicii}{8}% 
+\contentsline {section}{\numberline {4.2}Sabloane de proiectare pentru arhitecturi bazate pe servicii}{8}% 
+\contentsline {chapter}{\numberline {5}Sabloane de proiectare bazate pe microservicii}{9}% 
+\contentsline {section}{\numberline {5.1}Sabloane de implementare a microservicilor}{9}% 
+\contentsline {subsection}{\numberline {5.1.1}Agregator}{9}% 
+\contentsline {subsection}{\numberline {5.1.2}API Gateway}{9}% 
+\contentsline {section}{\numberline {5.2}Sabloane arhitecturale de proiectare}{9}% 
+\contentsline {subsection}{\numberline {5.2.1}Service bus}{9}% 
+\contentsline {subsection}{\numberline {5.2.2}Procesare asincrona}{9}% 
+\contentsline {subsection}{\numberline {5.2.3}Agregarea proceselor}{9}% 
+\contentsline {subsection}{\numberline {5.2.4}Alte Sabloane}{9}% 
+\contentsline {chapter}{\numberline {6}Studiu de Caz}{10}% 
+\contentsline {section}{\numberline {6.1}Introducere}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {section}{\numberline {6.2}Tranzi\IeC {\textcommabelow t}ia c\IeC {\u a}tre microservicii (Netflix)}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {subsection}{\numberline {6.2.1}Motive}{11}% 
+\contentsline {subsection}{\numberline {6.2.2}Avantaje \IeC {\textcommabelow s}i dezavantaje}{11}% 
+\contentsline {subsection}{\numberline {6.2.3}Arhitectura noii aplica\IeC {\textcommabelow t}ii}{11}% 
+\contentsline {chapter}{\numberline {7}Aplica\IeC {\textcommabelow t}ie Practica}{12}% 
+\contentsline {section}{\numberline {7.1}Cerin\IeC {\textcommabelow t}a}{12}% 
+\contentsline {section}{\numberline {7.2}Specifica\IeC {\textcommabelow t}ii}{12}% 
+\contentsline {section}{\numberline {7.3}Arhitectura aplicatiei}{12}% 
+\contentsline {section}{\numberline {7.4}Implementare}{12}% 
+\contentsline {section}{\numberline {7.5}Sablone bazate pe microservicii in practica}{12}% 
+\contentsline {chapter}{\numberline {8}Concluzii}{13}% 
+\contentsline {chapter}{Bibliografie}{14}% 

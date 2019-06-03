@@ -5,6 +5,7 @@ using Common.Enums;
 using Common.Exception;
 using Common.RequestHelper;
 using Common.ViewModels;
+using Common.ViewModels.RequestViewModel;
 using Common.ViewModels.ResponseViewModel;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -62,6 +63,56 @@ namespace PayAllHere.Service
                     throw new InvoiceNotExistException();
                 }
                 throw new Exception("Unknown Exception");
+            }
+        }
+
+        public async Task<bool> PayEON(PayInvoiceRequestViewModel payInvoiceRequestViewModel)
+        {
+            var url = $"{_configuration["EONGazAPIUrl"]}/api/invoice/pay";
+
+            try
+            {
+
+                var responseString = await HTTPRequestSender.PostAsync(url, payInvoiceRequestViewModel);
+                var responseUser = JsonConvert.DeserializeObject<bool>(responseString);
+
+                return responseUser;
+            }
+            catch (Exception e)
+            {
+                var errorResponse = JsonConvert.DeserializeObject<ErrorResponseViewModel>(e.Message);
+
+                if (errorResponse.Id == (int)ErrorResponseIds.UserInvalid)
+                {
+                    throw new UserNotFoundException();
+                }
+
+                throw;
+            }
+        }
+
+        public async Task<bool> PayElectrica(PayInvoiceRequestViewModel payInvoiceRequestViewModel)
+        {
+            var url = $"{_configuration["ElectricaAPIUrl"]}/api/invoice/pay";
+
+            try
+            {
+
+                var responseString = await HTTPRequestSender.PostAsync(url, payInvoiceRequestViewModel);
+                var responseUser = JsonConvert.DeserializeObject<bool>(responseString);
+
+                return responseUser;
+            }
+            catch (Exception e)
+            {
+                var errorResponse = JsonConvert.DeserializeObject<ErrorResponseViewModel>(e.Message);
+
+                if (errorResponse.Id == (int)ErrorResponseIds.UserInvalid)
+                {
+                    throw new UserNotFoundException();
+                }
+
+                throw;
             }
         }
     }

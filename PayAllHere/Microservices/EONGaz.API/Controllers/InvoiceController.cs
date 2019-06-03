@@ -38,7 +38,7 @@ namespace EONGaz.API.Controllers
                 return Conflict(new ErrorResponseViewModel { Id = (int)ErrorResponseIds.InvalidValue, Message = "InvalidValue" });
             }
 
-            return Ok();
+            return Ok(true);
         }
 
         [HttpGet]
@@ -78,7 +78,7 @@ namespace EONGaz.API.Controllers
                 return Conflict(new ErrorResponseViewModel { Id = (int)ErrorResponseIds.InvoiceAlreadyExist, Message = "Invoice already added" });
             }
 
-            return Ok();
+            return Ok(true);
         }
 
 
@@ -92,10 +92,10 @@ namespace EONGaz.API.Controllers
             }
             catch (Exception)
             {
-                return NotFound();
+                return NotFound(new ErrorResponseViewModel { Id = (int)ErrorResponseIds.InvoiceAlreadyExist, Message = "Receipt already added" });
             }
 
-            return Ok();
+            return Ok(true);
         }
     }
 }

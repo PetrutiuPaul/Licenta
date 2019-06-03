@@ -11,6 +11,6 @@ namespace PayAllHere.Service.Contracts
 
         Task<TransactionResponseViewModel> GetTransactionById(string id);
 
-        Task<bool> AddCredit(PaymentRequestViewModel paymentRequestViewModel,string userId);
+        Task<bool> AddTransaction(TransactionRequestViewModel transactionRequestViewModel);
     }
 }

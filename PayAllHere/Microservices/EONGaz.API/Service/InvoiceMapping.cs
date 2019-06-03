@@ -28,7 +28,8 @@ namespace EONGaz.API.Service
                 ProviderName = invoiceRequestViewModel.ProviderName,
                 Receipt = null,
                 StartDate = invoiceRequestViewModel.StartDate,
-                UserCNP = invoiceRequestViewModel.UserCNP
+                UserCNP = invoiceRequestViewModel.UserCNP,
+                Value = invoiceRequestViewModel.Value
             };
         }
 

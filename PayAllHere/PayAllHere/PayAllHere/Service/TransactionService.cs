@@ -67,22 +67,15 @@ namespace PayAllHere.Service
             }
         }
 
-        public async Task<bool> AddCredit(PaymentRequestViewModel paymentRequestViewModel, string userId)
+       
+        public async Task<bool> AddTransaction(TransactionRequestViewModel transactionRequestViewModel)
         {
             var url = $"{_configuration["TransactionAPIUrl"]}/api/Transaction";
 
             try
             {
-                var transaction = new TransactionRequestViewModel()
-                {
-                    From = PaymentUserType.ExternalAccount.ToString(),
-                    To = PaymentUserType.Me.ToString(),
-                    UserId = userId,
-                    Validated = true,
-                    Value = paymentRequestViewModel.Value
-                };
 
-                var responseString = await HTTPRequestSender.PostAsync(url, transaction);
+                var responseString = await HTTPRequestSender.PostAsync(url, transactionRequestViewModel);
                 var responseUser = JsonConvert.DeserializeObject<bool>(responseString);
 
                 return responseUser;

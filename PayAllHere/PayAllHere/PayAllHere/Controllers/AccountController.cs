@@ -105,7 +105,7 @@ namespace PayAllHere.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<ActionResult> Register()
+        public ActionResult Register()
         {
             return View("Login");
         }

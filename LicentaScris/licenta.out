@@ -1,0 +1,35 @@
+\BOOKMARK [0][]{chapter.1}{1 Introducere}{}% 1
+\BOOKMARK [0][]{chapter.2}{2 Concepte de baza}{}% 2
+\BOOKMARK [1][]{section.2.1}{2.1 Arhitectura Software}{chapter.2}% 3
+\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Ce este arhitectura unei aplicatii soft?}{section.2.1}% 4
+\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 Sabloane de Proiectare}{section.2.1}% 5
+\BOOKMARK [1][]{section.2.2}{2.2 Aplicatii Monolit}{chapter.2}% 6
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Ce este o aplicatie monolit?}{section.2.2}% 7
+\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 Avantaje si dezavantaje}{section.2.2}% 8
+\BOOKMARK [1][]{section.2.3}{2.3 Notiuni legate de arhitectura bazata pe servicii}{chapter.2}% 9
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Servicii Software}{section.2.3}% 10
+\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Fundamentele Arhitecturii bazate pe servicii}{section.2.3}% 11
+\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Sabloane de Proiectare pentru arhitecturi bazate pe servicii}{section.2.3}% 12
+\BOOKMARK [0][]{chapter.3}{3 Sabloane de proiectare bazate pe microservicii}{}% 13
+\BOOKMARK [1][]{section.3.1}{3.1 Sabloane de implementare a microservicilor}{chapter.3}% 14
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Agregator}{section.3.1}% 15
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 API Gateway}{section.3.1}% 16
+\BOOKMARK [1][]{section.3.2}{3.2 Sabloane arhitecturale de proiectare}{chapter.3}% 17
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Service bus}{section.3.2}% 18
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Procesare asincrona}{section.3.2}% 19
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Agregarea proceselor}{section.3.2}% 20
+\BOOKMARK [2][]{subsection.3.2.4}{3.2.4 Alte Sabloane}{section.3.2}% 21
+\BOOKMARK [0][]{chapter.4}{4 Studiu de Caz}{}% 22
+\BOOKMARK [1][]{section.4.1}{4.1 Introducere}{chapter.4}% 23
+\BOOKMARK [1][]{section.4.2}{4.2 Tranzitia catre microservicii \(Netflix\)}{chapter.4}% 24
+\BOOKMARK [1][]{section.4.3}{4.3 Motive}{chapter.4}% 25
+\BOOKMARK [1][]{section.4.4}{4.4 Avantaje, Compromisuri, Dezavantaje si Costuri}{chapter.4}% 26
+\BOOKMARK [1][]{section.4.5}{4.5 Arhitectura noii aplicatii}{chapter.4}% 27
+\BOOKMARK [0][]{chapter.5}{5 Aplicatie Practica}{}% 28
+\BOOKMARK [1][]{section.5.1}{5.1 Cerinta}{chapter.5}% 29
+\BOOKMARK [1][]{section.5.2}{5.2 Specificatii}{chapter.5}% 30
+\BOOKMARK [1][]{section.5.3}{5.3 Arhitectura aplicatiei}{chapter.5}% 31
+\BOOKMARK [1][]{section.5.4}{5.4 Implementare}{chapter.5}% 32
+\BOOKMARK [1][]{section.5.5}{5.5 Sablone bazate pe microservicii in practica}{chapter.5}% 33
+\BOOKMARK [0][]{chapter.6}{6 Concluzii}{}% 34
+\BOOKMARK [0][]{chapter.7}{7 Bibliografie}{}% 35

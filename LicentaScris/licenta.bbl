@@ -1,0 +1,78 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Alencar%
+, Cowan%
+\BCBL {}\ \BBA {} Lucena%
+}{%
+Alencar%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1996}}%
+}]{%
+alencar1996formal}
+\APACinsertmetastar {%
+alencar1996formal}%
+\begin{APACrefauthors}%
+Alencar, P\BPBI S.%
+, Cowan, D\BPBI D.%
+\BCBL {}\ \BBA {} Lucena, C\BPBI J\BPBI P\BPBI d.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1996}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A formal approach to architectural design patterns} {A
+  formal approach to architectural design patterns}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {International Symposium of Formal Methods Europe}
+  {International symposium of formal methods europe}\ (\BPGS\ 576--594).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hilliard%
+}{%
+Hilliard%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+hilliard2000ieee}
+\APACinsertmetastar {%
+hilliard2000ieee}%
+\begin{APACrefauthors}%
+Hilliard, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Ieee-std-1471-2000 recommended practice for
+  architectural description of software-intensive systems} {Ieee-std-1471-2000
+  recommended practice for architectural description of software-intensive
+  systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE, http://standards. ieee. org}{12}{16-20}{2000}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Th{\"o}nes%
+}{%
+Th{\"o}nes%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+thones2015microservices}
+\APACinsertmetastar {%
+thones2015microservices}%
+\begin{APACrefauthors}%
+Th{\"o}nes, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Microservices} {Microservices}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE software}{32}{1}{116--116}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Common.ViewModels.ResponseViewModel.InvoiceResponseViewModel>
+﻿@using Common.Enums
+@model IEnumerable<Common.ViewModels.ResponseViewModel.InvoiceResponseViewModel>
 
 @{
     ViewData["Title"] = "EONInvoices";
@@ -70,7 +71,7 @@
                 @Html.DisplayFor(modelItem => item.PayedValue)
             </td>
             <td>
-                Buton de plata aici
+                <button class="btn">@Html.ActionLink("Plateste", "Pay", "Payment", new {InvoiceId = item.InvoiceId, Provider = PaymentUserType.InternEON})</button>
             </td>
         </tr>
 }
