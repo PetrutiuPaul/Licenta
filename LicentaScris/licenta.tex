@@ -69,11 +69,12 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\section{Ce este o aplicație monolit?}
   	\paragraph{}O aplicație monolit este o aplicație a cărei cod este scris in cadrul unei singure unitați structurale. Componentele din care este alcătuită aplicația sunt gândite in așa fel incât sa funcționeze împreună și să se folosească de acelasi spatiu de memorie si de aceleași resurse.
   	\paragraph{}Aplicațiile monolit sunt printre cele mai raspândite din lume. Acest fapt se datorează felului în care oamenii abordeaza problemele. O soluție de tip monolit este prima solutie pe care un programator o va avea, deoarece este un mod natural de a gandi. În plus, pentru multe din aplicații, o solutie monolit va fi soluția perfectă, având în vedere că multe companii mici spre medii doresc sa aiba o aplicație care să automatizeze anumite procese, procese care nu au o complexitate extrem de mare, iar numărul utilizatorilor nu este enorm. 
-  	\paragraph{}Spre exemplu, să spunem că o firmă are un sediu destul de mare care are 5 săli de conferintă, având in vedere numărul mare de întâlniri din interiorul firmei, aceștia doresc o aplicație în care să poată rezerva o sala de conferintă pentru o anumită perioadă intr-o anumită zi. O astfel de aplicatie se poate realiza usor si rapid, sub forma unei aplicații web de tip server client.
+  	\paragraph{}Spre exemplu, să spunem că o firmă are un sediu destul de mare care are 5 săli de conferintă, având in vedere numărul mare de întâlniri din interiorul firmei, aceștia doresc o aplicație în care să poată rezerva o sala de conferintă pentru o anumită perioadă intr-o anumită zi. O astfel de aplicatie se poate realiza usor si rapid, sub forma unei aplicații web de tip server client(\ref{monolithicArhitecture}).
   	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=.2]{monolitFigure}
 	\caption{Arhitectură Aplicație Monolit(imagine : http://bits.citrusbyte.com)}  
+	\label{monolithicArhitecture}
   	\end{figure}
   	\section{Avantaje și dezavantaje}
   	\paragraph{}O aplicație monolit are mai multe avantaje in contextul unui business mic:
@@ -105,20 +106,34 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 		\subsection{Alte Sabloane}
 \chapter{Studiu de Caz}
 	\section{Introducere}
+	\paragraph{}Netflix este o companie care a început prin a vinde sau închiria filme pe DVD-uri. Ulterior furnizând acces online la filme si seriale. Netflix fiind un gigant in industria televiziunii online. Aplicația netflix este o aplicație la scară mondială, care în momentul in care firma a horărat schimbarea arhitecturii avea un trafic de 8 milioane de utilizatori, ajungând la finalul anul 2018 la 139 de milioane de utilizatori.	
 	\paragraph{}Dupa cum am discutat până acum, o arhitectură bazată pe microservicii nu are chiar o definiție propriu zisă, dar dupa cum susține Martin Fowler, microserviciile sunt implementarea corectă a arhitecturii bazate pe servicii.
 	\paragraph{}În acest capitol vom cuprinde trecerea de la o arhitectură monolit la o arhitectura bazată pe servicii, motivele pentru care s-a facut aceasta tranziție, pașii prin care s-a facut aceasta trecere, avantajele cât si dezavantajele acestei treceri, cât si despre rezultatul final.
-	\paragraph{}Netflix este o companie care a început prin a vinde sau închiria filme pe DVD-uri. Ulterior furnizând acces online la filme si seriale. Netflix fiind un gigant in industria televiziunii online. Aplicația netflix este o aplicație la scară mondială, care în momentul in care firma a horărat schimbarea arhitecturii avea un trafic de 8 milioane de utilizatori, ajungând la finalul anul 2018 la 139 de milioane de utilizatori.
-	\paragraph{}Având în vedere scala la care știm deja ca funcționează aplicația Netflix, putem deja considera că arhitectura bazată pe microservicii isi servește bine scopul.
 	\section{Tranziția către microservicii (Netflix)}
 	\paragraph{}În acest studiu de caz o să ne bazăm pe informațiile oferite de doua dintre personajele importante care au luat parte la tranziția catre microservicii:
 	\begin{itemize}
 	\item Ruslan Meshemberg
 	\item Adrian Cockcroft	
+	\item Josh Evans	
 	\end{itemize}
+	\subsection{Arhitectura aplicației de azi}
+	\paragraph{}În următoarea diagrama, este reprezentată, arhitectura bazată pe microservicii a aplicației Netflix.
+	\begin{figure}[h]
+  	\includegraphics[scale=.651]{netflixarhitecuture}
+	\caption{Arhitectura Aplicației Netflix()}  
+  	\end{figure}
+  	\paragraph{}Făcând o scurtă analiză asupra diagramei, putem să observam că prezentarea este una stratificată, nodul notat „ELB” rebrezintă un balansier de capacitate elastic (Elastic Load Balancer), care se o ocupă cu distrubuirea uniforma a cererilor catre microservicii. Stratul in care avem nodul notat „Zuul”, este un strat de tip proxy care ajută la oprirea atacurilor cibernetice. Iar zona dintre acest strat si „Middle Tier” este reprezentată de componente accesibile clientilor. În partea a 2-a a diagramei, este un strat destul de stratificat de microservicii care conțin mai multa logică si serversc componentelor din prima parte a diagramei. Ultimul strat, cel care contine si nodul notat cu „Cassandra” pe diagramă, reprezintă stratul de acces la bazele de date, datele fiind salvate separat in baza de date NoSQL. Iar intre ultimele 2 straturi   explicate, avem un strat care se ocupa de caching.
+  	\paragraph{}O diagramă mai reprezentativă pentru arhitectura bazată pe microservicii a Netflix, care contine mai mult de 500 de microservicii este numita si diagrama de arhitectura „Death Star”(\ref{deathStarArhitecture}).
+  	\paragraph{}Așadar, având în vedere scala la care știm deja ca funcționează aplicația Netflix, putem deja considera că arhitectura bazată pe microservicii isi servește bine scopul. În continuare vom discuta efectiv despre motivele, pașii, beneficiile și costurile acestei schimbari de arhitectură.
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=.8]{deathstararhitecture}
+	\caption{Arhitectura Aplicației Netflix()}  
+	\label{deathStarArhitecture}
+  	\end{figure}
 	\subsection{Motive}
-	\subsection{Avantaje și dezavantaje}
-	\subsection{Arhitectura noii aplicații}
-	
+	\paragraph{}Unul dintre primele motive care au înpins compania netflix isi mute aplicația catre cloud și odata cu asta, inceperea tranziției catre noua arhitectură, a fost o criza întampinata in 2008 când baza de date a fost coruptă, iar acest lucru a dus la intreruperea activitații timp de 3 zile. 
+	\subsection{Avantaje și dezavantaje, costuri și sacrificii}
 \chapter{Aplicație Practica}
 	\section{Cerința}
 	\section{Specificații}

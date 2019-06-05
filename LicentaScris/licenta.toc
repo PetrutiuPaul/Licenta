@@ -39,17 +39,21 @@
 \contentsline {paragraph}{}{10}% 
 \contentsline {paragraph}{}{10}% 
 \contentsline {paragraph}{}{10}% 
-\contentsline {paragraph}{}{10}% 
 \contentsline {section}{\numberline {6.2}Tranzi\IeC {\textcommabelow t}ia c\IeC {\u a}tre microservicii (Netflix)}{10}% 
 \contentsline {paragraph}{}{10}% 
-\contentsline {subsection}{\numberline {6.2.1}Motive}{11}% 
-\contentsline {subsection}{\numberline {6.2.2}Avantaje \IeC {\textcommabelow s}i dezavantaje}{11}% 
-\contentsline {subsection}{\numberline {6.2.3}Arhitectura noii aplica\IeC {\textcommabelow t}ii}{11}% 
-\contentsline {chapter}{\numberline {7}Aplica\IeC {\textcommabelow t}ie Practica}{12}% 
-\contentsline {section}{\numberline {7.1}Cerin\IeC {\textcommabelow t}a}{12}% 
-\contentsline {section}{\numberline {7.2}Specifica\IeC {\textcommabelow t}ii}{12}% 
-\contentsline {section}{\numberline {7.3}Arhitectura aplicatiei}{12}% 
-\contentsline {section}{\numberline {7.4}Implementare}{12}% 
-\contentsline {section}{\numberline {7.5}Sablone bazate pe microservicii in practica}{12}% 
-\contentsline {chapter}{\numberline {8}Concluzii}{13}% 
-\contentsline {chapter}{Bibliografie}{14}% 
+\contentsline {subsection}{\numberline {6.2.1}Arhitectura aplica\IeC {\textcommabelow t}iei de azi}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {paragraph}{}{11}% 
+\contentsline {paragraph}{}{11}% 
+\contentsline {paragraph}{}{11}% 
+\contentsline {subsection}{\numberline {6.2.2}Motive}{12}% 
+\contentsline {paragraph}{}{12}% 
+\contentsline {subsection}{\numberline {6.2.3}Avantaje \IeC {\textcommabelow s}i dezavantaje, costuri \IeC {\textcommabelow s}i sacrificii}{12}% 
+\contentsline {chapter}{\numberline {7}Aplica\IeC {\textcommabelow t}ie Practica}{13}% 
+\contentsline {section}{\numberline {7.1}Cerin\IeC {\textcommabelow t}a}{13}% 
+\contentsline {section}{\numberline {7.2}Specifica\IeC {\textcommabelow t}ii}{13}% 
+\contentsline {section}{\numberline {7.3}Arhitectura aplicatiei}{13}% 
+\contentsline {section}{\numberline {7.4}Implementare}{13}% 
+\contentsline {section}{\numberline {7.5}Sablone bazate pe microservicii in practica}{13}% 
+\contentsline {chapter}{\numberline {8}Concluzii}{14}% 
+\contentsline {chapter}{Bibliografie}{15}% 
