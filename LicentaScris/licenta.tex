@@ -93,8 +93,35 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\paragraph{}Acestea sunt doar câteva dintre avantajele si dezavantajele unei aplicații monolit, dar sunt suficiente incât putem sublinia o idee generală. Aplicațiile bazate pe o arhitectura monolit sunt mai ușor de implementat în primă fază cu un cost mai redus, dar în momentul în care aplicația ajunge la un nivel mai avansat, este nevoie de o reconstruire parțiala sau totală a aplicației sau cel puțin este nevoie de o refactorizare care sa diminueze dezavantajele create de stilul arhitectural folosit. Majoritatea aplicațiilor încep ca și aplicații tip monolit, iar mai târziu se pot transaforma in aplicații cu arhitecturi bazate pe microservicii de exemplu.(\cite{thones2015microservices})
   \chapter{Arhitectura bazată pe servicii}
   	\section{Fundamentele arhitecturii bazate pe servicii}
-  	\section{Sabloane de proiectare pentru arhitecturi bazate pe servicii}
-  
+  	\paragraph{}Unul din factorii care au dus la modificarea conceptelor despre cum trebuie să fie structurată o aplicație, a fost evolutia tehnologică rapidă și numărul tot mai ridicat de persoane care aveau acces la internet.
+	\paragraph{}Arhitectura bazată pe servicii (în engleză „Servici Oriented Architecture”, prescurtat „SOA”), este un tip de arhitectură care s-a născut datorită nevoii tot mai mari de dezvoltare rapidă a cât mai multor funcționalități într-un timp cât mai scurt, si in paralel pe cât posibil.
+	\paragraph{}Unul din motivele principale pentru apariția acestui stil arhitectural s-a datorat dorinție producătorilor ca o aplicație să poată sa fie folosită de pe diferite platforme. Dacă pentru fiecare platforma diferită era nevoie ca toată aplicația să fie rescrisă, costul ar fi fost prea mare, această soluție nu era plauzibilă. Datorită acestui fapt s-a decis că logica aplicației ar trebui să fie decuplată de partea din față a aplicației. În felul acesta, fiind necesară doar rescrierea  unei parți mult mai mici din aplicație pentru ca aceasta să poată functiona pe diferite tipuri de platforme. Odată cu această decizie, un nou stil arhitectural a apărut.
+	\paragraph{}Pentru început, s-a incercat enunțarea a 8 principii, care ar trebui respectate intr-o arhitectură bazată pe servicii.
+	\paragraph{}Acestea sunt:
+	\begin{itemize}
+	\item Serviciile sunt autonome.
+	\item Serviciile sunt slab cuplate
+	\item Serviciile trebuie să abstractizeaze logica pe care o folosesc.
+	\item Serviciile împart un contract formal.
+	\item Serviciile sunt compozabile
+	\item Serviciile sunt refolosibile
+	\item Serviciile nu au stare
+	\item Serviciile se pot descoperii
+	\end{itemize}
+	\paragraph{}Din aceste 8 principii, primele 4 sunt cele mai importate, acestea reprezentând fundația arhitecturii bazate pe servicii. Toate cele 8 principii se suțin intre ele, dar primele 4 principii induc și restul.
+  	\section{Principiile arhitecturii bazate pe servicii}
+  	\subsection{Autonomia}
+  	\paragraph{}Orietarea către servicii cere o atitudine serioasă atunci cand vine vorba de împărtirea lor in blocuri logice de sine stătătoare. Pentru ca serviciile sa fie fiabile și previzibile, trebuie sa se exercite un grad mai ridicat de control asupra resurselor pe care ele le folosesc.
+  	\paragraph{}Odată cu cresterea nivelului de control al unui serviciu asupra propriului context de executie, se reduc dependințele din serviciu, ceea ce ne duce spre un alt principiu, cel al cuplajului slab. Chiar dacă exclusivitatea asupra logicii pe care un serviciu o encapsulează nu poate să fie deplină, principalul obiectiv este atribuirea unui nivel rezonabil de control asupra oricărei logici pe care o prezintă intr-un moment al executiei.
+  	\paragraph{}Având in vedere că pot exista deferite metode de a masura autonomia, este bine facem distincție intre ele. Spre exemplu, un serviciu poate avea mai multe nivele de autonomie:
+    \begin{itemize}
+    \item Autonomie la nivelul serviciului
+    \item Autonomie pură
+    \end{itemize}
+  	\subsection{Cuplajul slab}
+  	\subsection{Abstractizarea}
+  	\subsection{Contractul Formal}
+  	\subsection{Șabloane de proiectare într-o arhitectură bazată pe servicii}
 \chapter{Sabloane de proiectare bazate pe microservicii}
 	\section{Sabloane de implementare a microservicilor}
 		\subsection{Agregator}
@@ -109,7 +136,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\paragraph{}Netflix este o companie care a început prin a vinde sau închiria filme pe DVD-uri. Ulterior furnizând acces online la filme si seriale. Netflix fiind un gigant in industria televiziunii online. Aplicația netflix este o aplicație la scară mondială, care în momentul in care firma a horărat schimbarea arhitecturii avea un trafic de 8 milioane de utilizatori, ajungând la finalul anul 2018 la 139 de milioane de utilizatori.	
 	\paragraph{}Dupa cum am discutat până acum, o arhitectură bazată pe microservicii nu are chiar o definiție propriu zisă, dar dupa cum susține Martin Fowler, microserviciile sunt implementarea corectă a arhitecturii bazate pe servicii.
 	\paragraph{}În acest capitol vom cuprinde trecerea de la o arhitectură monolit la o arhitectura bazată pe servicii, motivele pentru care s-a facut aceasta tranziție, pașii prin care s-a facut aceasta trecere, avantajele cât si dezavantajele acestei treceri, cât si despre rezultatul final.
-	\section{Tranziția către microservicii (Netflix)}
+	\section{Tranziția către microservicii în compania Netflix}
 	\paragraph{}În acest studiu de caz o să ne bazăm pe informațiile oferite de doua dintre personajele importante care au luat parte la tranziția catre microservicii:
 	\begin{itemize}
 	\item Ruslan Meshemberg
@@ -132,8 +159,57 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\label{deathStarArhitecture}
   	\end{figure}
 	\subsection{Motive}
-	\paragraph{}Unul dintre primele motive care au înpins compania netflix isi mute aplicația catre cloud și odata cu asta, inceperea tranziției catre noua arhitectură, a fost o criza întampinata in 2008 când baza de date a fost coruptă, iar acest lucru a dus la intreruperea activitații timp de 3 zile. 
+	\paragraph{}Unul dintre primele motive care au înpins compania netflix să iși mute aplicația catre cloud și odata cu asta, inceperea tranziției către noua arhitectură, a fost o criză întampinată în 2008 când baza lor de date a fost coruptă, iar acest lucru a dus la intreruperea activitații timp de 3 zile. 
+	\paragraph{}Al doilea motiv a fost ritmul alert în care compania crestea si numarul tot mai mare de utilizatori. Toată lumea era conștientă că numărul de utilizatori va creste si mai mult iar aplicația trebuia scalată din ce in ce mai mult.
+	\paragraph{}În momentul în care vorbim de scalabilitate, putem sa ne gândim la asta in 2 feluri, scalare pe veriticala (termenul în engleză „scale up”) sau scalare pe orizontală (termenul în engleză „scale out”). Scalarea pe verticală poate fi văzută ca imbunătățirea constantă a sistemului, nevoia suplimentară de memorie, spatiu pe disk, puterea de procesare mai mare. Acest lucru este posibil doar pană la un anumit punct, ajungându-se la atingearea limitei tehnologice. În plus scalarea pe verticală devenind din ce in ce mai costisitoare.
+	\paragraph{}Scalarea pe verticală a devenit în mod rapid, o soluție mult mai ușoară, acest tip de scalare presupune distribuirea aplicației pe mai multe sisteme care lucreaza împreuna. Așadar, în momentul în care aplicația trebuie scalată, este nevoie doar de introducerea unei noi componente in sistem si crearea unei noi instanțe pentru serviciul pentru care se doreste scalarea, iar având in vedere ca Netflix migra in același timp înspre cloud, activarea unei noi unitați si instanțierea unui nou serviciu se poate face foarte simplu și rapid.
+	\paragraph{}Mergând mai departe, se dorește eliminarea tuturor punctelor critice, ceea ce înseamnă ca se dorește ca în sistem sa nu existe posibilitatea ca o eroare sa se propage, generând in cascadă și alte erori ale sistemului. Soluția agreeată pentru această problemă a fost crearea de servicii fara stare (în engleză „stateless”), aceestea având proprietatea că anumite date de intrare vor fi procesate si transformate în date de ieșire in același mod indiferent de instanța serviciului. Iar ca si testare a acestei idei, cei de la Netflix folosesc un tool numit „Chaos Monkey”, care aleator distruge cate o instanța al unui serviciu pentru a se garanta că o asemenea eroare nu este propagată în întreg sistemul. Ca acest concept să funcționeze, este nevoie de un balansier, pentru ca datele să fie redistribuite către o altă instanță a aceluiași serviciu.
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=.5]{chaos}
+	\caption{Chaos Monkey}  
+	\label{chaosMonkey}
+  	\end{figure}
 	\subsection{Avantaje și dezavantaje, costuri și sacrificii}
+	\paragraph{}Din punct de vedere al avantajelor pe care microserviciile le aduc, unul dintre ele a fost probabil cel mai apreciat de Netflix, a fost viteza de dezovolare a produsului. Acest lucru, probabil fiind datorat faptului că fiind primul care aduce o imbunătățire sau un lucru nou, este favorizat față de cei care il urmează. Așadar, microserviciile au permis o redistribuire a echipelor, iar noile echipe având responsabilitați separate, conceptul de a astepta dupa o altă echipă pentru a putea sa iti faci treaba, incepe sa dispară.
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=.25]{tightCoupling}
+	\caption{Procesul de dezovoltare intr-o aplicație monolit}  
+	\label{tightCoupling}
+  	\end{figure}
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=.25]{looseCoupling}
+	\caption{Procesul de dezovoltare intr-o aplicație bazată pe microservicii}  
+	\label{looseCoupling}
+  	\end{figure}
+  	\paragraph{}După cum se poate observa în prima figură (\ref{tightCoupling}), în prima parte trebuie ca toata aplicația să fie dezvoltată, apoi testată si apoi lansată. Iar în a doua figura (\ref{looseCoupling}), se poate observa ca echipele pot să lucreze fiecare în ritmul lor, nefiind nevoiți să depindă constant de restul. Microserviciile nefiind nevoite să fie lansate in execuție împreună.
+	\paragraph{}Pe de altă parte, trebuie să avem in vedere faptul că în această schimbare au fost nevoie și de sacrificii, unele referindu-se la costuri, altele la relație oamenilor din echipe. Printre aceastea se pot numară urmatoarele:
+  	\begin{itemize}
+  	\item În primul rând, costul de dezvoltare si mentenanță a aplicație a crescut. Motivul fiind următorul: tranziția a fost una de durată, iar in timp ce se crea aplicația cu noua arhitectură, aplicația monolit trebuia sa ramână in picioare. Și pe de alta parte, datele trebuiau sa fie replicate si salvate atat in aplicația noua cât si in cea curentă.
+  	\item În al doilea rând, tehnologiile din noua aplicație s-au schimbat partial fața de aplicația monolit, iar compania trebuie sa suporte toate tehnologiile existente din ambele proiecte. Un exemplu este legat de bazele de date, in aplicația monolit existând baze de date relaționale, iar bazele de date din microservicii au devenit baze de date NoSQL. Mai târziu un evoluția noi arhitecturi vor aparea microservicii scrise si in NodeJS, Phyton si alte limbaje de programare.
+    \item În al treilea rand, un alt compromis, poate nu atat de mare, a fost în momentul în care compania a ales să traiască intr-o zonă hibridă, asta insemnând ca au inceput sa exite servicii scrise in diferite limbaje de programare cum are fi NodeJS, Phyton si altele. Acest lucru fiind posibil atât timp cât era respectat un format pentru datele de intrare cât și pentru datele ieșire.
+  	\item În ultimul rând, un alt compromis care a trebuit făcut a fost schimbarea structurii echipelor. De la echipe specializate pe dezvoltare, echipe specializate pe testare si echipe specializate in lansarea aplicației in mediul online, s-a ajuns la echipe mai mici care să se ocupe de intreg ciclul de viată al unui microserviciu(\ref{endtoend}), De la implementare, pâna la lansarea lui in execuție.
+  	\end{itemize}
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=.7]{endtoend}
+	\caption{Ciclul de viață al unui microserviciu}  
+	\label{endtoend}
+  	\end{figure}
+  	\subsection{Descrierea tranziției catre microservicii}
+  	\paragraph{}Unul din cei mai importanți oameni care a ajutat la tranziția aplicație catre microservicii si mutarea acesteia in cloud, este specialistul în scalabilitate de la Netflix, Adrian Cockcroft. Dupa cum am amintit și mai sus, posibilitățile de scalare erau pe verticală si pe orizontală. Dupa cum Adrian Cockcroft a susținut in timpul unei conferințe, scalarea pe verticală ar fi însemnat în momentul acela, anul 2009, construirea unui nou centru de date (în engleză „data center”) cu un cost estimativ de aproximativ 100 de milioane de dolari. Iar pe aceași tema, a glumit, spunând ca banii respectivi ar fi mai bine folosiți daca Netflix ar cumpăra inca un sezon din „House Of Cards”(acesta fiind un serial TV). Soluția plauzibilă care a rămas, fiind scalarea pe orizontală.
+  	\paragraph{}Primul pas fiind de test, s-a încercat mutarea unui serviciu in cloud, iar alegerea nu a fost intâmplătoare, a fost ales un serviciu care să nu fie in prima linie pentru utilizator, adică un serviciu care mai mult procesează cantităti mari de date in spate. Spre exemplu, algoritmul folosit pentru auto completarea câmpului de cautare. După ce acest pas a fost realizat cu succes, si serviciul era folosit de aplicația monolit, procesul a continuat.
+  	\paragraph{}Un alt pas important a fost schimbarea bazei de date, de la baze de date relaționale Oracle, la baza de date NoSQL („Cassandra”). Acesta bază de date este folosită și acum pentru aplicația Netflix. Având în vedere ca este open source(în engleza „open sourse”), Netflix a dezvoltat un feature care ajuta la replicarea usoară a datelor.
+  	\paragraph{}După ce întreaga tranziție a fost gata, dupa anul 2012, multe dintre soluțiile aplicate in timpul tranziției au fost publicate, sursele devenind surse deschise.
+	\paragraph{}Așadar succesul Netflix se datorează in mare parte lui Adrian Cockcroft, care este un vizionar, reusind tranziția Netflix catre o arhitectura bazată pe microservicii in cloud, intr-un moment in care nimeni nu dorea să creadă ca cloud-ul ar putea să fie o soluție(\ref{toCloud}).
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=.7]{toCloud}
+	\caption{Migrarea catre cloud a aplicațiilor}  
+	\label{toCloud}
+  	\end{figure}
 \chapter{Aplicație Practica}
 	\section{Cerința}
 	\section{Specificații}
