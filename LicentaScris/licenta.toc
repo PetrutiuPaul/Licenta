@@ -35,52 +35,60 @@
 \contentsline {paragraph}{}{9}% 
 \contentsline {paragraph}{}{9}% 
 \contentsline {paragraph}{}{9}% 
-\contentsline {subsection}{\numberline {4.2.2}Cuplajul slab}{9}% 
-\contentsline {subsection}{\numberline {4.2.3}Abstractizarea}{9}% 
-\contentsline {subsection}{\numberline {4.2.4}Contractul Formal}{9}% 
-\contentsline {subsection}{\numberline {4.2.5}\IeC {\textcommabelow S}abloane de proiectare \IeC {\^\i }ntr-o arhitectur\IeC {\u a} bazat\IeC {\u a} pe servicii}{9}% 
-\contentsline {chapter}{\numberline {5}Sabloane de proiectare bazate pe microservicii}{10}% 
-\contentsline {section}{\numberline {5.1}Sabloane de implementare a microservicilor}{10}% 
-\contentsline {subsection}{\numberline {5.1.1}Agregator}{10}% 
-\contentsline {subsection}{\numberline {5.1.2}API Gateway}{10}% 
-\contentsline {section}{\numberline {5.2}Sabloane arhitecturale de proiectare}{10}% 
-\contentsline {subsection}{\numberline {5.2.1}Service bus}{10}% 
-\contentsline {subsection}{\numberline {5.2.2}Procesare asincrona}{10}% 
-\contentsline {subsection}{\numberline {5.2.3}Agregarea proceselor}{10}% 
-\contentsline {subsection}{\numberline {5.2.4}Alte Sabloane}{10}% 
-\contentsline {chapter}{\numberline {6}Studiu de Caz}{11}% 
-\contentsline {section}{\numberline {6.1}Introducere}{11}% 
+\contentsline {paragraph}{}{9}% 
+\contentsline {subsection}{\numberline {4.2.2}Cuplajul slab}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {subsection}{\numberline {4.2.3}Abstractizarea}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {paragraph}{}{10}% 
+\contentsline {subsection}{\numberline {4.2.4}Contractul Formal}{10}% 
+\contentsline {paragraph}{}{10}% 
 \contentsline {paragraph}{}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {section}{\numberline {6.2}Tranzi\IeC {\textcommabelow t}ia c\IeC {\u a}tre microservicii \IeC {\^\i }n compania Netflix}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {subsection}{\numberline {6.2.1}Arhitectura aplica\IeC {\textcommabelow t}iei de azi}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {subsection}{\numberline {6.2.2}Motive}{13}% 
+\contentsline {subsection}{\numberline {4.2.5}\IeC {\textcommabelow S}abloane de proiectare \IeC {\^\i }ntr-o arhitectur\IeC {\u a} bazat\IeC {\u a} pe servicii}{11}% 
+\contentsline {chapter}{\numberline {5}Sabloane de proiectare bazate pe microservicii}{12}% 
+\contentsline {section}{\numberline {5.1}Sabloane de implementare a microservicilor}{12}% 
+\contentsline {subsection}{\numberline {5.1.1}Agregator}{12}% 
+\contentsline {subsection}{\numberline {5.1.2}API Gateway}{12}% 
+\contentsline {section}{\numberline {5.2}Sabloane arhitecturale de proiectare}{12}% 
+\contentsline {subsection}{\numberline {5.2.1}Service bus}{12}% 
+\contentsline {subsection}{\numberline {5.2.2}Procesare asincrona}{12}% 
+\contentsline {subsection}{\numberline {5.2.3}Agregarea proceselor}{12}% 
+\contentsline {subsection}{\numberline {5.2.4}Alte Sabloane}{12}% 
+\contentsline {chapter}{\numberline {6}Studiu de Caz}{13}% 
+\contentsline {section}{\numberline {6.1}Introducere}{13}% 
 \contentsline {paragraph}{}{13}% 
 \contentsline {paragraph}{}{13}% 
 \contentsline {paragraph}{}{13}% 
+\contentsline {section}{\numberline {6.2}Tranzi\IeC {\textcommabelow t}ia c\IeC {\u a}tre microservicii \IeC {\^\i }n compania Netflix}{13}% 
 \contentsline {paragraph}{}{13}% 
+\contentsline {subsection}{\numberline {6.2.1}Arhitectura aplica\IeC {\textcommabelow t}iei de azi}{13}% 
 \contentsline {paragraph}{}{13}% 
-\contentsline {subsection}{\numberline {6.2.3}Avantaje \IeC {\textcommabelow s}i dezavantaje, costuri \IeC {\textcommabelow s}i sacrificii}{14}% 
 \contentsline {paragraph}{}{14}% 
+\contentsline {paragraph}{}{14}% 
+\contentsline {paragraph}{}{14}% 
+\contentsline {subsection}{\numberline {6.2.2}Motive}{15}% 
 \contentsline {paragraph}{}{15}% 
 \contentsline {paragraph}{}{15}% 
-\contentsline {subsection}{\numberline {6.2.4}Descrierea tranzi\IeC {\textcommabelow t}iei catre microservicii}{16}% 
+\contentsline {paragraph}{}{15}% 
+\contentsline {paragraph}{}{15}% 
+\contentsline {paragraph}{}{15}% 
+\contentsline {subsection}{\numberline {6.2.3}Avantaje \IeC {\textcommabelow s}i dezavantaje, costuri \IeC {\textcommabelow s}i sacrificii}{16}% 
 \contentsline {paragraph}{}{16}% 
-\contentsline {paragraph}{}{16}% 
 \contentsline {paragraph}{}{17}% 
 \contentsline {paragraph}{}{17}% 
-\contentsline {paragraph}{}{17}% 
-\contentsline {chapter}{\numberline {7}Aplica\IeC {\textcommabelow t}ie Practica}{18}% 
-\contentsline {section}{\numberline {7.1}Cerin\IeC {\textcommabelow t}a}{18}% 
-\contentsline {section}{\numberline {7.2}Specifica\IeC {\textcommabelow t}ii}{18}% 
-\contentsline {section}{\numberline {7.3}Arhitectura aplicatiei}{18}% 
-\contentsline {section}{\numberline {7.4}Implementare}{18}% 
-\contentsline {section}{\numberline {7.5}Sablone bazate pe microservicii in practica}{18}% 
-\contentsline {chapter}{\numberline {8}Concluzii}{19}% 
-\contentsline {chapter}{Bibliografie}{20}% 
+\contentsline {subsection}{\numberline {6.2.4}Descrierea tranzi\IeC {\textcommabelow t}iei catre microservicii}{18}% 
+\contentsline {paragraph}{}{18}% 
+\contentsline {paragraph}{}{18}% 
+\contentsline {paragraph}{}{19}% 
+\contentsline {paragraph}{}{19}% 
+\contentsline {paragraph}{}{19}% 
+\contentsline {chapter}{\numberline {7}Aplica\IeC {\textcommabelow t}ie Practica}{20}% 
+\contentsline {section}{\numberline {7.1}Cerin\IeC {\textcommabelow t}a}{20}% 
+\contentsline {section}{\numberline {7.2}Specifica\IeC {\textcommabelow t}ii}{20}% 
+\contentsline {section}{\numberline {7.3}Arhitectura aplicatiei}{20}% 
+\contentsline {section}{\numberline {7.4}Implementare}{20}% 
+\contentsline {section}{\numberline {7.5}Sablone bazate pe microservicii in practica}{20}% 
+\contentsline {chapter}{\numberline {8}Concluzii}{21}% 
+\contentsline {chapter}{Bibliografie}{22}% 
