@@ -1,0 +1,26 @@
+\babel@toc {romanian}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arhitectur\IeC {\u a} Aplica\IeC {\textcommabelow t}ie Monolit(imagine : http://bits.citrusbyte.com)}}{8}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arhitectur\IeC {\u a} monolit vs arhitectur\IeC {\u a} bazat\IeC {\u a} pe microservicii}}{15}% 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Complexitatea si productivitatea in arhitecturi diferite}}{17}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Arhitectura Aplica\IeC {\textcommabelow t}iei Netflix()}}{19}% 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Arhitectura Netflix - \IeC {\quotedblbase }Death Star\IeC {\textquotedblright }}}{20}% 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Chaos Monkey}}{21}% 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Procesul de dezovoltare intr-o aplica\IeC {\textcommabelow t}ie monolit}}{22}% 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Procesul de dezovoltare intr-o aplica\IeC {\textcommabelow t}ie bazat\IeC {\u a} pe microservicii}}{22}% 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Ciclul de via\IeC {\textcommabelow t}\IeC {\u a} al unui microserviciu}}{24}% 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Migrarea catre cloud a aplica\IeC {\textcommabelow t}iilor}}{25}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Diagrama de arhitectur\IeC {\u a}}}{28}% 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Diagrama de clase a unui microserviciu atribuit unui furnizor}}{29}% 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Bazele de date pentru fiecare microserviciu}}{30}% 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Componen\IeC {\textcommabelow t}a bazelor de date}}{30}% 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Obiect \IeC {\^\i }n cod C\# \IeC {\textcommabelow s}i obiect \IeC {\^\i }n baza de date}}{31}% 
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Diagrama cazurilor de utilizare}}{32}% 
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Diagrama de secven\IeC {\textcommabelow t}\IeC {\u a} pentru plata unei facturi}}{34}% 
+\addvspace {10\p@ }

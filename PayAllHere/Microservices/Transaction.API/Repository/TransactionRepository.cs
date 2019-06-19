@@ -16,7 +16,7 @@ namespace Transaction.API.Repository
         {
             var client = new MongoClient("mongodb://localhost:27017");
 
-            var mongoDatabase = client.GetDatabase("DSN_TransactionService");
+            var mongoDatabase = client.GetDatabase("DB_TransactionService");
 
             _collection = mongoDatabase.GetCollection<Models.Transaction>("transactions");
         }

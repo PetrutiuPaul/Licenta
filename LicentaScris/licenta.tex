@@ -7,6 +7,7 @@
 \setcounter{secnumdepth}{3}
 \usepackage{mathptmx}
 \usepackage[pagestyles]{titlesec}
+\linespread{1.25}
 
 \begin{document}
 
@@ -44,6 +45,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 
 \tableofcontents
 \cleardoublepage
+\listoffigures
 
 \chapter{Introducere} 
 
@@ -135,17 +137,43 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\item Regulile si caracteristicile serviciului.
   	\end{itemize}
   	\paragraph{}Definirea contractelor necesită o atenție sporită pentru ca acestea sunt distribuite printre servicii. După momentul in care sunt lansate in execuție, definiția contractelor s-ar putea să devină o dependința pentru o sursa externă, ceea ce înseamnă că trebuie avut grijă ca definițiile din contract să nu sufere schimbări după lansarea principală. Prin urmare, contractele formale reprezintă un principiu de baza intr-o arhitectura bazată pe servicii. În plus acest concept susține alte principii despre care am discutat, aceastea fiind: abstractizarea și cuplajul slab, dar și alte principii care nu au fost abordate in detaliu precum: compozabilitatea si descoperirea serviciilor.
-  	\subsection{Șabloane de proiectare într-o arhitectură bazată pe servicii}
-\chapter{Sabloane de proiectare bazate pe microservicii}
-	\section{Sabloane de implementare a microservicilor}
-		\subsection{Agregator}
-		\subsection{API Gateway}
-	\section{Sabloane arhitecturale de proiectare}
-		\subsection{Service bus}
-		\subsection{Procesare asincrona}
-		\subsection{Agregarea proceselor}
-		\subsection{Alte Sabloane}
-\chapter{Studiu de Caz}
+\chapter{Arhitectura bazată pe microservicii}
+	\section{Ce sunt microserviciile}
+	\paragraph{}Microserviciile sunt un concept apărut nu cu mult timp in urmă, iar acesta este unul dintre motivele pentru care aceastea nu au o definiție exactă. Un alt motiv ar putea fi acela că microserviciile sunt o derivare ușoară a serviciilor. Având in vedere încercările de a crea o definiție pentru microservicii, putem găsii cateva caracteristici comune. Una dintre aceste definiții sugerează ca arhitectura bazată pe microservicii este, de fapt o arhitectură bazată pe servicii în care toate principiile au fost aplicate corect.
+	\paragraph{}Dacă ar fi să extragem aceste caracteristici speciale pe care trebuie sa le aibă un microserviciu, putem pornii chiar de la cuvantul „microserviciu” care ar putea fi imparțit in „micro” si „serviciu”. Deci microserviciile sunt de fapt servicii de dimensiune mică, autonome si fara stare, acestea lucrând impreună. 
+	\paragraph{}Daca tot ne bazăm pe „definițiile” din mediul online, putem găsi și mici diferențe intre arhitectura bazată pe servicii si cea bazată pe microservicii. Spre exemplu comunicarea in servicii se face in general cu ajutorul unui service bus, iar in microservicii se incearcă folosirea unor sisteme de mesaje mult mai simple, serviciile sunt contruite printr-o abordare „distribuie cât mai mult” iar microserviciile printr-o abordarare „distribuie cat mai puțin”. Serviciile se orientează mult mai mult pe reutilizare, în schimb microserviciile sunt orientate in primul rând pe un cuplaj cat mai mic, sau inexistent, acest lucru susținând principiul cuplajului slab.
+	\section{Comunicarea între microservicii}
+		\subsection{Diferite tipuri de comunicare}
+	\paragraph{}Dacă vrem să discutăm despre comunicarea intre microservicii, comunicarea ar putea să fie sincronă sau asincronă. În cazul microserviciilor se preferă comunicarea asincronă. Chiar daca comunicarea sincronă este mai ușor de implementat, spre exemplu, se face un call catre un microserviciu și se asteaptă pana când acesta returnează un mesaj sau pana eșuează. Dar acest lucru înseamnă că cele două servicii sunt acum cuplate, acest lucru fiind împotriva unui principiu de bază, cel al cuplajului slab. Daca vorbim despre comunicare asincronă, ne referim la faptul că un call este creat, dar restul execuției nu este blocată până se primește un raspuns, acest lucru fiind favorabil atunci când logica din spate durează mai mult timp. Spre exemplu, dacă dacă se efectuază un call care ar trebui să aducă o listă mai mare de obiecte pentru a fi afișate. Nu se doreste ca interfața pe care utilizatorul o vede să fie blocată, așadar comunicarea asincronă va permite asta.
+	\paragraph{}Comunicarea între microservicii se poate realiza sub forma de call-uri, așa cum deja am precizat mai sus, dar nu este singura variantă. O alta modalitate de comunicare între microservicii este comunicarea bazată pe evenimente, care funcționează invers intr-o oarecare masură. Acest lucru înseamnă că in momentul in care se produce o acțiune într-un microserviciu, aceasta produce un eveniment prin care anunță alte microservicii sau alte unități ale aplicației că o modificare a fost efectuată, iar acestea, având o logică implementată, vor putea gestiona situația.
+		\subsection{Utilizarea unui broker de mesaje}
+	\paragraph{}Un broker de mesaje reprezintă de fapt o componentă exterioară a aplicației, care are scopul de stoca si persista mesajele sau evenimentele până cand acestea sunt consumate de serviciul necesar. Un broker de mesaje necesar atunci cand vorbim de o comunicare asincronă, mai ales cand este vorba de comunicare cu ajutorul evenimentelor.
+	\paragraph{}Un exemplu care determină utilitatea unui broker de mesaje, ar putea fi următorul. Să presupunem ca avem un magazin online, si avem un microserviciu care se ocupă de plasarea unei comenzi, iar un microserviciu se ocupă cu logica pentru transportul pachetului. Dacă am presupune că microserviciul pentru transport nu funcționează, printr-o metodă sincronă de comunicare, rezultatul ar fi aruncarea unei exceptii care mentionează ca nu se poate plasa o comandă. Dacă se foloseste un broker de mesaje, comanda va fi procesată cu succes iar in momentul in care microserviciul care se ocupă de transportul produsului va functiona, procesul de livrare al produsului va începe.
+	\section{Avantaje și dezavantaje ale microserviciilor}
+	\paragraph{}Ca să vorbim de avantaje și dezavantaje, ar trebui să realizăm o comparație, iar pentru aceasta comparație ne vom folosii de o arhitectură monolit. Așadar in figura de mai jos (\ref{movsmicr}) putem vedea diferentele de structură. 
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=1]{movsmicr}
+	\caption{Arhitectură monolit vs arhitectură bazată pe microservicii}\cite{savchenko2015microservices}  
+	\label{movsmicr}
+  	\end{figure}
+  	\subsection{Avantaje}
+  	\paragraph{}Un avantaj al microserviciilor este oferit chiar de structura lor, dupa cum se obesrvă si in figura \ref{movsmicr}, microserviciile sunt independente unele de celelalte, acest lucru făcând mult mai ușoară dezvoltarea și îmbunătățirea lor. Mult mai rapidă intelegerea codului iar prin urmare, in oposiție cu o aplicație monolit, integrarea unui om nou pe proiect este mai usoară.
+  	\paragraph{}Microserviciile pot să fie văzute ca niste bucăți de lego care împreună crează o intreagă aplicație. Din acest motiv microserviciile sunt usor scalabile. Iar cand ne referim la scalabilitatea microserviciilor, ne referim la o scalabilitate pe orizontală. Având in vedere dimensiunea unui microserviciu în comparație cu dimensiunea intregii aplicații, e foarte evident că un microserviciu poate gestiona mult mai usor si mai flexibil resursele unui server. Acest lucru înseamnă că resursele unui server mai putin folosit, pot fi redistribuite pentru un server mai ocupat, pentru a se evita blocajele \cite{singleton2016economics}. Așadar, din cauza flixibilitații și a capacitații de scalare pe orizontală, un sistem bazat pe microservicii are un cost mai mic decăt un sistem monolit, deoarece nu toate microserviciile trebuie scalate in aceeași masură, iar o aplicație monolit nu iti poate oferii optiunea de a alege. \cite{newman2015building}
+  	\subsection{Dezavantaje}
+  	\paragraph{}Chiar dacă structura acestei arhitecturi aduce avantaje, aceasta aduce si dezavantaje. De exemplu, datorită complexității pe care o are o arhitectură bazată pe microservicii, o aplicație mica sau medie, ar avea doar de pierdut, timpul de dezvoltare crește și nevoia de resurese este mai mare.
+  	\paragraph{}Trecerea la microservicii, necesită un cost ridicat, mai ales la inceput. Acest lucru va fi evidenția in studiul de caz despre trecerea spre microservicii in compania Netflix. Tot odată, nivelul cunostiițelor pe care un programator lucrează pe o asemenea tehnologie trebuie sa fie mai vastă, iar acesta ar trebui sa aibă mai multă experiență ca să poate lua anumite decizii, iar acest lucru va duce la un timp crescut de dezvoltare a aplicației.
+  	\subsection{Cand putem sa utilizăm microserviciile?}
+  	\paragraph{} Răspunsul la întrebarea „Cand putem să utilizăm o arhitectură bazată pe microservicii?” este „Oricand”. Orice aplicație poate să fie remodelată pe o arhitectură bazată pe microservicii, dar nu neaparat acest lucru ar fi un lucru bun. De exemplu, aplicațiile care nu au un nivel de maturite mare, aplicațiile mici sau medii în care scalabilitatea ca aplicație monolit nu aduce costuri prea mari, nu au nevoie să fie mutate pe o arhitectură bazata pe microservicii, acest lucru fiind doar o risipă de resurse, dupa cum se vede și în figura \ref{fowler}
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.9]{fowler}
+	\caption{Complexitatea si productivitatea in arhitecturi diferite}
+	\label{fowler}
+  	\end{figure}
+  	\paragraph{}Un alt exemplu în care microserviciile nu ar fi o soluție bună ar fi aplicațiile care procesează fluxuri de date în timp real, date care vin de la diferiți senzori. Intr-o situație de genul acesta, orice timp contează, iar comunicarea dintre microservicii, chiar dacă este rapidă, poate influența rezultatul, așadar intr-o astfel de situație, o soluție monolit este favorabilă.
+  	\paragraph{}În concluzie, am putea spune că stilul arhitectural bazat pe microservicii poate fi aplicat in majoritatea aplicațiilor, dar este indicat să fie folosit doar atunci când aplicația este suficient de mare încât este greu de scalat sau scalarea devine prea scumpă sau în momentul în care sistemul devine atât de complex încât productivitatea este extrem de mică. În capitolul următor va fi prezentată in detaliu o trecere a unei aplicații de la o arhtectură monolitică la una bazată pe microservicii, împreună cu avantajele, costurile si compromisurile care au fost facute, dar si o prezentare a rezultatului final.
+  \chapter{Studiu de Caz}
 	\section{Introducere}
 	\paragraph{}Netflix este o companie care a început prin a vinde sau închiria filme pe DVD-uri. Ulterior furnizând acces online la filme si seriale. Netflix fiind un gigant in industria televiziunii online. Aplicația netflix este o aplicație la scară mondială, care în momentul in care firma a horărat schimbarea arhitecturii avea un trafic de 8 milioane de utilizatori, ajungând la finalul anul 2018 la 139 de milioane de utilizatori.	
 	\paragraph{}Dupa cum am discutat până acum, o arhitectură bazată pe microservicii nu are chiar o definiție propriu zisă, dar dupa cum susține Martin Fowler, microserviciile sunt implementarea corectă a arhitecturii bazate pe servicii.
@@ -169,7 +197,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=.8]{deathstararhitecture}
-	\caption{Arhitectura Aplicației Netflix()}  
+	\caption{Arhitectura Netflix - „Death Star”}  
 	\label{deathStarArhitecture}
   	\end{figure}
 	\subsection{Motive}
@@ -188,13 +216,13 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\paragraph{}Din punct de vedere al avantajelor pe care microserviciile le aduc, unul dintre ele a fost probabil cel mai apreciat de Netflix, a fost viteza de dezovolare a produsului. Acest lucru, probabil fiind datorat faptului că fiind primul care aduce o imbunătățire sau un lucru nou, este favorizat față de cei care il urmează. Așadar, microserviciile au permis o redistribuire a echipelor, iar noile echipe având responsabilitați separate, conceptul de a astepta dupa o altă echipă pentru a putea sa iti faci treaba, incepe sa dispară.
 	\begin{figure}[h]
   	\centering
-  	\includegraphics[scale=.25]{tightCoupling}
+  	\includegraphics[scale=.4]{tightCoupling}
 	\caption{Procesul de dezovoltare intr-o aplicație monolit}  
 	\label{tightCoupling}
   	\end{figure}
   	\begin{figure}[h]
   	\centering
-  	\includegraphics[scale=.25]{looseCoupling}
+  	\includegraphics[scale=.4]{looseCoupling}
 	\caption{Procesul de dezovoltare intr-o aplicație bazată pe microservicii}  
 	\label{looseCoupling}
   	\end{figure}
@@ -220,16 +248,108 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\paragraph{}Așadar succesul Netflix se datorează in mare parte lui Adrian Cockcroft, care este un vizionar, reusind tranziția Netflix catre o arhitectura bazată pe microservicii in cloud, intr-un moment in care nimeni nu dorea să creadă ca cloud-ul ar putea să fie o soluție(\ref{toCloud}).
 	\begin{figure}[h]
   	\centering
-  	\includegraphics[scale=.7]{toCloud}
+  	\includegraphics[scale=1]{toCloud}
 	\caption{Migrarea catre cloud a aplicațiilor}  
 	\label{toCloud}
   	\end{figure}
 \chapter{Aplicație Practica}
-	\section{Cerința}
-	\section{Specificații}
+	\section{Idee}
+	\paragraph{}Ideea creării aplicației a venit de la o problemă personală, iar aceasta ar fi următoarea: în fiecare luna scrisorile cu facturi ajung in postă, iar pentru ca nu vin toate in aceeași dată și pentru că nu vin în aceeași data a lunii, trebuie mereu să verifici posta ca să nu uiti sa plătești o facutră. În al doilea rand trebuie sa merg cu facturile la banca ca să le platesc, sau poate chiar firma de la care am primit factura, in caz că nu suporta plata prin bancă. Așadar am decis să creez o aplicație care să ajute în acest scop, iar această aplicație ar putea avea urmatorul enunț.
+	\paragraph{}Se dorește construirea unui prototip al unei platforme care să actioneze ca un intermediar între oameni și furnizorii de utilități în care un utilizator să poată sa primească facturile de la toate sau o parte din utilitățile pe care le folosește, sa poată să își încarce o anumită sumă de bani pe platforma (în varianta prototip nu este necesară utilizarea banilor reali), să poată să folosească banii introduși pentru a achita facturile, și să poată vedea detaliile facturilor cât și a tranzacțiilor pe care le efectueză pe platformă. Pentru ca relația dintre utilizatorii normali și furnizori să poată fi creată ușor, conturile utilizatorilor vor folosii CNP-ul pentru a fi create. Din punctul de vedere al furnizorilor de utilități, aceștia pot să fie capabili sa „își conecteze” aplicațiile actuale la platformă, aceasta furnizând puncte de acces pentru adaugarea facturilor, chitanțelor, si pentru cererea unei statistici a tranzactiilor facute catre ei între doua date alese. Toate plățile se vor face pe platformă, acestea efectuându-se fără transfer direct de bani intre platformă si furnizori. Platforma va efectua un singur transfer de bani, la finalul zilei, un singur transfer cu suma totală a platilor efectuate catre furnizorul în cauză. Dupa cum este specificat si mai sus, transferurile nu vor folosii bani reali. Deoarece furnizorii se vor conecta la aplicație prin call-uri la terminalele oferite de aplicație, aceștia vor trimite la fiecare call, un set de date de autentificare generate pentru fiecare furnizor în parte, în momentul în care un furnizor dorește să se lege la platformă. 
+	\paragraph{}Având în vedere cerința prezentată, putem deduce că vom avea doua tipuri de utilizatori, utilizatori normali, care vor plăti facturi și furnizorii, care vor adauga facturi, chitanțe și vor genera rapoarte. Putem determina următoarele funcționalități în funcție de tipul utilizatorului:
+	\paragraph{}Pentru ultizatorii direcți ai platformei avem următoarele funcționalități:
+	\begin{itemize}
+	\item Înregistrare
+	\item Autentificare
+	\item Introducere de bani pe platformă
+	\item Vizualizarea facturilor pentru fiecare utilitate
+	\item Plata facturilor
+	\item Vizualizarea tranzactiilor făcute pe platformă
+	\item Vizualizarea chitanțelor.
+	\end{itemize}
+	\paragraph{}Pentru furnizorii de utilități care doresc conectarea la platformă avem următoarele funcționalități:
+	\begin{itemize}
+	\item Adăugarea de facturi
+	\item Adaugarea chitanțelor după ce o factură a fost plătită
+	\item Generarea unui raport cu toate tranzactiile facute intre doua date
+	\item Recunoașterea/Autentificarea fiecărui furnizor cu ajutorul unor credențiale alese
+	\end{itemize}
 	\section{Arhitectura aplicatiei}
-	\section{Implementare}
-	\section{Sablone bazate pe microservicii in practica}
+	\paragraph{}Aplicația creată are la bază o arhitectură bazată pe microservicii, acest lucru oferind aplicației scalabilitatea necesară, în momentul în care numărul de utilizatori va crește foarte mult, iar acest lucru este datorat de existența unui microserviciu dedicat utilizatorilor. Tot această arhitectură poate oferii flexibilitatea creării unui nou furnizor in sistem, doar prin lansarea unui nou microserviciu cu un fișier de configurarea specific pentru un nou furnizor.
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.8]{component}
+	\caption{Diagrama de arhitectură}  
+	\label{component}
+  	\end{figure}
+  	\paragraph{}În figura de mai jos, figura \ref{component}, se poate observa că aplicația poate fi impărțită din punct de vedere al arhitecturii un in trei straturi și o componentă ajutătatoare denumită „Common”.
+	\paragraph{}În stratul superior se poate observa componenta „PayAllHere” care reprezintă de fapt poarta de intrare a unei arhitecturi bazate pe microservicii (în engleza „gateway”). Aceasta este de fapt o aplicație de tip MVC, a cărei singură dependință din proiect este componenta „Common”, dar acest fapt nu crează un cuplaj între componente, deoarece aceasta este doar o librărie (în engleză „Class Library”). Acestă componentă doar cere informații din stratul următor prin call-uri asincrone, ceea ce înseamnă ca există un cuplaj slab intre cele doua straturi.
+	\paragraph{}Al doilea strat al aplicației este format din microservicii. Acestea sunt unități independente ale aplicației, nu sunt cuplate între ele, și nu au stare. Fiecare microserviciu se ocupă independent de cate o secțiune a aplicației, în acest fel, avem un microserviciu pentru utilizatori, acesta se ocupă de înregistrarea utilizatorilor, autentificarea lor, cât și să păstreze date despre utilizatori. Un al doilea microserviciu este cel care se ocupă de tranzacții, acesta gestionează tranzactiile care se întamplă pe platformă, cât și de filtrarea unor tranzactii după anumite criterii: data, persone, etc.. 
+	\paragraph{}Al treilea și al patrulea microserviciu se ocupă de gestionarea facturilor, fiecare pentru un furnizor specific, ceea ce este bine de precizat, este faptul că structura celor doua microservicii este identică, iar diferențele dintre ele se pot face doar folosindu-se un fișier de configurare, ceea ce înseamnă că adaugarea unui nou furnizor va necesita foarte puțin timp de dezvoltare. Tot procesul fiind doar o lansare in execuție a unui nou microserviciu cu un fișier de configurare schimbat. O prezentare a felului în care un microserviciu de acest tip este implementat se poate observa in diagrama de clase prezentată mai jos, figura \ref{classDiag} 
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.85]{classDiag}
+	\caption{Diagrama de clase a unui microserviciu atribuit unui furnizor}  
+	\label{classDiag}
+  	\end{figure}
+  	\paragraph{}Al treilea strat este reprezentat de stratul de persistentă. După cum se poate observa in figura \ref{component}, fiecare microserviciu are cate o bază de date la care are acces unic, ceea ce înseamnă că persistența datelor nu reprezintă un factor de cuplaj între microservicii. 
+  	\paragraph{}Ultima componentă este componenta „Common”, in acestă componentă se găsesc modele si enumurații care se folosesc atat in aplicația MVC, cât și în microservicii, acest lucru nu cuplează serviciile, doar se asigură că informația trimisă dintr-o componentă înspre alta să poată sa fie recepționată in același format în care a fost transmisă.
+	\section{Persistenta datelor}
+	\paragraph{}Dacă e să vorbim de persistența datelor, așa cum s-a menționat mai sus, fiecare microserviciu are acces la propria lui bază de date (\ref{db}).
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=1]{db}
+	\caption{Bazele de date pentru fiecare microserviciu}  
+	\label{db}
+  	\end{figure}
+	\paragraph{}Baza de date folosită este una non realațională, această alegere a fost făcută deoarece este usor de gestionat. În cazul unei modificări in cod asupra clasei salvate in baza de date, schimbarea se va propaga în baza de date făra ca programatorul să depună un efort suplimentar. Fiecare bază de date conține cate o colectie de obiecte (\ref{dbopen}). Așadar, fiindcă baza de date nu este relațională, orice lagatură între doua clase diferite trebuie efectuată la nivel de logică in cod.
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.86]{dbopen}
+	\caption{Componența bazelor de date}  
+	\label{dbopen}
+  	\end{figure}
+  	\paragraph{}Baza de date folosita este MongoDb. In acestă bază de date se pot salva colectii care au o structura fluidă, dar elementele vor fi salvate in funcție de modelul clasei corespunzătoare. Fiecare obiect este salvat in baza de date serializat JSON. Un exemplu se poate observa mai jos in figura \ref{dbEx}.
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.81]{dbEx}
+	\caption{Obiect în cod C\# și obiect în baza de date}  
+	\label{dbEx}
+  	\end{figure}
+  	\paragraph{}Singurul lucru care diferă este reprezentare identificatorului unic, care in cod C\# este „Id” iar in baza de date este „\_id”, acest lucru se datorează atributului „[BsonId]” care marchează câmpul „Id” ca fiind identificator unic, iar reprezentarea identificatorului unic in baza de date MongoDb este „\_id” (figura \ref{dbEx}).
+	\section{Interacțiunea cu utilizatorul}
+	\paragraph{}Din punct de vedere al utilizatorilor, aceștia se împart în doua categorii, utilizatori externi și furnizori de utilitați (gaz, curent, etc.). Iar în funcție de acest criteriu și funcționalitățile pe care deja le-am definit, putem sa considerăm urmatoarele cazuri de utilizare, prezentate în diagrama \ref{usediag}. Este important faputul că doar utilizatorilor externi le este adresată o interfață grafică, furnizorilor ofrindu-li-se acces la anumite puncte de intrare („endpoints”) în aplicație la care se pot conecta cu ajutorul unor apeluri făcute din aplicațiile proprii.
+	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=1]{usediag}
+	\caption{Diagrama cazurilor de utilizare}  
+	\label{usediag}
+  	\end{figure}
+  	\paragraph{}În continuare vom exemplifica în detaliu câte un caz de utilizare pentru fiecare dintre tipurile de utilizatori. Pentru utilizatorii externi vom parcurge fiecare pas din fluxul de lucru (în engleză „workflow”) al plății unei facturi, iar pentru utilizatorii de tip furnizor, vom parcurge fiecare pas din fluxul de lucru pentru generarea unui raport pentru doua date selectate. Pentru o mai bună întelegere se va prezenta câte o diagrama de secvența pentru fiecare funcționalitate.
+  	\subsection{Plata unei facturi}
+  	\paragraph{}Acest caz de utilizare a fost ales deoarece este unul mai complex, acesta implicând aproape toate microserviciile. Pentru completarea cu succes al acestei operații, se vor efectua următoarele evenimente:
+  	\begin{itemize}
+  	\item Utilizatorul se autentifică
+	\item Utilizatorul accesează pagina cu furnizori 	
+  	\item Utilizatorul deschide lista de facuturi de la un furnizor (spre exemplu: facutrile de curent)
+  	\item Alege factura pe care doreste sa o platească
+  	\item Introduce suma pe care doreste să o plătească
+  	\item Se actualizează balanța utilizatorului
+  	\item Se salvează tranzactia
+  	\item Se modifica suma ramasă de plată pentru factura respectivă.
+  	\item Utilizatorul este întors pe pagina cu facturi.
+  	\end{itemize}
+  	\paragraph{}O secvență de plată a unei facturi se consideră un succes în momentul în care se salvează cu succes tranzacția efectuată, iar balanța unui utilizator cat și suma ramasă de plată este actualizată corect.
+  	\paragraph{}Unul din motivele pentru care o secvență de plată nu se va executa cu succes poate fi produsă de încercarea plății unei sume care nu este disponibilă în contul curent. În acest caz se va afișa un mesaj corespunzător, iar utilizatorul poate ulterior să încarce o sumă de bani pe platformă iar apoi sa reia procesul de plată a facturii.
+  	\paragraph{}După cum se poate observa și în figura \ref{utilizseq}, utilizatorul interacționează cu aplicația MVC, iar aceasta comunică prin apeluri asincrone cu microserviciile care se ocupă de datele utilizatorului, datele despre facturilor furnizorului cât și de tranzacții. Apelurile între microservicii sunt apeluri asincrone de tip HTTP. În diagrama \ref{utilizseq} nu este reprezentat și stratul de persistența, dar putem considera ca fiecare apel la un microserviciu determină o interogare pe baza de date.
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.9]{utilizseq}
+	\caption{Diagrama de secvență pentru plata unei facturi}  
+	\label{utilizseq}
+  	\end{figure}
+  	\subsection{Generarea unui raport}
+  	\section{Analiza arhtecturii}
 \chapter{Concluzii}
 
 \bibliographystyle{apacite}
@@ -252,11 +372,6 @@ Erl, Thomas. 2009. \texttt{SOA Design Patterns. Crawfordville Indiana : Prentice
 \begin{flushleft}
 \textbf{
 Fowler, Martin. 2014. \texttt{Microservices, 2014,. MartinFowler.com. [Interactiv] 2014. https://martinfowler.com/articles/microservices.html.}}
-\end{flushleft}
-
-\begin{flushleft}
-\textbf{
-OASIS Foundation. 2006. \texttt{Reference Model for Service Oriented Architecture. [Interactiv] 2006. https://docs.oasis-open.org/soa-rm/v1.0/soa-rm.html.}}
 \end{flushleft}
 
 

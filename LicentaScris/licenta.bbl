@@ -54,6 +54,82 @@ Hilliard, R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Newman%
+}{%
+Newman%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+newman2015building}
+\APACinsertmetastar {%
+newman2015building}%
+\begin{APACrefauthors}%
+Newman, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2015}.
+\newblock
+\APACrefbtitle {Building microservices: designing fine-grained systems}
+  {Building microservices: designing fine-grained systems}.
+\newblock
+\APACaddressPublisher{}{" O'Reilly Media, Inc."}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Savchenko%
+, Radchenko%
+\BCBL {}\ \BBA {} Taipale%
+}{%
+Savchenko%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+savchenko2015microservices}
+\APACinsertmetastar {%
+savchenko2015microservices}%
+\begin{APACrefauthors}%
+Savchenko, D\BPBI I.%
+, Radchenko, G\BPBI I.%
+\BCBL {}\ \BBA {} Taipale, O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Microservices validation: Mjolnirr platform case study}
+  {Microservices validation: Mjolnirr platform case study}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2015 38th International Convention on Information and
+  Communication Technology, Electronics and Microelectronics (MIPRO)} {2015
+  38th international convention on information and communication technology,
+  electronics and microelectronics (mipro)}\ (\BPGS\ 235--240).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Singleton%
+}{%
+Singleton%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+singleton2016economics}
+\APACinsertmetastar {%
+singleton2016economics}%
+\begin{APACrefauthors}%
+Singleton, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The economics of microservices} {The economics of
+  microservices}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Cloud Computing}{3}{5}{16--20}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Th{\"o}nes%
 }{%
 Th{\"o}nes%

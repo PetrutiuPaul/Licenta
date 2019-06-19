@@ -15,7 +15,7 @@ namespace UserService.API.Repository
         {
             var client = new MongoClient("mongodb://localhost:27017");
 
-            var mongoDatabase = client.GetDatabase("DSN_UserService");
+            var mongoDatabase = client.GetDatabase("DB_UserService");
 
             _collection = mongoDatabase.GetCollection<User>("users");
         }

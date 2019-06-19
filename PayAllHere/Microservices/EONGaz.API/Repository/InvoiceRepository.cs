@@ -15,7 +15,7 @@ namespace EONGaz.API.Repository
         {
             var client = new MongoClient("mongodb://localhost:27017");
 
-            var mongoDatabase = client.GetDatabase("DSN_EONGazService");
+            var mongoDatabase = client.GetDatabase("DB_EONGazService");
 
             _collection = mongoDatabase.GetCollection<Invoice>("Invoices");
         }

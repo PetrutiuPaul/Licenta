@@ -15,7 +15,7 @@ namespace Electrica.API.Repository
         {
             var client = new MongoClient("mongodb://localhost:27017");
 
-            var mongoDatabase = client.GetDatabase("DSN_ElectricaService");
+            var mongoDatabase = client.GetDatabase("DB_ElectricaService");
 
             _collection = mongoDatabase.GetCollection<Invoice>("Invoices");
         }
