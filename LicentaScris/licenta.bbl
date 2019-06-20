@@ -1,154 +1,107 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
 
-\bibitem [\protect \citeauthoryear {%
-Alencar%
-, Cowan%
-\BCBL {}\ \BBA {} Lucena%
-}{%
-Alencar%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {1996}}%
-}]{%
-alencar1996formal}
-\APACinsertmetastar {%
-alencar1996formal}%
-\begin{APACrefauthors}%
-Alencar, P\BPBI S.%
-, Cowan, D\BPBI D.%
-\BCBL {}\ \BBA {} Lucena, C\BPBI J\BPBI P\BPBI d.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1996}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A formal approach to architectural design patterns} {A
-  formal approach to architectural design patterns}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {International Symposium of Formal Methods Europe}
-  {International symposium of formal methods europe}\ (\BPGS\ 576--594).
-\PrintBackRefs{\CurrentBib}
+\bibitem{alencar1996formal}
+Paulo~SC Alencar, Donald~D Cowan, and Carlos Jos{\'e} Pereira~de Lucena.
+\newblock A formal approach to architectural design patterns.
+\newblock In {\em International Symposium of Formal Methods Europe}, pages
+  576--594. Springer, 1996.
 
-\bibitem [\protect \citeauthoryear {%
-Hilliard%
-}{%
-Hilliard%
-}{%
-{\protect \APACyear {2000}}%
-}]{%
-hilliard2000ieee}
-\APACinsertmetastar {%
-hilliard2000ieee}%
-\begin{APACrefauthors}%
-Hilliard, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2000}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Ieee-std-1471-2000 recommended practice for
-  architectural description of software-intensive systems} {Ieee-std-1471-2000
-  recommended practice for architectural description of software-intensive
-  systems}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{IEEE, http://standards. ieee. org}{12}{16-20}{2000}.
-\PrintBackRefs{\CurrentBib}
+\bibitem{migratingToMicroservices}
+Adrian Cockroft.
+\newblock Migrating to microservices, 2014.
+\newblock URL: \url{https://www.youtube.com/watch?v=1wiMLkXz26M}.
 
-\bibitem [\protect \citeauthoryear {%
-Newman%
-}{%
-Newman%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-newman2015building}
-\APACinsertmetastar {%
-newman2015building}%
-\begin{APACrefauthors}%
-Newman, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2015}.
-\newblock
-\APACrefbtitle {Building microservices: designing fine-grained systems}
-  {Building microservices: designing fine-grained systems}.
-\newblock
-\APACaddressPublisher{}{" O'Reilly Media, Inc."}.
-\PrintBackRefs{\CurrentBib}
+\bibitem{erl1}
+Thomas Erl.
+\newblock The principles of service-orientation part 1 of 6: Introduction to
+  service-orientation.
+\newblock URL:
+  \url{https://searchmicroservices.techtarget.com/tip/The-principles-of-service-orientation-part-1-of-6-Introduction-to-
+  service-orientation}.
 
-\bibitem [\protect \citeauthoryear {%
-Savchenko%
-, Radchenko%
-\BCBL {}\ \BBA {} Taipale%
-}{%
-Savchenko%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2015}}%
-}]{%
-savchenko2015microservices}
-\APACinsertmetastar {%
-savchenko2015microservices}%
-\begin{APACrefauthors}%
-Savchenko, D\BPBI I.%
-, Radchenko, G\BPBI I.%
-\BCBL {}\ \BBA {} Taipale, O.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Microservices validation: Mjolnirr platform case study}
-  {Microservices validation: Mjolnirr platform case study}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {2015 38th International Convention on Information and
-  Communication Technology, Electronics and Microelectronics (MIPRO)} {2015
-  38th international convention on information and communication technology,
-  electronics and microelectronics (mipro)}\ (\BPGS\ 235--240).
-\PrintBackRefs{\CurrentBib}
+\bibitem{erl2}
+Thomas Erl.
+\newblock The principles of service-orientation part 2 of 6: Introduction to
+  service-orientation.
+\newblock URL:
+  \url{https://searchmicroservices.techtarget.com/tip/The-principles-of-service-orientation-part-2-of-6-Service-contracts-and
+  -loose-coupling}.
 
-\bibitem [\protect \citeauthoryear {%
-Singleton%
-}{%
-Singleton%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-singleton2016economics}
-\APACinsertmetastar {%
-singleton2016economics}%
-\begin{APACrefauthors}%
-Singleton, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The economics of microservices} {The economics of
-  microservices}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{IEEE Cloud Computing}{3}{5}{16--20}.
-\PrintBackRefs{\CurrentBib}
+\bibitem{erl4}
+Thomas Erl.
+\newblock The principles of service-orientation part 5 of 6: Introduction to
+  service-orientation.
+\newblock URL:
+  \url{https://searchmicroservices.techtarget.com/tip/The-principles-of-service-orientation-part-5-of-6-Service-autonomy-and-
+  statelessness}.
 
-\bibitem [\protect \citeauthoryear {%
-Th{\"o}nes%
-}{%
-Th{\"o}nes%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-thones2015microservices}
-\APACinsertmetastar {%
-thones2015microservices}%
-\begin{APACrefauthors}%
-Th{\"o}nes, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Microservices} {Microservices}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{IEEE software}{32}{1}{116--116}.
-\PrintBackRefs{\CurrentBib}
+\bibitem{erl1900service}
+Thomas Erl.
+\newblock {\em Service-oriented architecture: concepts, technology, and
+  design}.
+\newblock Pearson Education India, 2006.
+
+\bibitem{evans}
+Josh Evans.
+\newblock Mastering chaos - a netflix guide to microservices.
+\newblock URL: \url{https://www.youtube.com/watch?v=CZ3wIuvmHeM}.
+
+\bibitem{fowler2}
+Martin Fowler.
+\newblock Microservicepremium, 2014.
+\newblock URL: \url{https://martinfowler.com/bliki/MicroservicePremium.html}.
+
+\bibitem{fowler1}
+Martin Fowler.
+\newblock Microservices, 2014.
+\newblock URL: \url{https://martinfowler.com/articles/microservices.html}.
+
+\bibitem{harris1}
+Derrick Harris.
+\newblock Talking microservices with the man who made netflix s cloud famous,
+  2015.
+\newblock URL:
+  \url{https://medium.com/s-c-a-l-e/talking-microservices-with-the-man-who-made-netflix-s-cloud-famous-
+  1032689afed3}.
+
+\bibitem{hilliard2000ieee}
+Rich Hilliard.
+\newblock Ieee-std-1471-2000 recommended practice for architectural description
+  of software-intensive systems.
+\newblock {\em IEEE, http://standards. ieee. org}, 12(16-20):2000, 2000.
+
+\bibitem{ruslan}
+Ruslan Meshenberg.
+\newblock Microservices at netflix scale.
+\newblock URL:
+  \url{https://gotocon.com/dl/goto-amsterdam-2016/slides/RuslanMeshenberg_MicroservicesAtNetflixScaleFirstPrinciplesTradeoffsLessonsLearned.pdf}.
+
+\bibitem{newman2015building}
+Sam Newman.
+\newblock {\em Building microservices: designing fine-grained systems}.
+\newblock " O'Reilly Media, Inc.", 2015.
+
+\bibitem{oman1992metrics}
+Paul Oman and Jack Hagemeister.
+\newblock Metrics for assessing a software system's maintainability.
+\newblock In {\em Proceedings Conference on Software Maintenance 1992}, pages
+  337--344. IEEE, 1992.
+
+\bibitem{savchenko2015microservices}
+Dmitry~I Savchenko, Gleb~I Radchenko, and Ossi Taipale.
+\newblock Microservices validation: Mjolnirr platform case study.
+\newblock In {\em 2015 38th International Convention on Information and
+  Communication Technology, Electronics and Microelectronics (MIPRO)}, pages
+  235--240. IEEE, 2015.
+
+\bibitem{singleton2016economics}
+Andy Singleton.
+\newblock The economics of microservices.
+\newblock {\em IEEE Cloud Computing}, 3(5):16--20, 2016.
+
+\bibitem{thones2015microservices}
+Johannes Th{\"o}nes.
+\newblock Microservices.
+\newblock {\em IEEE software}, 32(1):116--116, 2015.
 
 \end{thebibliography}

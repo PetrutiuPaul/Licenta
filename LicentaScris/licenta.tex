@@ -1,13 +1,16 @@
 \documentclass[12pt]{report}
-\usepackage{apacite}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[romanian]{babel}
 \usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
 \setcounter{secnumdepth}{3}
 \usepackage{mathptmx}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{breaklinks=true}
 \usepackage[pagestyles]{titlesec}
 \linespread{1.25}
+\Urlmuskip=0mu plus 1mu
 
 \begin{document}
 
@@ -47,8 +50,13 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 \cleardoublepage
 \listoffigures
 
-\chapter{Introducere} 
-
+\chapter{Introducere}
+	\paragraph{}Deoarece mediul IT este într-o continua dezvoltare, mereu apar noi concepte legate despre arhitecturi și șabloane de proiectare care ajută programatorii să dezvolte aplicațiile mai repede si mai eficient. În această lucrare se pune pe accentul pe stilul arhitectural care ar trebui adoptat pentru aplicațiile din ziua de azi, lucrurile care pot decide stilul arhitectural cât și diferențele dintre doua arhitecturi diferite.
+	\paragraph{}În lucrare se discută despre două tipuri arhitecturale diferite, una provenind din modul normal de gândii, aceasta fiind arhitectura monolit, iar una provenind din nevoia unei soluții care să rezolve unele probleme, precum creșterea exponențială a costului scalabilității sau scaderea productivității în aplicații foarte mari, aceasta arhitectură fiind arhitectura bazată pe servicii. În această lucrare se studiază si o ramură a arhitecturii orientată pe servicii, arhitectura pe microservicii, care este considerată o variată mai rafinată a arhitecturii bazate pe servicii.
+	\paragraph{}Scopul final al lucrării este acela de a evidenția avantajele pe care o arhitectură bazată pe microservicii le poate aduce într-o aplicație care vrea să intermedieze diferite operații intre utilizatori si diferiți furnizori care au obiective comune. Acest lucru se va realiza cu ajutorul unei aplicație prin care utilizatorii iși pot plătii facturile de la diferiți furnizori.
+	\paragraph{}Lucrearea este împărțită in opt capitole, care la randul lor sunt împărțite din secțiuni și subsecțiuni. În capitolul al doilea se prezintă concepte generale despre ce înseamnă o arhitecură, șablon de proiectare sau un serviciu software. În capitolul trei se prezintă arhitectura monolit cu avantajele dezavantajele pe care le aduce. În capitolul patru se prezintă concepte generale si principii legate de o arhitectură bazată pe servicii, urmând ca în capitolul cinci sa se vorbească despre arhitectura bazată pe microservicii, ce este un microserviciu, tipurile de comunicare dintre microservicii, cât și despre avantajele și dezavantajele ei. În capitolul se studiază tranziția aplicației Netflix de la o arhitectură de tip monolit la una bazată pe microservicii. Se prezintă motivele care au dus la luarea acestei decizii, structura finală a proiectului cât și problemele întâmpinate pe parcurs.
+	\paragraph{}În capitolul șapte se va prezenta o platformă menită să intermedieze plățile facturilor dintre consumatori și diferiți furnizori. Se va prezenta structura aplicației si decizile arhitecturale luate pentru a se respecta principile unei arhitecturi bazate pe microservicii. Pentru a se demonstra că o arhitectură bazată pe microservicii este o decizie corectă, se prezintă o analiză a codului, calculată cu ajutorul Visual Studio.
+	\paragraph{}Ultimul capitol al lucrării conține concluziile cu privire la avantajele unei arhitecturi bazate pe microservicii și argumentează motivele pentru care o astfel de arhitectură reprezintă o soluție modernă de a structura o aplicație.
 \chapter{Concepte de bază} 
   \section{Arhitectura unei aplicații soft}
   	\paragraph{}
@@ -79,8 +87,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\label{monolithicArhitecture}
   	\end{figure}
   	\section{Avantaje și dezavantaje}
-  	\paragraph{}O aplicație monolit are mai multe avantaje in contextul unui business mic:
-  	
+  	\paragraph{}O aplicație monolit are mai multe avantaje in contextul unui business mic:  	
   	\begin{itemize}
   	\item Faza de dezvoltare durează mai puțin timp, IDE-urile moderne reușind să genereze mult cod automat, ceea ce implică scădearea costurilor de producție.
   	\item Aplicația este usor de testat, automatizând procesul de testare a codului folosind o combinație de unit tests și integration test. 
@@ -97,8 +104,8 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\section{Fundamentele arhitecturii bazate pe servicii}
   	\paragraph{}Unul din factorii care au dus la modificarea conceptelor despre cum trebuie să fie structurată o aplicație, a fost evolutia tehnologică rapidă și numărul tot mai ridicat de persoane care aveau acces la internet.
 	\paragraph{}Arhitectura bazată pe servicii (în engleză „Servici Oriented Architecture”, prescurtat „SOA”), este un tip de arhitectură care s-a născut datorită nevoii tot mai mari de dezvoltare rapidă a cât mai multor funcționalități într-un timp cât mai scurt, si in paralel pe cât posibil.
-	\paragraph{}Unul din motivele principale pentru apariția acestui stil arhitectural s-a datorat dorinție producătorilor ca o aplicație să poată sa fie folosită de pe diferite platforme. Dacă pentru fiecare platforma diferită era nevoie ca toată aplicația să fie rescrisă, costul ar fi fost prea mare, această soluție nu era plauzibilă. Datorită acestui fapt s-a decis că logica aplicației ar trebui să fie decuplată de partea din față a aplicației. În felul acesta, fiind necesară doar rescrierea  unei parți mult mai mici din aplicație pentru ca aceasta să poată functiona pe diferite tipuri de platforme. Odată cu această decizie, un nou stil arhitectural a apărut.
-	\paragraph{}Pentru început, s-a incercat enunțarea a 8 principii, care ar trebui respectate intr-o arhitectură bazată pe servicii.
+	\paragraph{}Unul din motivele principale pentru apariția acestui stil arhitectural s-a datorat dorinție producătorilor ca o aplicație să poată sa fie folosită de pe diferite platforme. Dacă pentru fiecare platforma diferită era nevoie ca toată aplicația să fie rescrisă, costul ar fi fost prea mare, această soluție nu era plauzibilă. Datorită acestui fapt s-a decis că logica aplicației ar trebui să fie decuplată de partea din față a aplicației. În felul acesta, fiind necesară doar rescrierea  unei parți mult mai mici din aplicație pentru ca aceasta să poată functiona pe diferite tipuri de platforme. Odată cu această decizie, un nou stil arhitectural a apărut.\cite{erl1900service}
+	\paragraph{}Pentru început, s-a incercat enunțarea a 8 principii, care ar trebui respectate intr-o arhitectură bazată pe servicii.\cite{erl1}
 	\paragraph{}Acestea sunt:
 	\begin{itemize}
 	\item Serviciile sunt autonome.
@@ -114,7 +121,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\section{Principiile arhitecturii bazate pe servicii}
   	\subsection{Autonomia}
   	\paragraph{}Orietarea către servicii cere o atitudine serioasă atunci cand vine vorba de împărtirea lor in blocuri logice de sine stătătoare. Pentru ca serviciile sa fie fiabile și previzibile, trebuie sa se exercite un grad mai ridicat de control asupra resurselor pe care ele le folosesc.
-  	\paragraph{}Odată cu cresterea nivelului de control al unui serviciu asupra propriului context de executie, se reduc dependințele din serviciu, ceea ce ne duce spre un alt principiu, cel al cuplajului slab. Chiar dacă exclusivitatea asupra logicii pe care un serviciu o encapsulează nu poate să fie deplină, principalul obiectiv este atribuirea unui nivel rezonabil de control asupra oricărei logici pe care o prezintă intr-un moment al executiei.
+  	\paragraph{}Odată cu cresterea nivelului de control al unui serviciu asupra propriului context de executie, se reduc dependințele din serviciu, ceea ce ne duce spre un alt principiu, cel al cuplajului slab. Chiar dacă exclusivitatea asupra logicii pe care un serviciu o encapsulează nu poate să fie deplină, principalul obiectiv este atribuirea unui nivel rezonabil de control asupra oricărei logici pe care o prezintă intr-un moment al executiei.\cite{erl4}
   	\paragraph{}Având in vedere că pot exista deferite metode de a masura autonomia, este bine facem distincție intre ele. Spre exemplu, un serviciu poate avea mai multe nivele de autonomie:
     \begin{itemize}
     \item Autonomie la nivelul serviciului. În acest tip de autonomie granițele dintre servicii sunt bine definite, dar resursele folosite de server pot să fie distribuite cu alte servicii. Spre exemplu, putem avea un serviciu care encapsulează un mediu de lucru mai vechi, acesta deja fiind folosit de un alt serviciu vechi.
@@ -122,10 +129,10 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
     \end{itemize}
     \paragraph{}Cu siguranță, se dorește ca un număr cât mai mare sa fie de servicii pur autonome, deoarece acestea ar rezolva usor problemele de concurență și ar impinge serviciile importiva problemei „unui singur punct de eșec” (în engleză „single point of failure”). Oricum, pentru a se atinge această performanță, procesul de dezvoltare este mai lung, deoarece logica din servcii trebuie să fie rescrisă, iar partea de lansare în execuție a serviciului ar avea nevoie de atenție sporită. Așadar efortul si costurile ar crește, iar uneori aceste sacrificii nu sunt posibile.
   	\subsection{Cuplajul slab}
-  	\paragraph{}Nimeni nu poate să prezică în direcție va evolua domeniul IT. Nu se poate știi evoluția pentru automatizarea soluților, integrarea sau schimbarea lor, acestea fiind influențate de cauze din afara mediului IT. Având in vedere faptul ca în cazul unei modificăre neprevazută programatorii trebuie să fie gata să răspundă într-o manieră eficientă, un lucru necesar este lucrul cu forme abstracte ale serviciilor si mesajelor. Acest fapt, susține agilitatea de a compune o soluție folosind serviciile disponibile.
+  	\paragraph{}Nimeni nu poate să prezică în direcție va evolua domeniul IT. Nu se poate știi evoluția pentru automatizarea soluților, integrarea sau schimbarea lor, acestea fiind influențate de cauze din afara mediului IT. Având in vedere faptul ca în cazul unei modificăre neprevazută programatorii trebuie să fie gata să răspundă într-o manieră eficientă, un lucru necesar este lucrul cu forme abstracte ale serviciilor si mesajelor. Acest fapt, susține agilitatea de a compune o soluție folosind serviciile disponibile. \cite{erl2}
   	\paragraph{}Putem spune că cuplajul între doua unități logice și structurale poate fi văzut ca o măsurătoare a dependințelor dintre ele. Ceea ce înseamnă ca un număr mare de dependințe poate fi definit ca și un cuplaj mare. În cazul în care nu exista dependințe între două servicii, putem spune ca ele sunt decuplate. Prin implementarea consisteantă a cuplajului slab, unitățile logice dezvoltate ulterior dobândesc independență. Din acest fapt, în timp, se acumulează o multitudine de servicii care sunt blocuri logice de sine statatoare, care pot fi folosite in noi compoziții, și care pot fi întreținute ușor, fără a influența alte servicii.
   	\subsection{Abstractizarea}
-  	\paragraph{}Abstractizarea este un concept cunoscut in programare, fiind unul din principiile fundamentale ale paradigmei programarii orietate pe obiecte. Cam în aceeași directie se indreaptă si abstractizarea logicii din servicii. Acest concept sugerează că un serviciu ar trebui scris ca o cutie neagra, adică ascunzând detaliile de un potențial consumator. Acest lucru se realizează folosind contracte pentru fiecare serviciu, acesta limitând accesul catre serviciu. Cu ajutorul unui contract, se obține foarte ușor un grad mare de separare între ce este privat si ce este public pentru consumator. Ca rezultat, acest concept susține conceptul dezbătut anterior, cel al cuplajului slab.
+  	\paragraph{}Abstractizarea este un concept cunoscut in programare, fiind unul din principiile fundamentale ale paradigmei programarii orietate pe obiecte. Cam în aceeași directie se indreaptă si abstractizarea logicii din servicii. Acest concept sugerează că un serviciu ar trebui scris ca o cutie neagra, adică ascunzând detaliile de un potențial consumator. Acest lucru se realizează folosind contracte pentru fiecare serviciu, acesta limitând accesul catre serviciu. Cu ajutorul unui contract, se obține foarte ușor un grad mare de separare între ce este privat si ce este public pentru consumator. Ca rezultat, acest concept susține conceptul dezbătut anterior, cel al cuplajului slab.\cite{erl2}
   	\paragraph{}Dacă ar fi să discutăm despre cantitatea de logică pe care un serviciu o poate expune, putem spune ca nu există nici o limitare din acest punct de vedere. Un serviciu poate fi creat cu scopul de a servii îndeplinirii unui singur feature sau poate fi un punct de intrare în întreaga aplicație.
   	\paragraph{}Așadar se poate observa că întreaga atenție se poate îndrepta se modul in care un contract este conceput. Cu cât mai multă informație este expusa prin contract, cu atat mai puțină informație poate fi abstractizată. Cu cât un contract este mai generic, cu atat mai mult crește capacitatea lui de a fi reutilizat.
   	\subsection{Contractul Formal}
@@ -136,7 +143,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\item Pentru fiecare operație, formatul datelor de intrare cât și al celor de ieșire
   	\item Regulile si caracteristicile serviciului.
   	\end{itemize}
-  	\paragraph{}Definirea contractelor necesită o atenție sporită pentru ca acestea sunt distribuite printre servicii. După momentul in care sunt lansate in execuție, definiția contractelor s-ar putea să devină o dependința pentru o sursa externă, ceea ce înseamnă că trebuie avut grijă ca definițiile din contract să nu sufere schimbări după lansarea principală. Prin urmare, contractele formale reprezintă un principiu de baza intr-o arhitectura bazată pe servicii. În plus acest concept susține alte principii despre care am discutat, aceastea fiind: abstractizarea și cuplajul slab, dar și alte principii care nu au fost abordate in detaliu precum: compozabilitatea si descoperirea serviciilor.
+  	\paragraph{}Definirea contractelor necesită o atenție sporită pentru ca acestea sunt distribuite printre servicii. După momentul in care sunt lansate in execuție, definiția contractelor s-ar putea să devină o dependința pentru o sursa externă, ceea ce înseamnă că trebuie avut grijă ca definițiile din contract să nu sufere schimbări după lansarea principală. Prin urmare, contractele formale reprezintă un principiu de baza intr-o arhitectura bazată pe servicii. În plus acest concept susține alte principii despre care am discutat, aceastea fiind: abstractizarea și cuplajul slab, dar și alte principii care nu au fost abordate in detaliu precum: compozabilitatea si descoperirea serviciilor. \cite{erl2}
 \chapter{Arhitectura bazată pe microservicii}
 	\section{Ce sunt microserviciile}
 	\paragraph{}Microserviciile sunt un concept apărut nu cu mult timp in urmă, iar acesta este unul dintre motivele pentru care aceastea nu au o definiție exactă. Un alt motiv ar putea fi acela că microserviciile sunt o derivare ușoară a serviciilor. Având in vedere încercările de a crea o definiție pentru microservicii, putem găsii cateva caracteristici comune. Una dintre aceste definiții sugerează ca arhitectura bazată pe microservicii este, de fapt o arhitectură bazată pe servicii în care toate principiile au fost aplicate corect.
@@ -154,7 +161,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=1]{movsmicr}
-	\caption{Arhitectură monolit vs arhitectură bazată pe microservicii}\cite{savchenko2015microservices}  
+	\caption{Arhitectură monolit vs arhitectură bazată pe microservicii \cite{savchenko2015microservices}}
 	\label{movsmicr}
   	\end{figure}
   	\subsection{Avantaje}
@@ -168,7 +175,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=0.9]{fowler}
-	\caption{Complexitatea si productivitatea in arhitecturi diferite}
+	\caption{Complexitatea si productivitatea in arhitecturi diferite \cite{fowler2}}
 	\label{fowler}
   	\end{figure}
   	\paragraph{}Un alt exemplu în care microserviciile nu ar fi o soluție bună ar fi aplicațiile care procesează fluxuri de date în timp real, date care vin de la diferiți senzori. Intr-o situație de genul acesta, orice timp contează, iar comunicarea dintre microservicii, chiar dacă este rapidă, poate influența rezultatul, așadar intr-o astfel de situație, o soluție monolit este favorabilă.
@@ -176,7 +183,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   \chapter{Studiu de Caz}
 	\section{Introducere}
 	\paragraph{}Netflix este o companie care a început prin a vinde sau închiria filme pe DVD-uri. Ulterior furnizând acces online la filme si seriale. Netflix fiind un gigant in industria televiziunii online. Aplicația netflix este o aplicație la scară mondială, care în momentul in care firma a horărat schimbarea arhitecturii avea un trafic de 8 milioane de utilizatori, ajungând la finalul anul 2018 la 139 de milioane de utilizatori.	
-	\paragraph{}Dupa cum am discutat până acum, o arhitectură bazată pe microservicii nu are chiar o definiție propriu zisă, dar dupa cum susține Martin Fowler, microserviciile sunt implementarea corectă a arhitecturii bazate pe servicii.
+	\paragraph{}Dupa cum am discutat până acum, o arhitectură bazată pe microservicii nu are chiar o definiție propriu zisă, dar dupa cum susține Martin Fowler, microserviciile sunt implementarea corectă a arhitecturii bazate pe servicii. \cite{fowler1}
 	\paragraph{}În acest capitol vom cuprinde trecerea de la o arhitectură monolit la o arhitectura bazată pe servicii, motivele pentru care s-a facut aceasta tranziție, pașii prin care s-a facut aceasta trecere, avantajele cât si dezavantajele acestei treceri, cât si despre rezultatul final.
 	\section{Tranziția către microservicii în compania Netflix}
 	\paragraph{}În acest studiu de caz o să ne bazăm pe informațiile oferite de doua dintre personajele importante care au luat parte la tranziția catre microservicii:
@@ -189,15 +196,15 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\paragraph{}În următoarea diagrama, este reprezentată, arhitectura bazată pe microservicii a aplicației Netflix.
 	\begin{figure}[h]
   	\includegraphics[scale=.651]{netflixarhitecuture}
-	\caption{Arhitectura Aplicației Netflix()}  
+	\caption{Arhitectura Aplicației Netflix \cite{ruslan}}  
   	\end{figure}
-  	\paragraph{}Făcând o scurtă analiză asupra diagramei, putem să observam că prezentarea este una stratificată, nodul notat „ELB” rebrezintă un balansier de capacitate elastic (Elastic Load Balancer), care se o ocupă cu distrubuirea uniforma a cererilor catre microservicii. Stratul in care avem nodul notat „Zuul”, este un strat de tip proxy care ajută la oprirea atacurilor cibernetice. Iar zona dintre acest strat si „Middle Tier” este reprezentată de componente accesibile clientilor. În partea a 2-a a diagramei, este un strat destul de stratificat de microservicii care conțin mai multa logică si serversc componentelor din prima parte a diagramei. Ultimul strat, cel care contine si nodul notat cu „Cassandra” pe diagramă, reprezintă stratul de acces la bazele de date, datele fiind salvate separat in baza de date NoSQL. Iar intre ultimele 2 straturi   explicate, avem un strat care se ocupa de caching.
+  	\paragraph{}Făcând o scurtă analiză asupra diagramei, putem să observam că prezentarea este una stratificată, nodul notat „ELB” rebrezintă un balansier de capacitate elastic (Elastic Load Balancer), care se o ocupă cu distrubuirea uniforma a cererilor catre microservicii. Stratul in care avem nodul notat „Zuul”, este un strat de tip proxy care ajută la oprirea atacurilor cibernetice. Iar zona dintre acest strat si „Middle Tier” este reprezentată de componente accesibile clientilor. În partea a 2-a a diagramei, este un strat destul de stratificat de microservicii care conțin mai multa logică si serversc componentelor din prima parte a diagramei. Ultimul strat, cel care contine si nodul notat cu „Cassandra” pe diagramă, reprezintă stratul de acces la bazele de date, datele fiind salvate separat in baza de date NoSQL. Iar intre ultimele 2 straturi   explicate, avem un strat care se ocupa de caching. \cite{evans}
   	\paragraph{}O diagramă mai reprezentativă pentru arhitectura bazată pe microservicii a Netflix, care contine mai mult de 500 de microservicii este numita si diagrama de arhitectura „Death Star”(\ref{deathStarArhitecture}).
-  	\paragraph{}Așadar, având în vedere scala la care știm deja ca funcționează aplicația Netflix, putem deja considera că arhitectura bazată pe microservicii isi servește bine scopul. În continuare vom discuta efectiv despre motivele, pașii, beneficiile și costurile acestei schimbari de arhitectură.
+  	\paragraph{}Așadar, având în vedere scala la care știm deja ca funcționează aplicația Netflix, putem deja considera că arhitectura bazată pe microservicii isi servește bine scopul. În continuare vom discuta efectiv despre motivele, pașii, beneficiile și costurile acestei schimbari de arhitectură. \cite{migratingToMicroservices}
   	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=.8]{deathstararhitecture}
-	\caption{Arhitectura Netflix - „Death Star”}  
+	\caption{Arhitectura Netflix - „Death Star”  \cite{harris1}}  
 	\label{deathStarArhitecture}
   	\end{figure}
 	\subsection{Motive}
@@ -209,7 +216,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=.5]{chaos}
-	\caption{Chaos Monkey}  
+	\caption{Chaos Monkey \cite{ruslan}}  
 	\label{chaosMonkey}
   	\end{figure}
 	\subsection{Avantaje și dezavantaje, costuri și sacrificii}
@@ -217,13 +224,13 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=.4]{tightCoupling}
-	\caption{Procesul de dezovoltare intr-o aplicație monolit}  
+	\caption{Procesul de dezovoltare intr-o aplicație monolit \cite{ruslan}}  
 	\label{tightCoupling}
   	\end{figure}
   	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=.4]{looseCoupling}
-	\caption{Procesul de dezovoltare intr-o aplicație bazată pe microservicii}  
+	\caption{Procesul de dezovoltare intr-o aplicație bazată pe microservicii \cite{ruslan}}  
 	\label{looseCoupling}
   	\end{figure}
   	\paragraph{}După cum se poate observa în prima figură (\ref{tightCoupling}), în prima parte trebuie ca toata aplicația să fie dezvoltată, apoi testată si apoi lansată. Iar în a doua figura (\ref{looseCoupling}), se poate observa ca echipele pot să lucreze fiecare în ritmul lor, nefiind nevoiți să depindă constant de restul. Microserviciile nefiind nevoite să fie lansate in execuție împreună.
@@ -237,11 +244,11 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
   	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=.7]{endtoend}
-	\caption{Ciclul de viață al unui microserviciu}  
+	\caption{Ciclul de viață al unui microserviciu \cite{ruslan}}  
 	\label{endtoend}
   	\end{figure}
   	\subsection{Descrierea tranziției catre microservicii}
-  	\paragraph{}Unul din cei mai importanți oameni care a ajutat la tranziția aplicație catre microservicii si mutarea acesteia in cloud, este specialistul în scalabilitate de la Netflix, Adrian Cockcroft. Dupa cum am amintit și mai sus, posibilitățile de scalare erau pe verticală si pe orizontală. Dupa cum Adrian Cockcroft a susținut in timpul unei conferințe, scalarea pe verticală ar fi însemnat în momentul acela, anul 2009, construirea unui nou centru de date (în engleză „data center”) cu un cost estimativ de aproximativ 100 de milioane de dolari. Iar pe aceași tema, a glumit, spunând ca banii respectivi ar fi mai bine folosiți daca Netflix ar cumpăra inca un sezon din „House Of Cards”(acesta fiind un serial TV). Soluția plauzibilă care a rămas, fiind scalarea pe orizontală.
+  	\paragraph{}Unul din cei mai importanți oameni care a ajutat la tranziția aplicație catre microservicii si mutarea acesteia in cloud, este specialistul în scalabilitate de la Netflix, Adrian Cockcroft. Dupa cum am amintit și mai sus, posibilitățile de scalare erau pe verticală si pe orizontală. Dupa cum Adrian Cockcroft a susținut in timpul unei conferințe, scalarea pe verticală ar fi însemnat în momentul acela, anul 2009, construirea unui nou centru de date (în engleză „data center”) cu un cost estimativ de aproximativ 100 de milioane de dolari. Iar pe aceași tema, a glumit, spunând ca banii respectivi ar fi mai bine folosiți daca Netflix ar cumpăra inca un sezon din „House Of Cards”(acesta fiind un serial TV). Soluția plauzibilă care a rămas, fiind scalarea pe orizontală. \cite{harris1}
   	\paragraph{}Primul pas fiind de test, s-a încercat mutarea unui serviciu in cloud, iar alegerea nu a fost intâmplătoare, a fost ales un serviciu care să nu fie in prima linie pentru utilizator, adică un serviciu care mai mult procesează cantităti mari de date in spate. Spre exemplu, algoritmul folosit pentru auto completarea câmpului de cautare. După ce acest pas a fost realizat cu succes, si serviciul era folosit de aplicația monolit, procesul a continuat.
   	\paragraph{}Un alt pas important a fost schimbarea bazei de date, de la baze de date relaționale Oracle, la baza de date NoSQL („Cassandra”). Acesta bază de date este folosită și acum pentru aplicația Netflix. Având în vedere ca este open source(în engleza „open sourse”), Netflix a dezvoltat un feature care ajuta la replicarea usoară a datelor.
   	\paragraph{}După ce întreaga tranziție a fost gata, dupa anul 2012, multe dintre soluțiile aplicate in timpul tranziției au fost publicate, sursele devenind surse deschise.
@@ -249,7 +256,7 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\begin{figure}[h]
   	\centering
   	\includegraphics[scale=1]{toCloud}
-	\caption{Migrarea catre cloud a aplicațiilor}  
+	\caption{Migrarea catre cloud a aplicațiilor \cite{harris1}}  
 	\label{toCloud}
   	\end{figure}
 \chapter{Aplicație Practica}
@@ -349,31 +356,61 @@ lect. dr. \textbf{Mircea Ioan Gabriel }
 	\label{utilizseq}
   	\end{figure}
   	\subsection{Generarea unui raport}
+  	\paragraph{}Pentru generarea unui raport se va efectua un apel din afara aplicației (din aplicația furnizorului), aceasta va fi recunoscută de platformă, identificând furnizorul de la care vine apelul, va genera un raport sub forma unui fisier excel, iar acesta va fi trimis ca raspuns. Pentru completarea cu succes al acestei operații se vor efectua urmatoarele evenimente:
+  	\begin{itemize}
+  	\item Furnizorul face un apel catre aplicație
+  	\item Aplicația selecteaza toate tranzacțiile între cele doua date selectate
+  	\item Aplicația generează un document excel
+  	\item Aplicația transmite un raspuns cu documentul atașat
+  	\end{itemize}
+  	\paragraph{}O secvență executată cu succes se consideră atunci când generarea raportului in excel este reușită. O diagramă de secvență pentru acest caz este prezentată în figura \ref{furnizorseq}. 
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.9]{furnizorseq}
+	\caption{Diagrama de secvență pentru generarea unui raport}  
+	\label{furnizorseq}
+  	\end{figure}
+  	\section{Specificații tehnice}
+  	\paragraph{}Tehnologiile folosite pentru dezvoltarea platformei sunt:
+  	\begin{itemize}
+  	\item ASP .NET Core 2.1
+  	\item MongoDB 4.0
+  	\item JQuery
+  	\end{itemize}
+	\paragraph{}Pentru implementare s-a folosit mediul de dezvoltare Microsoft Visual Studio 2019, iar pentru vizualuziarea bazei de date s-a folosit Robo 3T.   	
+	\paragraph{}Platforma are o singura poartă de intrare, aceasta fiind reprezentată de aplicația MVC, iar procesarea datelor sa face în microservicii, acestea fiind aplicații Web API care au acces la baze de MongoDB. Interfața grafică prezentată utilizatorilor este construită cu ajutorului Razor View-urilor (.cshtml). În aceste view-uri s-a html, css, javascript, JQuery și JQuety
+	\paragraph{}Pentru soluția prezentată a fost introdus si suport pentru Docker, deoarece lansarea microserviciilor in execuție este ușor de facut cu ajutorul containerelor. Dacă se doreste rularea aplicație in modul de dezvoltare, este nevoie de toate elementele de mai sus să fie instalate: Microsoft Visual Studio 2019, .NET Core SDK 2.1, MongoDb (trebuie rulată o instanță pe localhost pe portul de bază 27017) și Docker (nu este obligatoriu, doar dacă se doreste lansarea in execuție cu ajutorul lui).
   	\section{Analiza arhtecturii}
+  	\paragraph{}Pentru a putea analiza arhitectura aplicației si beneficiile pe care aceasta le aduce, vom reamintii că aplicația are la baza o arhitectura bazată pe microservicii și utilzează un șablon de proiectare numit „Gateway design pattern”. acest șablon sublinază ideea cum că accesul către microservicii trebuie să se facă printr-o singura poartă de acces pentru fiecare tip de aplicație (web, mobilă, etc.). În platforma construită, poarta de acces cât și aplicația web este reprezentată de aplicația MVC.
+  	\paragraph{}Așadar unul din marile avantaje pe care le aduce arhitectura bazată pe microservicii este faptul că unitățile logice sunt decuplate, acest lucru oferă posibilitatea de a cunoaste platforma bucata cu bucată. Din acest motiv un programtor nou va putea dezvolta o anumită parte din aplicație fara să cunoască în detaliu celelate componente.
+  	\paragraph{}Pentru a reprezenta un alt avantaj adus de arhitectura bazată pe microservicii, ne vom baza pe un exemplu. Putem presupune că pe viitor se doreste să se introduca un algoritm de inteligența artificială, în asa fel încât în momentul în care în momentul în care un utilizator nou va dori să se înregistreze, acesta doar va face o poză buletinului lui, iar datele personale se vor completa automat. În primul rând este bine de stiu ca platforma .NET este abia la început cu suportul pe care îl oferă in materie de inteligență artificială, așadar, partea de IA ar putea să fie făcută in python. Acest lucru este posibil doar datorită arhitecturii bazate pe microservicii, deoarece este foarte simplu de construit un microserviciu wrapper scris in C\# peste o aplicație python. Un astfel de algoritm ar avea nevoie de o putere de procesare mai mare, ceea ce poate fi oferită usor de scalarea unui singur microserviciu. De exemplu acest lucru nefiind capabil intr-o aplicație monolit. 
+  	\paragraph{}În figura \ref{compara} putem observa o analiză facută asupra soluției de catre Visual Studio. Cele mai relevante date care care sustin ideea folosirii unui arhitecturi bazate pe microservicii, sunt datele din coloana „Maintainability Index”. Acesta este calculat in funcție de complexitatea ciclomatică, volumul Halstead și numărul linilor de cod \cite{oman1992metrics}. Formula fiind prezentata in figura \ref{formula}. Având în vedere că numere din coloana „Maintainability Index”, au o valoare ridicată, inseamnă că aplicația poate fi ușor îmbunătățită fară costuri prea mari.
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.85]{comapara}
+	\caption{Analiza asupra codului, generată de Visual Studio 2019}  
+	\label{compara}
+  	\end{figure}
+  	\begin{figure}[h]
+  	\centering
+  	\includegraphics[scale=0.75]{formula}
+	\caption{Formula de calcul pentru „Maintainability Index”}  
+	\label{formula}
+  	\end{figure}
 \chapter{Concluzii}
-
-\bibliographystyle{apacite}
+\paragraph{}Având in vedere toate aspectele care s-au discutat in această lucrare putem afirma că o arhitectură bazată pe microservicii aduce următoarele avantaje:
+\begin{itemize}
+\item Costul scalabilității scade deaoarece puterea de procesare poate fi crescută doar pe microserviciile care au nevoie.
+\item Nu este nevoie ca un programator să cunoască toată aplicația in detaliu pentru a putea dezvolta o funcționalitate nouă.
+\item Productivitatea în cadrul echipei nu va fi afectată de dimensiunile aplicație.
+\item Aplicația nu este limitată la folosirea unui singur limbaj de programare.
+\item Aplicația va avea un stil aranjat, cu domenii bine definite, acest lucru ducând la un cod lizibil și de calitate.
+\item Aplicația poate fi găzduită in cloud.
+\end{itemize}
+\paragraph{}Toate aceste avantaje se aplică asupra aplicațiilor care au la bază o aplicație pe microservicii. Deși o astfel de arhitectură aduce atât de multe avantaje, există câteva tipuri de aplicații in care aceasta arhitectură nu ar fi una ideeală, spre exemplu aplicații care primesc un flux de date constant.
+\paragraph{}Ca o concluzie personale, consider că arhitectura bazată pe microservicii este un stil arhitectural care ar trebui luat în calcul mereu pentru dezovoltarea unei noi aplicații. Nu este o arhitectură la fel de simplistă ca o arhitectură de tip monolit, dar avantajele pe care le poate oferii pot face o diferență enormă, acest fapt fiind exemplificat și in studiul de caz. În același timp, această arhitectură favorizează o calitate ridicată a codului, care, din punctul meu de vedere, este unul din cele mai importante lucruri. Așadar, arhitectura bazată pe microservicii are multe avantaje dar și cateva dezavantaje, dar în momentul de fața, aceasta arhitecută este o solutie fiabilă pentru multe aplicații și mereu ar trebui luată in calcul. 
+\bibliographystyle{plainurl}
 \bibliography{referinte}
-
-\begin{flushleft}
-\textbf{Cockcroft, Adrian. 2015. \texttt{Talking microservices with the man who made Netflix’s cloud famous. [interviu cu] Derrick Harris. 2015.}}
-\end{flushleft}
-
-\begin{flushleft}
-\textbf{
-Cockroft, Adrian. 2014. \texttt{Migrating to Microservices by Adrian Cockroft. YouTube. [Interactiv] 2014. https://www.youtube.com/watch?v=1wiMLkXz26M.}}
-\end{flushleft}
-
-\begin{flushleft}
-\textbf{
-Erl, Thomas. 2009. \texttt{SOA Design Patterns. Crawfordville Indiana : Prentice Hall, 2009.}}
-\end{flushleft}
-
-\begin{flushleft}
-\textbf{
-Fowler, Martin. 2014. \texttt{Microservices, 2014,. MartinFowler.com. [Interactiv] 2014. https://martinfowler.com/articles/microservices.html.}}
-\end{flushleft}
-
 
 
 \end{document}

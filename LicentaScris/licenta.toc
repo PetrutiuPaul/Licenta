@@ -1,132 +1,151 @@
 \babel@toc {romanian}{}
-\contentsline {chapter}{\numberline {1}Introducere}{4}% 
-\contentsline {chapter}{\numberline {2}Concepte de baz\IeC {\u a}}{5}% 
-\contentsline {section}{\numberline {2.1}Arhitectura unei aplica\IeC {\textcommabelow t}ii soft}{5}% 
-\contentsline {paragraph}{}{5}% 
-\contentsline {paragraph}{}{5}% 
-\contentsline {paragraph}{}{5}% 
-\contentsline {section}{\numberline {2.2}\IeC {\textcommabelow S}abloane de proiectare}{5}% 
-\contentsline {paragraph}{}{5}% 
-\contentsline {paragraph}{}{5}% 
-\contentsline {paragraph}{}{6}% 
-\contentsline {section}{\numberline {2.3}Serviciu Software}{6}% 
-\contentsline {paragraph}{}{6}% 
-\contentsline {paragraph}{}{6}% 
-\contentsline {paragraph}{}{6}% 
-\contentsline {chapter}{\numberline {3}Aplica\IeC {\textcommabelow t}ii Monolit}{7}% 
-\contentsline {section}{\numberline {3.1}Ce este o aplica\IeC {\textcommabelow t}ie monolit?}{7}% 
-\contentsline {paragraph}{}{7}% 
-\contentsline {paragraph}{}{7}% 
-\contentsline {paragraph}{}{7}% 
-\contentsline {section}{\numberline {3.2}Avantaje \IeC {\textcommabelow s}i dezavantaje}{7}% 
-\contentsline {paragraph}{}{7}% 
-\contentsline {paragraph}{}{8}% 
-\contentsline {paragraph}{}{8}% 
-\contentsline {chapter}{\numberline {4}Arhitectura bazat\IeC {\u a} pe servicii}{9}% 
-\contentsline {section}{\numberline {4.1}Fundamentele arhitecturii bazate pe servicii}{9}% 
-\contentsline {paragraph}{}{9}% 
-\contentsline {paragraph}{}{9}% 
-\contentsline {paragraph}{}{9}% 
-\contentsline {paragraph}{}{9}% 
-\contentsline {paragraph}{}{9}% 
-\contentsline {paragraph}{}{10}% 
-\contentsline {section}{\numberline {4.2}Principiile arhitecturii bazate pe servicii}{10}% 
-\contentsline {subsection}{\numberline {4.2.1}Autonomia}{10}% 
-\contentsline {paragraph}{}{10}% 
-\contentsline {paragraph}{}{10}% 
-\contentsline {paragraph}{}{10}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {subsection}{\numberline {4.2.2}Cuplajul slab}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {subsection}{\numberline {4.2.3}Abstractizarea}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {paragraph}{}{11}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {subsection}{\numberline {4.2.4}Contractul Formal}{12}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {chapter}{\numberline {5}Arhitectura bazat\IeC {\u a} pe microservicii}{13}% 
-\contentsline {section}{\numberline {5.1}Ce sunt microserviciile}{13}% 
-\contentsline {paragraph}{}{13}% 
-\contentsline {paragraph}{}{13}% 
-\contentsline {paragraph}{}{13}% 
-\contentsline {section}{\numberline {5.2}Comunicarea \IeC {\^\i }ntre microservicii}{14}% 
-\contentsline {subsection}{\numberline {5.2.1}Diferite tipuri de comunicare}{14}% 
-\contentsline {paragraph}{}{14}% 
-\contentsline {paragraph}{}{14}% 
-\contentsline {subsection}{\numberline {5.2.2}Utilizarea unui broker de mesaje}{14}% 
-\contentsline {paragraph}{}{14}% 
-\contentsline {paragraph}{}{14}% 
-\contentsline {section}{\numberline {5.3}Avantaje \IeC {\textcommabelow s}i dezavantaje ale microserviciilor}{15}% 
-\contentsline {paragraph}{}{15}% 
-\contentsline {subsection}{\numberline {5.3.1}Avantaje}{15}% 
-\contentsline {paragraph}{}{15}% 
-\contentsline {paragraph}{}{15}% 
-\contentsline {subsection}{\numberline {5.3.2}Dezavantaje}{16}% 
-\contentsline {paragraph}{}{16}% 
-\contentsline {paragraph}{}{16}% 
-\contentsline {subsection}{\numberline {5.3.3}Cand putem sa utiliz\IeC {\u a}m microserviciile?}{16}% 
-\contentsline {paragraph}{}{16}% 
-\contentsline {paragraph}{}{16}% 
-\contentsline {paragraph}{}{16}% 
-\contentsline {chapter}{\numberline {6}Studiu de Caz}{18}% 
-\contentsline {section}{\numberline {6.1}Introducere}{18}% 
-\contentsline {paragraph}{}{18}% 
-\contentsline {paragraph}{}{18}% 
-\contentsline {paragraph}{}{18}% 
-\contentsline {section}{\numberline {6.2}Tranzi\IeC {\textcommabelow t}ia c\IeC {\u a}tre microservicii \IeC {\^\i }n compania Netflix}{18}% 
-\contentsline {paragraph}{}{18}% 
-\contentsline {subsection}{\numberline {6.2.1}Arhitectura aplica\IeC {\textcommabelow t}iei de azi}{19}% 
-\contentsline {paragraph}{}{19}% 
-\contentsline {paragraph}{}{19}% 
-\contentsline {paragraph}{}{20}% 
-\contentsline {paragraph}{}{20}% 
-\contentsline {subsection}{\numberline {6.2.2}Motive}{20}% 
-\contentsline {paragraph}{}{20}% 
-\contentsline {paragraph}{}{20}% 
-\contentsline {paragraph}{}{20}% 
-\contentsline {paragraph}{}{21}% 
-\contentsline {paragraph}{}{21}% 
-\contentsline {subsection}{\numberline {6.2.3}Avantaje \IeC {\textcommabelow s}i dezavantaje, costuri \IeC {\textcommabelow s}i sacrificii}{21}% 
-\contentsline {paragraph}{}{21}% 
-\contentsline {paragraph}{}{22}% 
-\contentsline {paragraph}{}{23}% 
-\contentsline {subsection}{\numberline {6.2.4}Descrierea tranzi\IeC {\textcommabelow t}iei catre microservicii}{23}% 
-\contentsline {paragraph}{}{23}% 
-\contentsline {paragraph}{}{24}% 
-\contentsline {paragraph}{}{24}% 
-\contentsline {paragraph}{}{24}% 
-\contentsline {paragraph}{}{25}% 
-\contentsline {chapter}{\numberline {7}Aplica\IeC {\textcommabelow t}ie Practica}{26}% 
-\contentsline {section}{\numberline {7.1}Idee}{26}% 
-\contentsline {paragraph}{}{26}% 
-\contentsline {paragraph}{}{26}% 
-\contentsline {paragraph}{}{27}% 
-\contentsline {paragraph}{}{27}% 
-\contentsline {paragraph}{}{27}% 
-\contentsline {section}{\numberline {7.2}Arhitectura aplicatiei}{27}% 
-\contentsline {paragraph}{}{27}% 
-\contentsline {paragraph}{}{27}% 
-\contentsline {paragraph}{}{28}% 
-\contentsline {paragraph}{}{28}% 
-\contentsline {paragraph}{}{28}% 
-\contentsline {paragraph}{}{29}% 
-\contentsline {paragraph}{}{29}% 
-\contentsline {section}{\numberline {7.3}Persistenta datelor}{30}% 
-\contentsline {paragraph}{}{30}% 
-\contentsline {paragraph}{}{30}% 
-\contentsline {paragraph}{}{31}% 
-\contentsline {paragraph}{}{31}% 
-\contentsline {section}{\numberline {7.4}Interac\IeC {\textcommabelow t}iunea cu utilizatorul}{31}% 
-\contentsline {paragraph}{}{31}% 
-\contentsline {paragraph}{}{32}% 
-\contentsline {subsection}{\numberline {7.4.1}Plata unei facturi}{33}% 
-\contentsline {paragraph}{}{33}% 
-\contentsline {paragraph}{}{33}% 
-\contentsline {paragraph}{}{33}% 
-\contentsline {paragraph}{}{33}% 
-\contentsline {subsection}{\numberline {7.4.2}Generarea unui raport}{34}% 
-\contentsline {section}{\numberline {7.5}Analiza arhtecturii}{34}% 
-\contentsline {chapter}{\numberline {8}Concluzii}{35}% 
-\contentsline {chapter}{Bibliografie}{36}% 
+\contentsline {chapter}{\numberline {1}Introducere}{4}{chapter.1}% 
+\contentsline {paragraph}{}{4}{chapter.1}% 
+\contentsline {paragraph}{}{4}{chapter.1}% 
+\contentsline {paragraph}{}{4}{chapter.1}% 
+\contentsline {paragraph}{}{4}{chapter.1}% 
+\contentsline {paragraph}{}{5}{chapter.1}% 
+\contentsline {paragraph}{}{5}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Concepte de baz\IeC {\u a}}{6}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Arhitectura unei aplica\IeC {\textcommabelow t}ii soft}{6}{section.2.1}% 
+\contentsline {paragraph}{}{6}{section.2.1}% 
+\contentsline {paragraph}{}{6}{section.2.1}% 
+\contentsline {paragraph}{}{6}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}\IeC {\textcommabelow S}abloane de proiectare}{6}{section.2.2}% 
+\contentsline {paragraph}{}{6}{section.2.2}% 
+\contentsline {paragraph}{}{6}{section.2.2}% 
+\contentsline {paragraph}{}{7}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Serviciu Software}{7}{section.2.3}% 
+\contentsline {paragraph}{}{7}{section.2.3}% 
+\contentsline {paragraph}{}{7}{section.2.3}% 
+\contentsline {paragraph}{}{7}{section.2.3}% 
+\contentsline {chapter}{\numberline {3}Aplica\IeC {\textcommabelow t}ii Monolit}{8}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Ce este o aplica\IeC {\textcommabelow t}ie monolit?}{8}{section.3.1}% 
+\contentsline {paragraph}{}{8}{section.3.1}% 
+\contentsline {paragraph}{}{8}{section.3.1}% 
+\contentsline {paragraph}{}{8}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Avantaje \IeC {\textcommabelow s}i dezavantaje}{8}{section.3.2}% 
+\contentsline {paragraph}{}{8}{section.3.2}% 
+\contentsline {paragraph}{}{9}{section.3.2}% 
+\contentsline {paragraph}{}{9}{section.3.2}% 
+\contentsline {chapter}{\numberline {4}Arhitectura bazat\IeC {\u a} pe servicii}{10}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Fundamentele arhitecturii bazate pe servicii}{10}{section.4.1}% 
+\contentsline {paragraph}{}{10}{section.4.1}% 
+\contentsline {paragraph}{}{10}{section.4.1}% 
+\contentsline {paragraph}{}{10}{section.4.1}% 
+\contentsline {paragraph}{}{10}{section.4.1}% 
+\contentsline {paragraph}{}{10}{section.4.1}% 
+\contentsline {paragraph}{}{11}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Principiile arhitecturii bazate pe servicii}{11}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Autonomia}{11}{subsection.4.2.1}% 
+\contentsline {paragraph}{}{11}{subsection.4.2.1}% 
+\contentsline {paragraph}{}{11}{subsection.4.2.1}% 
+\contentsline {paragraph}{}{11}{subsection.4.2.1}% 
+\contentsline {paragraph}{}{12}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Cuplajul slab}{12}{subsection.4.2.2}% 
+\contentsline {paragraph}{}{12}{subsection.4.2.2}% 
+\contentsline {paragraph}{}{12}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}Abstractizarea}{12}{subsection.4.2.3}% 
+\contentsline {paragraph}{}{12}{subsection.4.2.3}% 
+\contentsline {paragraph}{}{12}{subsection.4.2.3}% 
+\contentsline {paragraph}{}{13}{subsection.4.2.3}% 
+\contentsline {subsection}{\numberline {4.2.4}Contractul Formal}{13}{subsection.4.2.4}% 
+\contentsline {paragraph}{}{13}{subsection.4.2.4}% 
+\contentsline {paragraph}{}{13}{subsection.4.2.4}% 
+\contentsline {chapter}{\numberline {5}Arhitectura bazat\IeC {\u a} pe microservicii}{14}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Ce sunt microserviciile}{14}{section.5.1}% 
+\contentsline {paragraph}{}{14}{section.5.1}% 
+\contentsline {paragraph}{}{14}{section.5.1}% 
+\contentsline {paragraph}{}{14}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Comunicarea \IeC {\^\i }ntre microservicii}{15}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Diferite tipuri de comunicare}{15}{subsection.5.2.1}% 
+\contentsline {paragraph}{}{15}{subsection.5.2.1}% 
+\contentsline {paragraph}{}{15}{subsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.2.2}Utilizarea unui broker de mesaje}{15}{subsection.5.2.2}% 
+\contentsline {paragraph}{}{15}{subsection.5.2.2}% 
+\contentsline {paragraph}{}{15}{subsection.5.2.2}% 
+\contentsline {section}{\numberline {5.3}Avantaje \IeC {\textcommabelow s}i dezavantaje ale microserviciilor}{16}{section.5.3}% 
+\contentsline {paragraph}{}{16}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Avantaje}{16}{subsection.5.3.1}% 
+\contentsline {paragraph}{}{16}{subsection.5.3.1}% 
+\contentsline {paragraph}{}{16}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Dezavantaje}{17}{subsection.5.3.2}% 
+\contentsline {paragraph}{}{17}{subsection.5.3.2}% 
+\contentsline {paragraph}{}{17}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}Cand putem sa utiliz\IeC {\u a}m microserviciile?}{17}{subsection.5.3.3}% 
+\contentsline {paragraph}{}{17}{subsection.5.3.3}% 
+\contentsline {paragraph}{}{17}{figure.5.2}% 
+\contentsline {paragraph}{}{17}{figure.5.2}% 
+\contentsline {chapter}{\numberline {6}Studiu de Caz}{19}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Introducere}{19}{section.6.1}% 
+\contentsline {paragraph}{}{19}{section.6.1}% 
+\contentsline {paragraph}{}{19}{section.6.1}% 
+\contentsline {paragraph}{}{19}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Tranzi\IeC {\textcommabelow t}ia c\IeC {\u a}tre microservicii \IeC {\^\i }n compania Netflix}{19}{section.6.2}% 
+\contentsline {paragraph}{}{19}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}Arhitectura aplica\IeC {\textcommabelow t}iei de azi}{20}{subsection.6.2.1}% 
+\contentsline {paragraph}{}{20}{subsection.6.2.1}% 
+\contentsline {paragraph}{}{20}{figure.6.1}% 
+\contentsline {paragraph}{}{21}{figure.6.1}% 
+\contentsline {paragraph}{}{21}{figure.6.1}% 
+\contentsline {subsection}{\numberline {6.2.2}Motive}{21}{subsection.6.2.2}% 
+\contentsline {paragraph}{}{21}{subsection.6.2.2}% 
+\contentsline {paragraph}{}{21}{subsection.6.2.2}% 
+\contentsline {paragraph}{}{21}{subsection.6.2.2}% 
+\contentsline {paragraph}{}{22}{subsection.6.2.2}% 
+\contentsline {paragraph}{}{22}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.3}Avantaje \IeC {\textcommabelow s}i dezavantaje, costuri \IeC {\textcommabelow s}i sacrificii}{22}{subsection.6.2.3}% 
+\contentsline {paragraph}{}{22}{subsection.6.2.3}% 
+\contentsline {paragraph}{}{23}{figure.6.5}% 
+\contentsline {paragraph}{}{24}{figure.6.5}% 
+\contentsline {subsection}{\numberline {6.2.4}Descrierea tranzi\IeC {\textcommabelow t}iei catre microservicii}{24}{subsection.6.2.4}% 
+\contentsline {paragraph}{}{24}{subsection.6.2.4}% 
+\contentsline {paragraph}{}{25}{subsection.6.2.4}% 
+\contentsline {paragraph}{}{25}{subsection.6.2.4}% 
+\contentsline {paragraph}{}{25}{subsection.6.2.4}% 
+\contentsline {paragraph}{}{26}{subsection.6.2.4}% 
+\contentsline {chapter}{\numberline {7}Aplica\IeC {\textcommabelow t}ie Practica}{27}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Idee}{27}{section.7.1}% 
+\contentsline {paragraph}{}{27}{section.7.1}% 
+\contentsline {paragraph}{}{27}{section.7.1}% 
+\contentsline {paragraph}{}{28}{section.7.1}% 
+\contentsline {paragraph}{}{28}{section.7.1}% 
+\contentsline {paragraph}{}{28}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Arhitectura aplicatiei}{28}{section.7.2}% 
+\contentsline {paragraph}{}{28}{section.7.2}% 
+\contentsline {paragraph}{}{28}{figure.7.1}% 
+\contentsline {paragraph}{}{29}{figure.7.1}% 
+\contentsline {paragraph}{}{29}{figure.7.1}% 
+\contentsline {paragraph}{}{29}{figure.7.1}% 
+\contentsline {paragraph}{}{30}{figure.7.2}% 
+\contentsline {paragraph}{}{30}{figure.7.2}% 
+\contentsline {section}{\numberline {7.3}Persistenta datelor}{31}{section.7.3}% 
+\contentsline {paragraph}{}{31}{section.7.3}% 
+\contentsline {paragraph}{}{31}{figure.7.3}% 
+\contentsline {paragraph}{}{32}{figure.7.4}% 
+\contentsline {paragraph}{}{32}{figure.7.5}% 
+\contentsline {section}{\numberline {7.4}Interac\IeC {\textcommabelow t}iunea cu utilizatorul}{32}{section.7.4}% 
+\contentsline {paragraph}{}{32}{section.7.4}% 
+\contentsline {paragraph}{}{33}{figure.7.6}% 
+\contentsline {subsection}{\numberline {7.4.1}Plata unei facturi}{34}{subsection.7.4.1}% 
+\contentsline {paragraph}{}{34}{subsection.7.4.1}% 
+\contentsline {paragraph}{}{34}{subsection.7.4.1}% 
+\contentsline {paragraph}{}{34}{subsection.7.4.1}% 
+\contentsline {paragraph}{}{34}{subsection.7.4.1}% 
+\contentsline {subsection}{\numberline {7.4.2}Generarea unui raport}{35}{subsection.7.4.2}% 
+\contentsline {paragraph}{}{35}{subsection.7.4.2}% 
+\contentsline {paragraph}{}{36}{subsection.7.4.2}% 
+\contentsline {section}{\numberline {7.5}Specifica\IeC {\textcommabelow t}ii tehnice}{36}{section.7.5}% 
+\contentsline {paragraph}{}{36}{section.7.5}% 
+\contentsline {paragraph}{}{36}{section.7.5}% 
+\contentsline {paragraph}{}{36}{section.7.5}% 
+\contentsline {paragraph}{}{36}{section.7.5}% 
+\contentsline {section}{\numberline {7.6}Analiza arhtecturii}{37}{section.7.6}% 
+\contentsline {paragraph}{}{37}{section.7.6}% 
+\contentsline {paragraph}{}{37}{section.7.6}% 
+\contentsline {paragraph}{}{37}{section.7.6}% 
+\contentsline {paragraph}{}{37}{section.7.6}% 
+\contentsline {chapter}{\numberline {8}Concluzii}{39}{chapter.8}% 
+\contentsline {paragraph}{}{39}{chapter.8}% 
+\contentsline {paragraph}{}{39}{chapter.8}% 
+\contentsline {paragraph}{}{39}{chapter.8}% 
