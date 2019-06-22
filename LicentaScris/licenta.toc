@@ -1,4 +1,5 @@
 \babel@toc {romanian}{}
+\contentsline {chapter}{List\u {a} de figuri}{3}{chapter*.2}% 
 \contentsline {chapter}{\numberline {1}Introducere}{4}{chapter.1}% 
 \contentsline {paragraph}{}{4}{chapter.1}% 
 \contentsline {paragraph}{}{4}{chapter.1}% 
@@ -72,7 +73,7 @@
 \contentsline {subsection}{\numberline {5.3.2}Dezavantaje}{17}{subsection.5.3.2}% 
 \contentsline {paragraph}{}{17}{subsection.5.3.2}% 
 \contentsline {paragraph}{}{17}{subsection.5.3.2}% 
-\contentsline {subsection}{\numberline {5.3.3}Cand putem sa utiliz\IeC {\u a}m microserviciile?}{17}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.3}Cand putem s\IeC {\u a} utiliz\IeC {\u a}m microserviciile?}{17}{subsection.5.3.3}% 
 \contentsline {paragraph}{}{17}{subsection.5.3.3}% 
 \contentsline {paragraph}{}{17}{figure.5.2}% 
 \contentsline {paragraph}{}{17}{figure.5.2}% 
@@ -140,7 +141,7 @@
 \contentsline {paragraph}{}{36}{section.7.5}% 
 \contentsline {paragraph}{}{36}{section.7.5}% 
 \contentsline {paragraph}{}{36}{section.7.5}% 
-\contentsline {section}{\numberline {7.6}Analiza arhtecturii}{37}{section.7.6}% 
+\contentsline {section}{\numberline {7.6}Analiza arhitecturii}{37}{section.7.6}% 
 \contentsline {paragraph}{}{37}{section.7.6}% 
 \contentsline {paragraph}{}{37}{section.7.6}% 
 \contentsline {paragraph}{}{37}{section.7.6}% 
@@ -149,3 +150,4 @@
 \contentsline {paragraph}{}{39}{chapter.8}% 
 \contentsline {paragraph}{}{39}{chapter.8}% 
 \contentsline {paragraph}{}{39}{chapter.8}% 
+\contentsline {chapter}{\numberline {9}Bibliografie}{41}{chapter.9}% 

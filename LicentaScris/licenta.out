@@ -1,41 +1,43 @@
-\BOOKMARK [0][-]{chapter.1}{Introducere}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Concepte de baza}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Arhitectura unei aplicatii soft}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{Sabloane de proiectare}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.3}{Serviciu Software}{chapter.2}% 5
-\BOOKMARK [0][-]{chapter.3}{Aplicatii Monolit}{}% 6
-\BOOKMARK [1][-]{section.3.1}{Ce este o aplicatie monolit?}{chapter.3}% 7
-\BOOKMARK [1][-]{section.3.2}{Avantaje si dezavantaje}{chapter.3}% 8
-\BOOKMARK [0][-]{chapter.4}{Arhitectura bazata pe servicii}{}% 9
-\BOOKMARK [1][-]{section.4.1}{Fundamentele arhitecturii bazate pe servicii}{chapter.4}% 10
-\BOOKMARK [1][-]{section.4.2}{Principiile arhitecturii bazate pe servicii}{chapter.4}% 11
-\BOOKMARK [2][-]{subsection.4.2.1}{Autonomia}{section.4.2}% 12
-\BOOKMARK [2][-]{subsection.4.2.2}{Cuplajul slab}{section.4.2}% 13
-\BOOKMARK [2][-]{subsection.4.2.3}{Abstractizarea}{section.4.2}% 14
-\BOOKMARK [2][-]{subsection.4.2.4}{Contractul Formal}{section.4.2}% 15
-\BOOKMARK [0][-]{chapter.5}{Arhitectura bazata pe microservicii}{}% 16
-\BOOKMARK [1][-]{section.5.1}{Ce sunt microserviciile}{chapter.5}% 17
-\BOOKMARK [1][-]{section.5.2}{Comunicarea \356ntre microservicii}{chapter.5}% 18
-\BOOKMARK [2][-]{subsection.5.2.1}{Diferite tipuri de comunicare}{section.5.2}% 19
-\BOOKMARK [2][-]{subsection.5.2.2}{Utilizarea unui broker de mesaje}{section.5.2}% 20
-\BOOKMARK [1][-]{section.5.3}{Avantaje si dezavantaje ale microserviciilor}{chapter.5}% 21
-\BOOKMARK [2][-]{subsection.5.3.1}{Avantaje}{section.5.3}% 22
-\BOOKMARK [2][-]{subsection.5.3.2}{Dezavantaje}{section.5.3}% 23
-\BOOKMARK [2][-]{subsection.5.3.3}{Cand putem sa utilizam microserviciile?}{section.5.3}% 24
-\BOOKMARK [0][-]{chapter.6}{Studiu de Caz}{}% 25
-\BOOKMARK [1][-]{section.6.1}{Introducere}{chapter.6}% 26
-\BOOKMARK [1][-]{section.6.2}{Tranzitia catre microservicii \356n compania Netflix}{chapter.6}% 27
-\BOOKMARK [2][-]{subsection.6.2.1}{Arhitectura aplicatiei de azi}{section.6.2}% 28
-\BOOKMARK [2][-]{subsection.6.2.2}{Motive}{section.6.2}% 29
-\BOOKMARK [2][-]{subsection.6.2.3}{Avantaje si dezavantaje, costuri si sacrificii}{section.6.2}% 30
-\BOOKMARK [2][-]{subsection.6.2.4}{Descrierea tranzitiei catre microservicii}{section.6.2}% 31
-\BOOKMARK [0][-]{chapter.7}{Aplicatie Practica}{}% 32
-\BOOKMARK [1][-]{section.7.1}{Idee}{chapter.7}% 33
-\BOOKMARK [1][-]{section.7.2}{Arhitectura aplicatiei}{chapter.7}% 34
-\BOOKMARK [1][-]{section.7.3}{Persistenta datelor}{chapter.7}% 35
-\BOOKMARK [1][-]{section.7.4}{Interactiunea cu utilizatorul}{chapter.7}% 36
-\BOOKMARK [2][-]{subsection.7.4.1}{Plata unei facturi}{section.7.4}% 37
-\BOOKMARK [2][-]{subsection.7.4.2}{Generarea unui raport}{section.7.4}% 38
-\BOOKMARK [1][-]{section.7.5}{Specificatii tehnice}{chapter.7}% 39
-\BOOKMARK [1][-]{section.7.6}{Analiza arhtecturii}{chapter.7}% 40
-\BOOKMARK [0][-]{chapter.8}{Concluzii}{}% 41
+\BOOKMARK [0][-]{chapter*.2}{Lista de figuri}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introducere}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Concepte de baza}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Arhitectura unei aplicatii soft}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{Sabloane de proiectare}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.3}{Serviciu Software}{chapter.2}% 6
+\BOOKMARK [0][-]{chapter.3}{Aplicatii Monolit}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Ce este o aplicatie monolit?}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.2}{Avantaje si dezavantaje}{chapter.3}% 9
+\BOOKMARK [0][-]{chapter.4}{Arhitectura bazata pe servicii}{}% 10
+\BOOKMARK [1][-]{section.4.1}{Fundamentele arhitecturii bazate pe servicii}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.2}{Principiile arhitecturii bazate pe servicii}{chapter.4}% 12
+\BOOKMARK [2][-]{subsection.4.2.1}{Autonomia}{section.4.2}% 13
+\BOOKMARK [2][-]{subsection.4.2.2}{Cuplajul slab}{section.4.2}% 14
+\BOOKMARK [2][-]{subsection.4.2.3}{Abstractizarea}{section.4.2}% 15
+\BOOKMARK [2][-]{subsection.4.2.4}{Contractul Formal}{section.4.2}% 16
+\BOOKMARK [0][-]{chapter.5}{Arhitectura bazata pe microservicii}{}% 17
+\BOOKMARK [1][-]{section.5.1}{Ce sunt microserviciile}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.2}{Comunicarea \356ntre microservicii}{chapter.5}% 19
+\BOOKMARK [2][-]{subsection.5.2.1}{Diferite tipuri de comunicare}{section.5.2}% 20
+\BOOKMARK [2][-]{subsection.5.2.2}{Utilizarea unui broker de mesaje}{section.5.2}% 21
+\BOOKMARK [1][-]{section.5.3}{Avantaje si dezavantaje ale microserviciilor}{chapter.5}% 22
+\BOOKMARK [2][-]{subsection.5.3.1}{Avantaje}{section.5.3}% 23
+\BOOKMARK [2][-]{subsection.5.3.2}{Dezavantaje}{section.5.3}% 24
+\BOOKMARK [2][-]{subsection.5.3.3}{Cand putem sa utilizam microserviciile?}{section.5.3}% 25
+\BOOKMARK [0][-]{chapter.6}{Studiu de Caz}{}% 26
+\BOOKMARK [1][-]{section.6.1}{Introducere}{chapter.6}% 27
+\BOOKMARK [1][-]{section.6.2}{Tranzitia catre microservicii \356n compania Netflix}{chapter.6}% 28
+\BOOKMARK [2][-]{subsection.6.2.1}{Arhitectura aplicatiei de azi}{section.6.2}% 29
+\BOOKMARK [2][-]{subsection.6.2.2}{Motive}{section.6.2}% 30
+\BOOKMARK [2][-]{subsection.6.2.3}{Avantaje si dezavantaje, costuri si sacrificii}{section.6.2}% 31
+\BOOKMARK [2][-]{subsection.6.2.4}{Descrierea tranzitiei catre microservicii}{section.6.2}% 32
+\BOOKMARK [0][-]{chapter.7}{Aplicatie Practica}{}% 33
+\BOOKMARK [1][-]{section.7.1}{Idee}{chapter.7}% 34
+\BOOKMARK [1][-]{section.7.2}{Arhitectura aplicatiei}{chapter.7}% 35
+\BOOKMARK [1][-]{section.7.3}{Persistenta datelor}{chapter.7}% 36
+\BOOKMARK [1][-]{section.7.4}{Interactiunea cu utilizatorul}{chapter.7}% 37
+\BOOKMARK [2][-]{subsection.7.4.1}{Plata unei facturi}{section.7.4}% 38
+\BOOKMARK [2][-]{subsection.7.4.2}{Generarea unui raport}{section.7.4}% 39
+\BOOKMARK [1][-]{section.7.5}{Specificatii tehnice}{chapter.7}% 40
+\BOOKMARK [1][-]{section.7.6}{Analiza arhitecturii}{chapter.7}% 41
+\BOOKMARK [0][-]{chapter.8}{Concluzii}{}% 42
+\BOOKMARK [0][-]{chapter.9}{Bibliografie}{}% 43
