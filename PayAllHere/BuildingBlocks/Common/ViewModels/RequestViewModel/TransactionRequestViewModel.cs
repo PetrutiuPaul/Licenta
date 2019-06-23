@@ -19,5 +19,7 @@ namespace Common.ViewModels.RequestViewModel
         public string UserId { get; set; }
 
         public bool Validated { get; set; }
+
+        public string InvoiceId { get; set; }
     }
 }

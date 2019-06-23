@@ -77,6 +77,11 @@ namespace PayAllHere.Controllers
         {
 
             var userId = User.Claims.Where(x => x.Type.Contains("primarysid")).Select(x => x).First().Value;
+            await _userService.ModifyBalance(new UpdateBalanceRequestViewModel()
+            {
+                Id = userId,
+                Value = -payInvoiceRequestViewModel.Value
+            });
             switch (payInvoiceRequestViewModel.Provider)
             {
                 case PaymentUserType.InternEON:
@@ -89,14 +94,14 @@ namespace PayAllHere.Controllers
                     throw new ArgumentOutOfRangeException();
             }
 
-
             var transaction = new TransactionRequestViewModel()
             {
                 From = PaymentUserType.Me.ToString(),
                 To = payInvoiceRequestViewModel.Provider.ToString(),
                 UserId = userId,
                 Validated = false,
-                Value = payInvoiceRequestViewModel.Value
+                Value = payInvoiceRequestViewModel.Value,
+                InvoiceId = payInvoiceRequestViewModel.InvoiceId
             };
 
             var ok = await _transactionService.AddTransaction(transaction);

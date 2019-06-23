@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using System;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Transaction.API.Models
 {
@@ -15,7 +16,10 @@ namespace Transaction.API.Models
 
         public string UserId { get; set; }
 
-        public string TransactionId { get; set; }
+        public string InvoiceId { get; set; }
+
+        [BsonDateTimeOptions]
+        public DateTime AddedAt { get; set; }
 
         public bool Validated { get; set; }
     }

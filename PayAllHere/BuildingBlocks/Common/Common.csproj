@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestHelper\HTTPRequestSender.cs" />
     <Compile Include="ViewModels\ErrorResponseViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewModel\InvoiceAuthRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\InvoiceRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\PayInvoiceRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel\PaymentRequestViewModel.cs" />

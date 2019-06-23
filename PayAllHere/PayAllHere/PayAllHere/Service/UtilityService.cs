@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using Common.Enums;
 using Common.Exception;
@@ -16,10 +17,12 @@ namespace PayAllHere.Service
     public class UtilityService : IUtilityService
     {
         private readonly IConfiguration _configuration;
+        private readonly IRouterService _routerService;
 
-        public UtilityService(IConfiguration configuration)
+        public UtilityService(IConfiguration configuration, IRouterService routerService)
         {
             _configuration = configuration;
+            _routerService = routerService;
         }
 
         public async Task<List<InvoiceResponseViewModel>> GetAllElectricaInvoice(string CNP)
@@ -110,6 +113,35 @@ namespace PayAllHere.Service
                 if (errorResponse.Id == (int)ErrorResponseIds.UserInvalid)
                 {
                     throw new UserNotFoundException();
+                }
+
+                throw;
+            }
+        }
+
+        public async Task<bool> AddInvoice(InvoiceAuthRequestViewModel invoice)
+        {
+            try
+            {
+                var url = _routerService.GetRedirectUrl(invoice.Username, invoice.Password);
+
+                if(string.IsNullOrEmpty(url))
+                    throw new InvalidCredentialException();
+
+                url += "/api/invoice";
+
+                var responseString = await HTTPRequestSender.PostAsync(url, invoice);
+                var responseUser = JsonConvert.DeserializeObject<bool>(responseString);
+
+                return responseUser;
+            }
+            catch (Exception e)
+            {
+                var errorResponse = JsonConvert.DeserializeObject<ErrorResponseViewModel>(e.Message);
+
+                if (errorResponse.Id == (int)ErrorResponseIds.InvoiceAlreadyExist)
+                {
+                    throw new InvoiceAlreadyExistException();
                 }
 
                 throw;

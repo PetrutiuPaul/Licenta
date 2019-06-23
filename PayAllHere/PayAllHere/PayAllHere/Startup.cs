@@ -36,6 +36,7 @@ namespace PayAllHere
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ITransactionService, TransactionService>();
             services.AddTransient<IUtilityService, UtilityService>();
+            services.AddTransient<IRouterService, RouterService>();
 
 
         }

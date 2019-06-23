@@ -3,6 +3,7 @@ using Electrica.API.Repository.Contracts;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Electrica.API.Repository
@@ -27,7 +28,7 @@ namespace Electrica.API.Repository
 
         public async Task<List<Invoice>> GetInvoicesByCNP(string CNP)
         {
-            return (await _collection.FindAsync(x => x.UserCNP == CNP)).ToList();
+            return (await _collection.FindAsync(x => x.UserCNP == CNP)).ToList().OrderByDescending(x => x.EndDate).ToList();
         }
 
         public async Task AddInvoice(Invoice invoice)
@@ -39,7 +40,7 @@ namespace Electrica.API.Repository
         {
             var invoice = await _collection.Find(x => x.InvoiceId == id).FirstOrDefaultAsync();
 
-            if (invoice.Value - invoice.PayedValue <= value)
+            if (invoice.Value - invoice.PayedValue >= value)
             {
                 invoice.PayedValue += value;
             }
@@ -47,8 +48,7 @@ namespace Electrica.API.Repository
             {
                 throw new Exception();
             }
-            await _collection.ReplaceOneAsync(x => x.InvoiceId == id, invoice
-            );
+            await _collection.ReplaceOneAsync(x => x.InvoiceId == id, invoice);
 
             return invoice.Value - invoice.PayedValue;
         }

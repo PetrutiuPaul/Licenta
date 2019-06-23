@@ -16,5 +16,7 @@ namespace PayAllHere.Service.Contracts
         Task<bool> PayEON(PayInvoiceRequestViewModel payInvoiceRequestViewModel);
 
         Task<bool> PayElectrica(PayInvoiceRequestViewModel payInvoiceRequestViewModel);
+
+        Task<bool> AddInvoice(InvoiceAuthRequestViewModel invoice);
     }
 }

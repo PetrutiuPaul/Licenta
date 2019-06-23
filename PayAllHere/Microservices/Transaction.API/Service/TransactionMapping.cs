@@ -1,4 +1,5 @@
-﻿using Common.ViewModels.RequestViewModel;
+﻿using System;
+using Common.ViewModels.RequestViewModel;
 using Common.ViewModels.ResponseViewModel;
 
 namespace Transaction.API.Service
@@ -14,7 +15,9 @@ namespace Transaction.API.Service
                 Id = transactionRequestViewModel.Id,
                 UserId = transactionRequestViewModel.UserId,
                 Validated = transactionRequestViewModel.Validated,
-                Value = transactionRequestViewModel.Value
+                Value = transactionRequestViewModel.Value,
+                AddedAt = DateTime.Now,
+                InvoiceId = transactionRequestViewModel.InvoiceId
             };
         }
 

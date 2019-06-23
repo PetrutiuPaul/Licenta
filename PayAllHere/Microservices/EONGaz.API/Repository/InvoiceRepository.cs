@@ -3,6 +3,7 @@ using EONGaz.API.Repository.Contracts;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EONGaz.API.Repository
@@ -27,7 +28,7 @@ namespace EONGaz.API.Repository
 
         public async Task<List<Invoice>> GetInvoicesByCNP(string CNP)
         {
-            return (await _collection.FindAsync(x => x.UserCNP == CNP)).ToList();
+            return (await _collection.FindAsync(x => x.UserCNP == CNP)).ToList().OrderByDescending(x => x.EndDate).ToList();
         }
 
         public async Task AddInvoice(Invoice invoice)
