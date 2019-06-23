@@ -11,6 +11,8 @@
         public string To { get; set; }
 
         public bool Validated { get; set; }
+        
+        public string InvoiceId { get; set; }
     }
 
 }

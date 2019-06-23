@@ -20,5 +20,10 @@ namespace PayAllHere.Service
         {
             return _configuration[userName+":Password"] != password ? string.Empty : _configuration[userName + ":Url"];
         }
+
+        public string GetInternalName(string userName, string password)
+        {
+            return _configuration[userName + ":Password"] != password ? string.Empty : _configuration[userName + ":InternalName"];
+        }
     }
 }

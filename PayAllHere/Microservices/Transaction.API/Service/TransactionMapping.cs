@@ -29,7 +29,8 @@ namespace Transaction.API.Service
                 Id = transaction.Id,
                 To = transaction.To,
                 Value = transaction.Value,
-                Validated = transaction.Validated
+                Validated = transaction.Validated,
+                InvoiceId = transaction.InvoiceId
             };
         }
     }

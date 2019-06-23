@@ -15,10 +15,12 @@ namespace PayAllHere.Controllers
     public class ExternalController : ControllerBase
     {
         private readonly IUtilityService _utilityService;
+        private readonly ITransactionService _transactionService;
 
-        public ExternalController(IUtilityService utilityService)
+        public ExternalController(IUtilityService utilityService, ITransactionService transactionService)
         {
             _utilityService = utilityService;
+            _transactionService = transactionService;
         }
 
         [HttpPost]
@@ -45,6 +47,23 @@ namespace PayAllHere.Controllers
             }
 
             return Ok(true);
+        }
+
+        [HttpPost]
+        [Route("Report")]
+        public async Task<IActionResult> GetReport([FromBody]ReportAuthRequestViewModel reportRequestViewModel)
+        {
+            try
+            {
+                var list = await _transactionService.GetTransactionsBetween(reportRequestViewModel);
+
+                return Ok(list);
+            }
+            catch (Exception)
+            {
+                return Conflict(new ErrorResponseViewModel
+                    {Id = 400, Message = "ceva o crapat"});
+            }
         }
 
     }

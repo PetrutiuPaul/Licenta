@@ -12,5 +12,7 @@ namespace PayAllHere.Service.Contracts
         Task<TransactionResponseViewModel> GetTransactionById(string id);
 
         Task<bool> AddTransaction(TransactionRequestViewModel transactionRequestViewModel);
+
+        Task<List<TransactionResponseViewModel>> GetTransactionsBetween(ReportAuthRequestViewModel reportRequestViewModel);
     }
 }

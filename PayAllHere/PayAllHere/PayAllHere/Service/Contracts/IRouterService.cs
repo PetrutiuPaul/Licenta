@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace PayAllHere.Service.Contracts
+﻿namespace PayAllHere.Service.Contracts
 {
     public interface IRouterService
     {
         string GetRedirectUrl(string userName, string password);
+
+        string GetInternalName(string userName, string password);
     }
 }

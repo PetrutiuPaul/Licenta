@@ -71,5 +71,22 @@ namespace Transaction.API.Controllers
                     { Id = (int)ErrorResponseIds.InvalidTransaction, Message = "Error" });
             }
         }
+
+        [HttpPost]
+        [Route("AllInBetween")]
+        public async Task<IActionResult> GetAllTransactionBetween(ReportRequestViewModel reportRequestViewModel)
+        {
+            try
+            {
+                var transactions = await _transactionRepository.Get(x => x.AddedAt >= reportRequestViewModel.From && x.AddedAt <= reportRequestViewModel.To);
+
+                return Ok(transactions.Select(x => x.ToTransactionResponseViewModel()));
+            }
+            catch (Exception)
+            {
+                return BadRequest(new ErrorResponseViewModel()
+                    { Id = (int)ErrorResponseIds.InvalidTransaction, Message = "Error" });
+            }
+        }
     }
 }

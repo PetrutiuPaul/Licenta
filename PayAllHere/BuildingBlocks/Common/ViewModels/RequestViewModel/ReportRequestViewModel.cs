@@ -11,6 +11,8 @@ namespace Common.ViewModels.RequestViewModel
         public DateTime From { get; set; }
 
         public DateTime To { get; set; }
+
+        public string InternalName { get; set; }
     }
 
     public class ReportAuthRequestViewModel
@@ -22,5 +24,7 @@ namespace Common.ViewModels.RequestViewModel
         public DateTime From { get; set; }
 
         public DateTime To { get; set; }
+
+        public string InternalName { get; set; }
     }
 }
