@@ -61,7 +61,7 @@ namespace PayAllHere.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                ModelState.AddModelError("error",e.Message);
                 return View();
             }
         }
@@ -75,37 +75,46 @@ namespace PayAllHere.Controllers
         [HttpPost]
         public async Task<ActionResult> PayInvoice(PayInvoiceRequestViewModel payInvoiceRequestViewModel)
         {
+            try
+            {
 
-            var userId = User.Claims.Where(x => x.Type.Contains("primarysid")).Select(x => x).First().Value;
-            await _userService.ModifyBalance(new UpdateBalanceRequestViewModel()
-            {
-                Id = userId,
-                Value = -payInvoiceRequestViewModel.Value
-            });
-            switch (payInvoiceRequestViewModel.Provider)
-            {
-                case PaymentUserType.InternEON:
-                    await _utilityService.PayEON(payInvoiceRequestViewModel);
-                    break;
-                case PaymentUserType.InternElectrica:
-                    await _utilityService.PayElectrica(payInvoiceRequestViewModel);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+
+                var userId = User.Claims.Where(x => x.Type.Contains("primarysid")).Select(x => x).First().Value;
+                await _userService.ModifyBalance(new UpdateBalanceRequestViewModel()
+                {
+                    Id = userId,
+                    Value = -payInvoiceRequestViewModel.Value
+                });
+                switch (payInvoiceRequestViewModel.Provider)
+                {
+                    case PaymentUserType.InternEON:
+                        await _utilityService.PayEON(payInvoiceRequestViewModel);
+                        break;
+                    case PaymentUserType.InternElectrica:
+                        await _utilityService.PayElectrica(payInvoiceRequestViewModel);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                var transaction = new TransactionRequestViewModel()
+                {
+                    From = PaymentUserType.Me.ToString(),
+                    To = payInvoiceRequestViewModel.Provider.ToString(),
+                    UserId = userId,
+                    Validated = false,
+                    Value = payInvoiceRequestViewModel.Value,
+                    InvoiceId = payInvoiceRequestViewModel.InvoiceId
+                };
+
+                var ok = await _transactionService.AddTransaction(transaction);
+                return RedirectToAction("Index", "Home");
             }
-
-            var transaction = new TransactionRequestViewModel()
+            catch (Exception e)
             {
-                From = PaymentUserType.Me.ToString(),
-                To = payInvoiceRequestViewModel.Provider.ToString(),
-                UserId = userId,
-                Validated = false,
-                Value = payInvoiceRequestViewModel.Value,
-                InvoiceId = payInvoiceRequestViewModel.InvoiceId
-            };
-
-            var ok = await _transactionService.AddTransaction(transaction);
-            return RedirectToAction("Index", "Home");
+                ModelState.AddModelError("error",e.Message);
+                return View("Pay");
+            }
         }
     }
 }

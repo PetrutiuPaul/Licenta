@@ -115,7 +115,7 @@ namespace PayAllHere.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(UserRequestViewModel newUser)
         {
-            if (await _userService.UserExists(newUser)) //on error
+            if (await _userService.UserExists(newUser))
             {
                 ModelState.AddModelError("", "Username or email already exists.");
                 return View("Login", newUser);

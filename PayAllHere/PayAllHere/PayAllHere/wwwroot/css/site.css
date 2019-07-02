@@ -35,3 +35,33 @@ body {
         display: none;
     }
 }
+
+.titlu {
+    font-weight: 600;
+    color: #112d55;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.sub-title {
+    font-weight: 500;
+    text-align: center;
+    color: #112d55;
+}
+
+.all-providers {
+    width: 100%;
+    display: inline-flex
+}
+
+.provider {
+    width: 50%;
+    text-align: center;
+}
+
+.provider-link {
+    width: 100px;
+}

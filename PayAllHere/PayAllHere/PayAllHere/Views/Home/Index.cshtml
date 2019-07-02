@@ -4,24 +4,33 @@
     ViewData["Title"] = "Home Page";
 }
 
+<br/>
+<br/>
+<div>
+    <h1 class="titlu">Pay All Here</h1>
+</div>
+<hr/>
 
-
-<div class="row">
-    <div class="col-md-3">
-        <ul>
-            <li>@Model.Id</li>
-            <li>@Model.CNP</li>
-            <li>@Model.FullName</li>
-            <li>@Model.Balance</li>
-            <li>@Model.Username</li>
-        </ul>
+<div class="description">
+    <p>
+        Pay All Here is a platform where you can pay your bills from different providers. For now, you can pay your electricity bills and your gas bills.
+    </p>
+    <p>
+        Every time a provider creates an invoice for you, it will send it to us and you could see invoice details in every provider specific section.
+    </p>
+    <p>
+        After that, you can pay it on the platform, if you have enough money in your platform account. If you haven't, you can add some money from personal account menu.
+    </p>
+    <hr/>
+    <h3 class="sub-title">
+        Providers Sections
+    </h3>
+</div>
+<div class="row all-providers">
+    <div class="provider">
+        @Html.ActionLink("Electrica", "ElectricaInvoices", "Utility", null, new {@class = "btn btn-lg btn-info provider-link"})
     </div>
-</div>
-
-<div class="row">
-    <button class="btn btn-default btn-success">@Html.ActionLink("Electrica","ElectricaInvoices","Utility")</button>
-</div>
-
-<div class="row">
-    <button class="btn btn-default btn-success">@Html.ActionLink("EON","EONInvoices","Utility")</button>
+    <div class="provider">
+        @Html.ActionLink("EON", "EONInvoices", "Utility", null, new {@class = "btn btn-lg btn-info provider-link"})
+    </div>
 </div>

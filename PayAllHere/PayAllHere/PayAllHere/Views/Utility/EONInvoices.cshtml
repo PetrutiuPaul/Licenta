@@ -2,22 +2,23 @@
 @model IEnumerable<Common.ViewModels.ResponseViewModel.InvoiceResponseViewModel>
 
 @{
-    ViewData["Title"] = "EONInvoices";
+    ViewData["Title"] = "EON Invoices";
 }
+<br />
 
-<h2>EONInvoices</h2>
-
-<table class="table">
-    <thead>
-        <tr>
+<h2>EON Invoices</h2>
+<hr />
+<table class="table table-responsive table-hover">
+    <thead style="background-color: #112d55">
+        <tr style="color: white">
             <th>
-                @Html.DisplayNameFor(model => model.InvoiceId)
+                @Html.DisplayName("Invoice Id")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProviderName)
+                @Html.DisplayName("Provider")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserCNP)
+                @Html.DisplayName("CNP")
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Address)
@@ -26,54 +27,66 @@
                 @Html.DisplayNameFor(model => model.Value)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StartDate)
+                @Html.DisplayName("Start Date")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EndDate)
+                @Html.DisplayName("End Date")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PaymentDate)
+                @Html.DisplayName("Payment Date")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PayedValue)
+                @Html.DisplayName("Payed Value")
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.InvoiceId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProviderName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserCNP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Value)
-            </td>
-            <td>
-                @item.StartDate.Date.ToShortDateString()
-            </td>
-            <td>
-                @item.EndDate.Date.ToShortDateString()
-            </td>
-            <td>
-                @item.PaymentDate.Date.ToShortDateString()
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PayedValue)
-            </td>
-            <td>
-                <button class="btn">@Html.ActionLink("Plateste", "Pay", "Payment", new {InvoiceId = item.InvoiceId, Provider = PaymentUserType.InternEON})</button>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvoiceId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProviderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserCNP)
+                </td>
+                <td>
+                    @if (item.Address.Length > 20)
+                    {
+                        item.Address = item.Address.Substring(0, 20) + "...";
+                    }
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @item.StartDate.Date.ToShortDateString()
+                </td>
+                <td>
+                    @item.EndDate.Date.ToShortDateString()
+                </td>
+                <td>
+                    @item.PaymentDate.Date.ToShortDateString()
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PayedValue)
+                </td>
+                @if(item.PayedValue >= item.Value || item.PaymentDate < DateTime.Now)
+                {
+                    <td></td>
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Plateste", "Pay", "Payment", new {InvoiceId = item.InvoiceId, Provider = PaymentUserType.InternEON, Value = item.Value-item.PayedValue}, new {@class = "btn btn-sm btn-info"})
+                    </td>
+                }   
+            </tr>
+        }
     </tbody>
 </table>

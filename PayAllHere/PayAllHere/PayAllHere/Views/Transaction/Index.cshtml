@@ -4,16 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Transactiile mele</h2>
+<h2>My Transactions</h2>
+<hr/>
 
-<table class="table">
-    <thead>
-        <tr>
+<table class="table table-responsive table-hover">
+    <thead style="background-color: #112d55">
+        <tr  style="color: white">
             <th>
                 @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Value)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.From)
@@ -22,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.To)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Validated)
+                @Html.DisplayNameFor(model => model.Value)
             </th>
             <th></th>
         </tr>
@@ -34,19 +32,16 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Value)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.From)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.To)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Validated)
+                @Html.DisplayFor(modelItem => item.Value)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new{ @class = "btn btn-info btn-sm"})
             </td>
         </tr>
 }

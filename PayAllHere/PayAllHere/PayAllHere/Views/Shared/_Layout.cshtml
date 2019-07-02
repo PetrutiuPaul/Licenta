@@ -17,7 +17,7 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #112d55">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,13 +26,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">PayAllHere</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand" style="color: #c6c6c6">Pay All Here</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Utilitati</a></li>
-                    <li><a asp-area="" asp-controller="Transaction" asp-action="Index">Tranzactiile mele</a></li>
-                    <li><a asp-area="" asp-controller="Account" asp-action="Details">Detalii cont</a></li>
+                <ul class="nav navbar-nav" style="width: 84%">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index" style="color: #c6c6c6">Utilities</a></li>
+                    <li><a asp-area="" asp-controller="Transaction" asp-action="Index" style="color: #c6c6c6">My Transactions</a></li>
+                    <li><a asp-area="" asp-controller="Account" asp-action="Details" style="color: #c6c6c6">Account Details</a></li>
+                    <li style="float: right"><a asp-area="" asp-controller="Account" asp-action="Logout" style="color: #c6c6c6">Log Out</a></li>
                 </ul>
             </div>
         </div>

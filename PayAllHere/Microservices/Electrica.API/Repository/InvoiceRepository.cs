@@ -40,7 +40,7 @@ namespace Electrica.API.Repository
         {
             var invoice = await _collection.Find(x => x.InvoiceId == id).FirstOrDefaultAsync();
 
-            if (invoice.Value - invoice.PayedValue >= value)
+            if (0 <= value)
             {
                 invoice.PayedValue += value;
             }

@@ -4,17 +4,16 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>My Account Details</h2>
+<hr />
 
 <div>
-    <h4>UserResponseViewModel</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.Username)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Id)
+            @Html.DisplayFor(model => model.Username)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.CNP)
@@ -23,28 +22,16 @@
             @Html.DisplayFor(model => model.CNP)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayName("First Name")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.FirstName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayName("Last Name")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Username)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Email)
@@ -62,14 +49,14 @@
             @Html.DisplayNameFor(model => model.Balance)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Balance)
-            @Html.ActionLink("+","Deposit","Payment",new {@class = "btn btn-success"})
+            @Html.DisplayFor(model => model.Balance) lei
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
+            @Html.DisplayName("Date Of Birth")
         </dt>
         <dd>
             @Html.DisplayFor(model => model.DateOfBirth)
         </dd>
     </dl>
+    @Html.ActionLink("Add Money", "Deposit", "Payment", null, new { @class = "btn btn-sm btn-info" })
 </div>
