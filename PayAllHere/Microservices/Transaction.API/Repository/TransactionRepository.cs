@@ -32,5 +32,12 @@ namespace Transaction.API.Repository
         {
             return (await _collection.Find(filter).ToListAsync()).OrderByDescending(x => x.AddedAt).ToList();
         }
+
+        public async Task ValidateTransaction(Models.Transaction transaction)
+        {
+            var filter = Builders<Models.Transaction>.Filter.Eq(s => s.Id, transaction.Id);
+            transaction.Validated = true;
+            await _collection.ReplaceOneAsync(filter, transaction);
+        }
     }
 }

@@ -10,5 +10,7 @@ namespace Transaction.API.Repository.Contracts
         Task AddTransaction(Models.Transaction transaction);
 
         Task<List<Models.Transaction>> Get(Expression<Func<Models.Transaction, bool>> filter);
+
+        Task ValidateTransaction(Models.Transaction transaction);
     }
 }

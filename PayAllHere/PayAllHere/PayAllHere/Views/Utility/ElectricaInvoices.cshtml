@@ -81,7 +81,7 @@
             else
             {
                 <td>
-                    @Html.ActionLink("Plateste", "Pay", "Payment", new {InvoiceId = item.InvoiceId, Provider = PaymentUserType.InternElectrica, Value = item.Value-item.PayedValue}, new {@class = "btn btn-sm btn-info"})
+                    @Html.ActionLink("Pay", "Pay", "Payment", new {InvoiceId = item.InvoiceId, Provider = PaymentUserType.InternElectrica, Value = item.Value-item.PayedValue}, new {@class = "btn btn-sm btn-info"})
                 </td>
             }
         </tr>

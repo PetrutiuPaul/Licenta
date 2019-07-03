@@ -8,11 +8,14 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using Transaction.API.Repository;
 using Transaction.API.Repository.Contracts;
+using Transaction.API.Service;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Transaction.API
 {
@@ -37,7 +40,7 @@ namespace Transaction.API
             });
 
             services.AddTransient<ITransactionRepository, TransactionRepository>();
-
+            services.AddSingleton<IHostedService, ValidateBackgroundService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -78,7 +78,7 @@ namespace Transaction.API.Controllers
         {
             try
             {
-                var transactions = await _transactionRepository.Get(x => x.AddedAt >= reportRequestViewModel.From && x.AddedAt <= reportRequestViewModel.To);
+                var transactions = await _transactionRepository.Get(x => x.AddedAt >= reportRequestViewModel.From && x.AddedAt <= reportRequestViewModel.To && x.Validated && x.To == reportRequestViewModel.InternalName);
 
                 return Ok(transactions.Select(x => x.ToTransactionResponseViewModel()));
             }
